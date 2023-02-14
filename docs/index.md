@@ -58,14 +58,13 @@ Concepção de sistema de automação industrial
 
 # Autores
 
-* Aluno 1
-* Aluno 2
-* Aluno 3
-* Aluno 4
-* Aluno 5
-* Aluno 6
-* Aluno 7
-* Aluno 8
+* Jean Lucas Rothstein Machado
+* Antonio Angelo Teixeira
+* Rafael Nissim Katalan 
+* Vinicios Venâncio Lugli 
+* Felipe Henrique Moreira Leão
+* Pablo Ruan Lana Viana
+* Gustavo Ferreira de Oliveira
 
 
 # Visão Geral do Projeto
@@ -112,7 +111,7 @@ Concepção de sistema de automação industrial
 
 ## Matriz de Risco
 
-*Matriz_de_risco*
+<img src ="https://github.com/2023M5T2-Inteli/grupo3/blob/main/docs/img/relatorio/Matriz_de_Risco.png">
 
 
 # Requisitos do Sistema
