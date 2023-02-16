@@ -87,7 +87,7 @@ Com o intuito de aliviar os problemas e as dores apresentadas, produziremos uma 
 
 ### Objetivos específicos
 
-	Para cumprir com o objetivo citado, o robô fará a tarefa de executar a varredura da bandeja inicial da amostra com um eletroímã, que deverá ser ajustado de acordo com o metal que deseja-se obter. Após essa configuração, o robô começará a varrer a amostra, mantendo uma distância e o campo magnético fixos. Em seguida à finalização da varredura, o robô irá submergir em água o que foi coletado, com o intuito de retirar as impurezas que ficaram retidas. Posteriormente, o braço irá se direcionar para a bandeja de coleta, onde o ímã será desativado e a amostra será depositada. O processo será repetido até que toda a amostra seja coletada
+Para cumprir com o objetivo citado, o robô fará a tarefa de executar a varredura da bandeja inicial da amostra com um eletroímã, que deverá ser ajustado de acordo com o metal que deseja-se obter. Após essa configuração, o robô começará a varrer a amostra, mantendo uma distância e o campo magnético fixos. Em seguida à finalização da varredura, o robô irá submergir em água o que foi coletado, com o intuito de retirar as impurezas que ficaram retidas. Posteriormente, o braço irá se direcionar para a bandeja de coleta, onde o ímã será desativado e a amostra será depositada. O processo será repetido até que toda a amostra seja coletada
 
 
 ## Partes interessadas
@@ -96,7 +96,7 @@ IPT - Instituto de Pesquisas Tecnológicas;
 
 # Análise do Problema
 
-imagem 
+<img src = "https://github.com/2023M5T2-Inteli/grupo3/blob/main/docs/img/relatorio/unnamed.png">
 
 
 1 — Demonstração do processo manual de separação de amostras realizado pelo IPT.
@@ -104,7 +104,7 @@ imagem
 O processo de separação de amostras atualmente ocorre da seguinte forma: sobre uma mesa são dispostos 3 ímãs de diferentes potenciais (medidos em Gauss); 3 bandejas; 1 saco plástico; 1 recipiente com a amostra (imagem 2). Em todas as 3 bandejas são colocados água para facilitar a manipulação da amostra - na primeira bandeja é despejado a amostra e as outras 2 bandejas irão ser utilizadas como apoio durante o processo de separação manual. Após estas etapas, é escolhido o ímã que mais atrai minérios magnéticos, o qual é envolvido em um plástico (para facilitar a retirada dos materiais de ferros recolhidos pelo ímã). Após esta fase, o ímã é mergulhado e passa pela bandeja que se encontra com água e a amostra, posteriormente na segunda bandeja só com água e por último solto e armazenado na última bandeja. Este processo é feito várias vezes com o ímã de maior potência e depois  com os outros dois ímãs de menor potência, sendo realizado as etapas da mesma forma.
 
 
-imagem
+<img src ="https://github.com/2023M5T2-Inteli/grupo3/blob/main/docs/img/relatorio/unnamed%20(1).png">
 
 2 - Processo manual de separação de amostras realizado pelo IPT.
 
@@ -114,7 +114,7 @@ Qualidade do minério para determinar a pureza desse;
 Características geológicas do minério;
 Quantidade de recursos disponíveis para mineração no local;
 Riscos ambientais envolvidos com o projeto.
-	Com a separação magnética feita de forma automática com o braço mecânico, a medição dos minérios poderá ser mais efetiva, e assim, será possível analisar mais facilmente esses parâmetros para viabilização do projeto de mineração do ambiente pretendido.
+Com a separação magnética feita de forma automática com o braço mecânico, a medição dos minérios poderá ser mais efetiva, e assim, será possível analisar mais facilmente esses parâmetros para viabilização do projeto de mineração do ambiente pretendido.
 
 ## Dados levantados e analisados relativos ao problema
 
@@ -134,12 +134,15 @@ Os metais que despertam o maior interesse da indústria atualmente são o ferro 
 
 O cenário financeiro do parceiro, laboratório de mineração do IPT, atualmente é de 8 análises de solo por mês com cada uma custando na faixa de 3 mil reais. Ainda nesse sentido, podemos considerar o técnico que realiza o processo manual como único custo que deve ser considerado, pois esse será o único custo que, efetivamente, mudará, porque com a automação, o técnico ficará livre para realizar outros trabalhos gerando um valor apenas dependente de suas qualificações.
 Por outro lado, com o processo de automatização realizado, o rendimento aumentaria em 25%, passando para 10 amostras analisadas por mês, mantendo-se em 3 mil reais. Dessa maneira, para realizar esse processo, o robô custaria 20 mil reais somado a um kit de 600 reais, que seriam custos únicos, além dos custos por mês de operação, sendo dividido em estruturação e implementação. Os custos de estruturação são de operação com 2,5 mil reais, 4 mil por ano de manutenção e um engenheiro robótico com salário de 20 mil reais. Já no processo de implementação, os custos são: 2,5 mil reais e uma equipe com o engenheiro e três funcionários, totalizando pouco mais de 42 mil reais.
-	Em última análise, realizando-se os cálculos, chega-se à conclusão que o valor da automação deve custar algo próximo a 90 mil reais, com dois meses de operação. Assim, esse processo se pagaria em torno de 10 meses, pois o aumento de desempenho irá gerar nove mil reais a mais por mês, somando com o que o técnico, que terá mais tempo livre, conseguirá realizar com esse tempo de sobra. 
+Em última análise, realizando-se os cálculos, chega-se à conclusão que o valor da automação deve custar algo próximo a 90 mil reais, com dois meses de operação. Assim, esse processo se pagaria em torno de 10 meses, pois o aumento de desempenho irá gerar nove mil reais a mais por mês, somando com o que o técnico, que terá mais tempo livre, conseguirá realizar com esse tempo de sobra. 
 
+## Análise das 5 forças de Porter
+
+<img src = "https://github.com/2023M5T2-Inteli/grupo3/blob/main/docs/img/relatorio/Porter's%205%20Forces%20Template%20(Community).png">
 
 ## Proposta de Valor: Value Proposition Canvas
 
-*Value_Proposition_Canvas*
+<img src = "https://github.com/2023M5T2-Inteli/grupo3/blob/main/docs/img/relatorio/Value%20Proposition%20Canvas.png">
 
 
 ## Matriz de Risco
@@ -147,8 +150,8 @@ Por outro lado, com o processo de automatização realizado, o rendimento aument
 <img src ="https://github.com/2023M5T2-Inteli/grupo3/blob/main/docs/img/relatorio/Matriz_de_Risco.png">
 
 ## Matriz de avaliação de valor Oceano Azul
-
- *Oceano_azul*
+ 
+<img src = "https://github.com/2023M5T2-Inteli/grupo3/blob/main/docs/img/relatorio/Matriz%20de%20avalia%C3%A7%C3%A3o%20de%20valor%20Oceano%20Azul.png">
 
 # Requisitos do Sistema
 
@@ -164,7 +167,9 @@ g. Relatório apresentando todos os dados pertinentes do ensaio (opcional).
 
 ## Personas
 
-*Descrição_das_personas*
+<img src = "https://github.com/2023M5T2-Inteli/grupo3/blob/main/docs/img/relatorio/Personas_1.png">
+
+<img src = "https://github.com/2023M5T2-Inteli/grupo3/blob/main/docs/img/relatorio/Personas_2.png">
 
 
 ## Histórias dos usuários (user stories)
@@ -188,6 +193,9 @@ Eu, como engenheiro responsável pelo laboratório  do IPT, desejo que a interfa
 
 ## Croqui
 
+## Documentação dos componentes
+
+<img src = "https://github.com/2023M5T2-Inteli/grupo3/blob/main/docs/img/relatorio/Porter's%205%20Forces%20Template%20(Community).png">
 
 ## Módulos do Sistema e Visão Geral (Big Picture)
 
