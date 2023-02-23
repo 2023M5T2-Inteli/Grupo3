@@ -195,6 +195,8 @@ Eu, como engenheiro responsável pelo laboratório  do IPT, desejo que a interfa
 
 ## Documentação dos componentes
 
+## Documentação da Interface
+
 <img src = "https://github.com/2023M5T2-Inteli/grupo3/blob/main/docs/img/relatorio/Porter's%205%20Forces%20Template%20(Community).png">
 
 ## Módulos do Sistema e Visão Geral (Big Picture)
