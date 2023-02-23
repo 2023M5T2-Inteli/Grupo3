@@ -204,9 +204,17 @@ na faixa de 800 a 12.000 Gauss;
 
 ![Alt text](img/relatorio/croqui.png)
 
+## Design da Interface
+
+A conexão homem máquina da solução do grupo será realizada por meio do LCD, e tal decisão foi tomada pelo grupo por conta da facilidade de manipulação do braço com uma interface que seja simples e prática, além da dispensabilidade da necessidade do acesso a computadores e internet pelo parceiro. Frente a isso, a interface será constituída por um teclado de membrana e uma tela LCD, por meio dos quais o usuário poderá realizar alterações de funcionamento do robô, como por exemplo, a intensidade de corrente elétrica disponibilizada ao imã, distância do braço do robô, assim como sua velocidade, sendo os dois primeiros responsáveis por alterar a intensidade de fluxo magnético produzido pelo ímã e o último apenas a velocidade de varredura.
+Dessa forma, a arquitetura da solução foi idealizada visando a maior praticidade por parte do operador, ficando, dessa maneira, com  a interface completa, teclado de membrana e LCD, acoplada ao robô, tendo apenas o cabo de conexão como única distância entre eles. Portanto, decidiu-se usar uma representação no teclado de membrana, trazendo significado, ou seja, levando o braço a realizar ações com suas teclas e trazer feedbacks sobre o sucesso ou insucesso dessas ações no display.
+
+![Alt text](img/relatorio/interface.png)
+
 ## Documentação dos componentes
 
 ![Alt text](img/relatorio/documentacao-componentes.png)
+
 
 ## Módulos do Sistema e Visão Geral (Big Picture)
 
