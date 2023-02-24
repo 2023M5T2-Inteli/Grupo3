@@ -216,10 +216,107 @@ Dessa forma, a arquitetura da solução foi idealizada visando a maior praticida
 ![Alt text](img/relatorio/documentacao-componentes.png)
 
 
-## Módulos do Sistema e Visão Geral (Big Picture)
+### Componentes 
+#### Raspberry Pi pico w
+- O Raspberry Pi pico w é um microcontrolador com acesso wireless, o que permite uma conexão via bluetooth e via wifi. Assim ele pode ser  usado para sistemas embarcados e controlar dados de sensores e mandar informações para atuadores sendo fundamental na execução do projeto tanto para enviar como receber os dados.
+![Alt text](img/relatorio/Raspberry.jpg)
+#### Braço robótico Dobot Magician lite 
+- O braço robótico Dobot Magician lite é um robo que apresenta uma interface em software que dá suporte para a programação do hardware, possibilitando a utilização da garra para tarefas diversas tanto em protótipos reais como no estudo de interação entre inteligência artificial e hardware. 
+![Alt text](img/relatorio/Magician.jpg)
+#### Teclado matricial de membrana
+- O teclado matricial de membrana é utilizado para projetos que utiizam um teclado alfa numérico que possua ligação com um monitor serial para que seja visivel as respostas de interação através de um monitor serial ligado a ele. 
+![Alt text](img/relatorio/TMembrana.jpg)
+#### Display LCD
+- O display LCD é utilizado para apresentar frases e numeros tendo capacidade de mostrar 16 caracteres em 2 linhas, podendo ser progamado para apresentar dados e informaçoes de sensores ou atuadores ligados a ele, possibilitando assim, a vericação do estágio em que o código se encontra.
+![Alt text](img/relatorio/LCD.jpg)
+#### Eletroímã
+ O Eletroimã é um componente eletrônico moderno com funcionalidade básica semelhante a de um imã, porém com a diferença de possuir maior capacidade de atração graças a presença de solenóides. Que através deles, quando expostos a uma tensão é capaz de gerar um campo magnético no seu interior e exterior, podendo controlar este campo a medida que se controla a intesidade da tensão.
+ ![Alt text](img/relatorio/Eletroima.jpg)
+ #### Ponte H
+ - A ponte H é um driver usado em motores de corrente contínua, e que permite o motor girar tanto no sentido horário quanto no sentido anti-horário. Além de permitir alternar o sentido de rotação do motor, ela também exige pouquíssima energia do circuito de comando.
+![Alt text](img/relatorio/ponteH.jpg)
+ #### Célula de peso e módulo Hx711 sensor de peso 
+ - O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferentes cargas que estejam sobre sua meia-ponte, entretanto para funcionamento deve atuar em conjunto com uma plataforma de prototipagem, entre elas, Arduino, PIC, ARM, AVR, entre outros. Como as Células de Carga instalados nas balanças não oferecem dados com grande precisão é necessário o Módulo Conversor HX711 que também funciona como um amplificador de sinal para oferecer dados mais precisos. O Módulo Conversor Amplificador Hx711 de 24bits se comunica através do padrão de comunicação TTL 232, possuindo estrutura simples, fácil de usar e com desempenho estável, além é claro, da elevada sensibilidade e velocidade de medida. 
+![Alt text](img/relatorio/CelulaP.jpg)
+## Especificações dos componentes
+#### Raspberry Pi pico w
+- Microcontrolador RP2040 (Silicon Designed by Raspberry Pi)
+- Dual-Core ARM Cortex M0+ com clock até 133MHz.
+- 264kB de memória SRAM.
+- 2MB de memória Flash.
+- 26 pinos de GPIO multifunção.
+- 2× SPI, 2× I2C, 2× UART, 3× 12-bit ADC e 16× canais PWM.
+- Conectividade via WiFi 2.4GHz 802.11n.
+- Certificação ANATEL: 134082210629.
 
-## Descrição dos Subsistemas
+#### Braço robótico Dobot Magician lite
+- Capacidade de Carga: 250 gramas
+- Potência: 60W máx
+- Número de eixos: 4
+- Alcance Máximo: 340mm
+- Posição da Repetibilidade (controle): 0.2mm
+- Fonte de Alimentação: 100V~240V, 50/60 Hz.
+- Alimentação: 12V/7A DC
+- Controle por USB virtual porta serial / Porta serial 
 
+#### Teclado matricial de membrana
+– Tensão de operação (máxima): 35VDC
+– Corrente de operação (máxima): 100mA
+– Quantidade de teclas: 16
+– Conector: 8 vias (4 linhas / 4 colunas)
+– Isolação: 100V / 100MΩ
+– Tempo de contato: 5ms
+– Temperatura de operação: 0 a 70° celsius 
+
+#### Display LCD 
+- Controlador: HD44780;
+- Cor backlight: Azul;
+- Cor escrita: Branca;
+- Dimensão Total: 80mm X 36mm X 12mm;
+- Dimensão Área visível: 64.5mm X 14mm;
+- Dimensão Caracter: 3mm X 5.02mm;
+- Dimensão Ponto: 0.52mm X 0.54mm.
+
+#### Eletroímã
+- Eletroimã / Solenóide 20mm;
+- Capacidade de atração elevada;
+- Princípo básico de funcionamento semelhante a imã;
+- Constituído por solenóides (bobinas cilíndricas);
+- Ideal para projetos robóticos e automação residendial.
+- Tensão de entrada: 12VDC;
+- Capacidade: 2,5Kg;
+- Corrente: 0,25A;
+- Comprimento do fio: 28cm;
+- Diâmetro: 20mm;
+- Altura: 15mm;
+- Peso: 24g. 
+
+#### Ponte H 
+- Tensão de Operação: 4~35v.
+- Chip: ST L298N (Datasheet)
+- Controle de 2 motores DC ou 1 motor de passo.
+- Corrente de Operação máxima: 2A por canal ou 4A max.
+- Tensão lógica: 5v.
+- Corrente lógica: 0~36mA.
+- Limites de Temperatura: -20 a +135°C.
+- Potência Máxima: 25W.
+#### Célula de peso e módulo Hx711 sensor de peso
+- Carga nominal: 1 kg
+- Potência nominal de saída: 1.0mv/v ± 0.15mv/v
+- Tensão de funcionamento recomendada: 3 ~ 12 VDC
+- Tensão máxima de operação: 15 VDC
+- Impedância de entrada: 410 +/-30 ohm
+- Impedância de saída: 350 +/-3 ohm
+- Isolamento: > 2000 megaohm/50 VDC
+- Faixa de compensação de temperatura: -10C ~ 40C
+- Faixa de temperatura de operação: -20C ~ 60C
+- Sobrecarga permitida: <120% da carga nominal
+- Carga de ruptura: >150% da carga nominal
+- Classe de proteção: IP65
+- Material: liga de alumínio
+- Dimensões(CxLxA):80mm,12,7mm,12,7mm
+- Peso: 31g
+- Ligação do fios: Vermelho(+),Preto(-),Verde(Sinal +),Branco(Sinal -)
 ### Requisitos de software
 
 ## Tecnologias Utilizadas
