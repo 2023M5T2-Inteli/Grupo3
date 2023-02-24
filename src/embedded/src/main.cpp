@@ -1,5 +1,12 @@
 #include <Arduino.h>
 
-void setup() { Serial.begin(115200); }
+#include "tests.hpp"
 
-void loop() { Serial.println("Testing upload"); }
+void setup() {
+	Serial.begin(115200);
+
+	// test_WeightModule();
+	// test_HBridge();
+}
+
+void loop() {}
