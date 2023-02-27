@@ -363,6 +363,32 @@ na faixa de 800 a 12.000 Gauss;
 
 ## Testes Unitários
 
+### Braço mecanico 
+Para a primeira versão do protótipo do braço mecânico, foi construído um código-fonte que permitisse a comunicação entre o braço mecânico e um computador atraves do controle de seus eixos X, Y e Z por meio de um controle de Xbox. A escolha do controle de Xbox foi feita, inicialmente, pelo fato de ser o que chega ao mais próximo de nosso interface proposta, já que ambos se comunicarem por meio de um cabo a um receptor de entrada/saída (computador). Sendo assim, realizamos teste de movimentação ao qual notamos os seguintes problemas/ delimitações do Dobot Magician:
+
+1. Limites máximo de movimentação:
+
+- Ao atingirmos o limite máximo do braço mecânico, nos ângulos -135° e 135°, o Dobot Magician acaba travando e sendo necessário realizar o desligamento e ligamento do braço mecânico para voltar a utilizar novamente.
+
+2. Movimentação forçada do braço mecânico (batidas ou movimentações manuais):
+
+- O mesmo travamento acontece quando está ocorrendo a execução de um determinado código-fonte no braço mecânico, por algum evento acabe ocorrendo uma movimentação forçada (batida ou reajuste no braço mecânico manualmente). Sendo assim, para a construção de códigos-fonte de execução de processos mais complexo há a necessidade de tratamento para estes possíveis acontecimentos.
+
+[![Foo](img/relatorio/teste-robo.png)](https://drive.google.com/file/d/1z_-WjqqmEGV3r7EgLiq7NLJw4R8_bzBm/view?usp=sharing)
+
+### Eletroímã
+
+A construção do eletroímã foi realizado por meio da ligação de dois eletroímãs à uma ponte H, por meio disto podemos testar três níveis inicias de intercidades do campo magnético passado energia manualmente pela fonte digital. Desta forma, concluímos que a utilização de apenas um eletroímã, não ira conseguir cobrir uma área tão grande durante a varredura do processo de separação da amostra. Sendo assim, partimos do pressuposto que a utilização de dois eletroímãs, iria conseguir atingir o nosso objetivo proposto, esse teste também nos possibilitou realizar o teste de velocidade de execução do braço com o peso de dois eletroímãs. Ao qual vimos que talvez haja a necessidade de dividirmos o processo de varredura da separação de amostras por quadrantes, já que devemos 
+considerar o peso dos eletroímãs com o coletado da amostra.
+
+[![Foo](img/relatorio/teste-eletroima.png)](https://drive.google.com/file/d/1Zvlc5oBxqtvwXt64XTNt2HBSVcuGdnnM/view?usp=share_link)
+### Módulo de peso
+Também durante está sprint 2, realizamos a construção do módulo de peso que serviram como uma das peças principais do nosso protótipo, pois serviram como mecanismo de parado do processo de separação de amostra. Durante a contrição, notamos a dificuldade de achar exemplos de construção do mesmo por meio da linguagem de programação Python. Apenas encontrado, exemplos de construções realizadas em C, por meio deste, notamos que talvez para a nossa solução, teremos que mudar a linguagem de programação, sendo adotada a linguagem C. 
+
+Também, notamos que inicialmente, para pesos maiores, o modulo de peso conseguem capturar os valores, mas para valores menores não consegue capturar com tanta precisão (este processo de teste foi realizado com parafusos e porcas). Desta forma, não podemos distinguir se esta limitação ocorre devido ao módulo ou pelo código-fonte, necessitando realizar teste com a amostra disponibilizada recentemente.
+
+[![Foo](img/relatorio/teste-modulo-peso.png)](https://drive.google.com/file/d/1Z5szDusptTmaxcjM55xNJIMFCwcP95F8/view?usp=share_link)
+
 ## Teste de Usabilidade
 
 # Análise de Dados
