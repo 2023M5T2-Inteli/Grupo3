@@ -204,12 +204,6 @@ na faixa de 800 a 12.000 Gauss;
 
 ![Alt text](img/relatorio/croqui.png)
 
-## Design da Interface
-
-A conexão homem máquina da solução do grupo será realizada por meio do LCD, e tal decisão foi tomada pelo grupo por conta da facilidade de manipulação do braço com uma interface que seja simples e prática, além da dispensabilidade da necessidade do acesso a computadores e internet pelo parceiro. Frente a isso, a interface será constituída por um teclado de membrana e uma tela LCD, por meio dos quais o usuário poderá realizar alterações de funcionamento do robô, como por exemplo, a intensidade de corrente elétrica disponibilizada ao imã, distância do braço do robô, assim como sua velocidade, sendo os dois primeiros responsáveis por alterar a intensidade de fluxo magnético produzido pelo ímã e o último apenas a velocidade de varredura.
-Dessa forma, a arquitetura da solução foi idealizada visando a maior praticidade por parte do operador, ficando, dessa maneira, com  a interface completa, teclado de membrana e LCD, acoplada ao robô, tendo apenas o cabo de conexão como única distância entre eles. Portanto, decidiu-se usar uma representação no teclado de membrana, trazendo significado, ou seja, levando o braço a realizar ações com suas teclas e trazer feedbacks sobre o sucesso ou insucesso dessas ações no display.
-
-![Alt text](img/relatorio/interface.png)
 
 ## Documentação dos componentes
 
@@ -325,7 +319,39 @@ Dessa forma, a arquitetura da solução foi idealizada visando a maior praticida
 
 ## Wireframe + Storyboard
 
-## Design de Interface - Guia de Estilos
+## Design de Interface 
+  A conexão homem máquina da solução do grupo será realizada por meio do LCD, de modo que a interface se mantenha simples e prática, sem a necessidade de outros dispositivos ou acesso à internet. A entrada de dados será feita por um teclado de membrana, por meio do qual o usuário poderá realizar alterações de funcionamento do robô, como ajuste da intensidade de corrente elétrica de acionamento do ímã, distância do braço do robô, assim como sua velocidade, sendo os dois primeiros responsáveis por alterar a intensidade de fluxo magnético produzido pelo ímã e o último apenas a velocidade de varredura.
+  Dessa forma, a arquitetura da solução foi idealizada com o intuito de dar maior praticidade ao operador, com a interface completa acoplada ao robô, tendo apenas o cabo de conexão como única distância entre eles. Para isso, o grupo decidiu usar o teclado de membrana como meio de comunicação direta entre o usuário final e o sistema, de modo que cada tecla corresponde a uma ação específica do braço. Somado a isso, o display LCD, associado ao teclado, apresenta o feedback de sucesso ou fracasso dessas ações. 
+
+  ![Alt text](img/relatorio/esquematico-interface.png)
+
+### Dimensões e características dos componentes da interface:
+
+#### Teclado de membrana: 
+- Teclas: 16;
+- Conector: 8 pinos (2,54mm);
+- Montagem: Auto-Adesivo;
+- Limites de Operação: 35VDC, 100mA;
+- Isolação: 100MΩ, 100V;
+- Tempo de contato: 5ms;
+- Durabilidade: 1 milhão de ciclos por tecla;
+- Temperatura de Funcionamento: 0-70°C;
+- Tamanho: 69 x 77 x 0,8mm;
+- Comprimento Cabo: 86mm;
+- Peso: 10g;
+
+![Alt text](img/relatorio/teclado-matricial.jpg)
+
+#### Display LCD: 
+- Controlador: HD44780;
+- Cor backlight: Azul;
+- Cor escrita: Branca;
+- Dimensão Total: 80mm X 36mm X 12mm;
+- Dimensão Área visível: 64.5mm X 14mm;
+- Dimensão Caracter: 3mm X 5.02mm;
+- Dimensão Ponto: 0.52mm X 0.54mm.
+
+![Alt text](img/relatorio/lcd.jpg)
 
 # Projeto de Banco de Dados
 
