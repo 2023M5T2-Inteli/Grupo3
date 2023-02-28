@@ -100,9 +100,9 @@ Para cumprir com o objetivo citado, o robô fará a tarefa de executar a varredu
 - INTELI - Instituto de Tecnologia e Liderança.
 
 # Análise do Problema
-
-<img src="img/relatorio/processo-separacao-minerios.png" style="margin-left: auto; margin-right:auto; display:flex; width:500px;" >
-
+<center>
+<img src="img/relatorio/processo-separacao-minerios.png" style="width:500px;" >
+</center>
 <b style="text-align:center;display:block;">1 — Demonstração do processo manual de separação de amostras realizado pelo IPT.</b>
   
 O processo de separação de amostras atualmente ocorre da seguinte forma: sobre uma mesa são dispostos 3 ímãs de diferentes potenciais (medidos em Gauss); 3 bandejas; 1 saco plástico; 1 recipiente com a amostra (imagem 2). Em todas as 3 bandejas são colocados água para facilitar a manipulação da amostra - na primeira bandeja é despejado a amostra e as outras 2 bandejas irão ser utilizadas como apoio durante o processo de separação manual. Após estas etapas, é escolhido o ímã que mais atrai minérios magnéticos, o qual é envolvido em um plástico (para facilitar a retirada dos materiais de ferros recolhidos pelo ímã).
