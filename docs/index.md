@@ -109,7 +109,7 @@ O processo de separação de amostras atualmente ocorre da seguinte forma: sobre
 
 Após esta fase, o ímã é mergulhado e passa pela bandeja que se encontra com água e a amostra, posteriormente na segunda bandeja só com água e por último solto e armazenado na última bandeja. Este processo é feito várias vezes com o ímã de maior potência e depois  com os outros dois ímãs de menor potência, sendo realizado as etapas da mesma forma.
 
-<img src="img/relatorio/processo-separacao-minerios-etapas.png" style="margin-left: auto; margin-right:auto; display:flex; width:500px;" >
+<img src="img/relatorio/processo-separacao-minerios-etapas.png" align="center" style="width:500px;" >
 
 <b style="text-align:center;display:block;">2 - Processo manual de separação de amostras realizado pelo IPT.</b>
 
