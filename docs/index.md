@@ -101,7 +101,7 @@ Para cumprir com o objetivo citado, o robô fará a tarefa de executar a varredu
 
 # Análise do Problema
 
-![Alt text](img/relatorio/processo-separacao-minerios.png)
+<img src="img/relatorio/processo-separacao-minerios.png" style="text-align:center; width:500px;" >
 
 #### <center>1 — Demonstração do processo manual de separação de amostras realizado pelo IPT.</center>
   
@@ -109,7 +109,7 @@ O processo de separação de amostras atualmente ocorre da seguinte forma: sobre
 
 Após esta fase, o ímã é mergulhado e passa pela bandeja que se encontra com água e a amostra, posteriormente na segunda bandeja só com água e por último solto e armazenado na última bandeja. Este processo é feito várias vezes com o ímã de maior potência e depois  com os outros dois ímãs de menor potência, sendo realizado as etapas da mesma forma.
 
-![Alt text](img/relatorio/processo-separacao-minerios-etapas.png)
+<img src="img/relatorio/processo-separacao-minerios-etapas.png" style="text-align:center; width:500px;" >
 
 #### <center>2 - Processo manual de separação de amostras realizado pelo IPT.</center>
 
@@ -148,19 +148,19 @@ Em última análise, realizando-se os cálculos, chega-se à conclusão que o va
 
 ## Análise das 5 forças de Porter
 
-![Alt text](img/relatorio/cinco-forcas-porter.png)
+<img src="img/relatorio/cinco-forcas-porter.png" style="text-align:center; width:500px;" >
 
 ## Proposta de Valor: Value Proposition Canvas
 
-![Alt text](img/relatorio/value-proposition-canvas.png)
+<img src="img/relatorio/value-proposition-canvas.png" style="text-align:center; width:500px;" >
 
 ## Matriz de Risco
 
-![Alt text](img/relatorio/matriz-risco.png)
+<img src="img/relatorio/matriz-risco.png" style="text-align:center; width:500px;" >
 
 ## Matriz de avaliação de valor Oceano Azul
 
- ![Alt text](img/relatorio/matriz-avaliacao-valor-oceano-azul.png)
+ <img src="img/relatorio/matriz-avaliacao-valor-oceano-azul.png" style="text-align:center; width:500px;" >
 
 # Requisitos do Sistema
 
@@ -176,9 +176,9 @@ na faixa de 800 a 12.000 Gauss;
 
 ## Personas
 
-![Alt text](img/relatorio/personas-1.png)
+<img src="img/relatorio/personas-1.png" style="text-align:center; width:500px;" >
 
-![Alt text](img/relatorio/personas-2.png)
+<img src="img/relatorio/personas-2.png" style="text-align:center; width:500px;" >
 
 ## Histórias dos usuários (user stories)
 
@@ -202,43 +202,50 @@ na faixa de 800 a 12.000 Gauss;
 
 ## Croqui
 
-![Alt text](img/relatorio/croqui.png)
+<img src="img/relatorio/croqui.png" style="text-align:center; width:500px;" >
 
 
 ## Documentação dos componentes
 
-![Alt text](img/relatorio/documentacao-componentes.png)
+<img src="img/relatorio/documentacao-componentes.png" style="text-align:center; width:500px;" >
 
 
 ### Componentes 
 #### Raspberry Pi pico w
 - O Raspberry Pi pico w é um microcontrolador com acesso wireless, o que permite uma conexão via bluetooth e via wifi. Assim ele pode ser  usado para sistemas embarcados e controlar dados de sensores e mandar informações para atuadores sendo fundamental na execução do projeto tanto para enviar como receber os dados.
 
-![Alt text](img/relatorio/Raspberry.jpg)
+<img src="img/relatorio/Raspberry.jpg" style="text-align:center; width:500px;" >
+
 #### Braço robótico Dobot Magician lite 
 - O braço robótico Dobot Magician lite é um robo que apresenta uma interface em software que dá suporte para a programação do hardware, possibilitando a utilização da garra para tarefas diversas tanto em protótipos reais como no estudo de interação entre inteligência artificial e hardware. 
 
-![Alt text](img/relatorio/Magician.jpg)
+<img src="img/relatorio/Magician.jpg" style="text-align:center; width:500px;" >
+
 #### Teclado matricial de membrana
 - O teclado matricial de membrana é utilizado para projetos que utiizam um teclado alfa numérico que possua ligação com um monitor serial para que seja visivel as respostas de interação através de um monitor serial ligado a ele. 
 
-![Alt text](img/relatorio/TMembrana.jpg)
+<img src="img/relatorio/TMembrana.jpg" style="text-align:center; width:500px;" >
+
 #### Display LCD
 - O display LCD é utilizado para apresentar frases e numeros tendo capacidade de mostrar 16 caracteres em 2 linhas, podendo ser progamado para apresentar dados e informaçoes de sensores ou atuadores ligados a ele, possibilitando assim, a vericação do estágio em que o código se encontra.
 
-![Alt text](img/relatorio/LCD.jpg)
+<img src="img/relatorio/LCD.jpg" style="text-align:center; width:500px;" >
+
 #### Eletroímã
  O Eletroimã é um componente eletrônico moderno com funcionalidade básica semelhante a de um imã, porém com a diferença de possuir maior capacidade de atração graças a presença de solenóides. Que através deles, quando expostos a uma tensão é capaz de gerar um campo magnético no seu interior e exterior, podendo controlar este campo a medida que se controla a intesidade da tensão.
 
- ![Alt text](img/relatorio/Eletroima.jpg)
+ <img src="img/relatorio/Eletroima.jpg" style="text-align:center; width:500px;" >
+
  #### Ponte H
  - A ponte H é um driver usado em motores de corrente contínua, e que permite o motor girar tanto no sentido horário quanto no sentido anti-horário. Além de permitir alternar o sentido de rotação do motor, ela também exige pouquíssima energia do circuito de comando.
 
-![Alt text](img/relatorio/ponteH.jpg)
+<img src="img/relatorio/ponteH.jpg" style="text-align:center; width:500px;" >
+
  #### Célula de peso e módulo Hx711 sensor de peso 
  - O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferentes cargas que estejam sobre sua meia-ponte, entretanto para funcionamento deve atuar em conjunto com uma plataforma de prototipagem, entre elas, Arduino, PIC, ARM, AVR, entre outros. Como as Células de Carga instalados nas balanças não oferecem dados com grande precisão é necessário o Módulo Conversor HX711 que também funciona como um amplificador de sinal para oferecer dados mais precisos. O Módulo Conversor Amplificador Hx711 de 24bits se comunica através do padrão de comunicação TTL 232, possuindo estrutura simples, fácil de usar e com desempenho estável, além é claro, da elevada sensibilidade e velocidade de medida. 
 
-![Alt text](img/relatorio/CelulaP.jpg)
+<img src="img/relatorio/CelulaP.jpg" style="text-align:center; width:500px;" >
+
 ## Especificações dos componentes
 #### Raspberry Pi pico w
 - Microcontrolador RP2040 (Silicon Designed by Raspberry Pi)
@@ -330,7 +337,7 @@ na faixa de 800 a 12.000 Gauss;
   A conexão homem máquina da solução do grupo será realizada por meio do LCD, de modo que a interface se mantenha simples e prática, sem a necessidade de outros dispositivos ou acesso à internet. A entrada de dados será feita por um teclado de membrana, por meio do qual o usuário poderá realizar alterações de funcionamento do robô, como ajuste da intensidade de corrente elétrica de acionamento do ímã, distância do braço do robô, assim como sua velocidade, sendo os dois primeiros responsáveis por alterar a intensidade de fluxo magnético produzido pelo ímã e o último apenas a velocidade de varredura.
   Dessa forma, a arquitetura da solução foi idealizada com o intuito de dar maior praticidade ao operador, com a interface completa acoplada ao robô, tendo apenas o cabo de conexão como única distância entre eles. Para isso, o grupo decidiu usar o teclado de membrana como meio de comunicação direta entre o usuário final e o sistema, de modo que cada tecla corresponde a uma ação específica do braço. Somado a isso, o display LCD, associado ao teclado, apresenta o feedback de sucesso ou fracasso dessas ações. 
 
-  ![Alt text](img/relatorio/esquematico-interface.png)
+  <img src="img/relatorio/esquematico-interface.png" style="text-align:center; width:500px;" >
 
 ### Dimensões e características dos componentes da interface:
 
@@ -347,7 +354,7 @@ na faixa de 800 a 12.000 Gauss;
 - Comprimento Cabo: 86mm;
 - Peso: 10g;
 
-![Alt text](img/relatorio/teclado-matricial.jpg)
+<img src="img/relatorio/teclado-matricial.jpg" style="text-align:center; width:500px;" >
 
 #### Display LCD: 
 - Controlador: HD44780;
@@ -358,7 +365,7 @@ na faixa de 800 a 12.000 Gauss;
 - Dimensão Caracter: 3mm X 5.02mm;
 - Dimensão Ponto: 0.52mm X 0.54mm.
 
-![Alt text](img/relatorio/lcd.jpg)
+<img src="img/relatorio/lcd.jpg" style="text-align:center; width:500px;" >
 
 # Projeto de Banco de Dados
 
