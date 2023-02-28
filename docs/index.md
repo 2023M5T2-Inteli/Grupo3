@@ -1,3 +1,10 @@
+<style>
+  img{
+    display:flex !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+</style>
 <table>
 <tr>
 <td>
