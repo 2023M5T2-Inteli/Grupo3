@@ -31,7 +31,6 @@ Concepção de sistema de automação industrial
   - [Partes interessadas](#partes-interessadas)
 - [Análise do Problema](#análise-do-problema)
   - [Dados levantados e analisados relativos ao problema](#dados-levantados-e-analisados-relativos-ao-problema)
-  - [Análise da área de atuação](#análise-da-área-de-atuação)
   - [Análise financeira do projeto](#análise-financeira-do-projeto)
   - [Análise das 5 forças de Porter](#análise-das-5-forças-de-porter)
     - [Fornecedores:](#fornecedores)
@@ -175,10 +174,6 @@ Existem diferentes tipos de separadores magnéticos, sendo normalmente usados í
 Em relação à taxa de eficiência da separação magnética em minérios, no entanto, pode haver uma variação dependendo de diversos fatores, incluindo a composição mineral do minério, a granulometria, a concentração de minério, a intensidade do campo magnético e o tipo de separador magnético utilizado.
 
 Os metais que despertam o maior interesse da indústria atualmente são o ferro e o cobre. Entretanto, esses metais apresentam uma grande diferença de atração magnética, o que permite que a separação magnética seja bastante efetiva. Como o ferro apresenta um potencial de atração muito alto, um campo magnético muito baixo é o suficiente para atrair as amostras desse tipo de minério. Após a separação desse minério, poderá ser utilizado um campo magnético de intensidade maior, para que o cobre seja atraído com maior facilidade.
-
-## Análise da área de atuação
-
-*Descrição_da_análise_da_área_de_atuação*
 
 ## Análise financeira do projeto
 
