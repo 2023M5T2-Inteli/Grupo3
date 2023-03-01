@@ -1,29 +1,37 @@
 #include "components/HBridge.hpp"
 
 HBridge::HBridge(byte pwm_pin, byte in1_pin, byte in2_pin) {
+	// Store the pin numbers
 	this->m_pwmPin = pwm_pin;
 	this->m_in1Pin = in1_pin;
 	this->m_in2Pin = in2_pin;
 
+	// Set the pins modes to output
 	pinMode(this->m_pwmPin, OUTPUT);
 	pinMode(this->m_in1Pin, OUTPUT);
 	pinMode(this->m_in2Pin, OUTPUT);
 
+	// Set default values
 	this->setInValues(false, false);
 	this->setPwmValue(0);
 }
 
 HBridge::~HBridge() {
+	// Set default values for safety deinit
 	this->setInValues(false, false);
 	this->setPwmValue(0);
 }
 
 void HBridge::setInValues(bool in1_pin, bool in2_pin) {
+	// Set the values of the IN1 and IN2 pins
 	digitalWrite(this->m_in1Pin, in1_pin);
 	digitalWrite(this->m_in2Pin, in2_pin);
 }
 
-void HBridge::setPwmValue(byte pwm_pin) { analogWrite(this->m_pwmPin, pwm_pin); }
+void HBridge::setPwmValue(byte pwm_pin) {
+	// Set the value of the PWM pin
+	analogWrite(this->m_pwmPin, pwm_pin);
+}
 
 void HBridge::setDuty(byte duty) {
 	// duty is a value between 0 and 100
