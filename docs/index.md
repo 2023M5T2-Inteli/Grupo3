@@ -193,6 +193,9 @@ Em última análise, realizando-se os cálculos, chega-se à conclusão que o va
 ## Matriz de Risco
 <center>
 
+A partir da análise que realizamos sobre o contexto do projeto, percebemos que os aspectos que gerariam maiores riscos foram relacionados com um funcionamento impreciso da solução, gerado por algum erro durante o processo de desenvolvimento.
+
+Em contrapartida, os aspectos que gerariam maiores oportunidades seriam relacionados com a possibilidade de se obter uma separação mais precisa e com a capacidade de variação do campo magnético .
 ![Alt text](img/relatorio/matriz-risco.png)
 </center>
 
