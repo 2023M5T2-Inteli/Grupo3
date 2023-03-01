@@ -34,7 +34,14 @@ Concepção de sistema de automação industrial
   - [Análise da área de atuação](#análise-da-área-de-atuação)
   - [Análise financeira do projeto](#análise-financeira-do-projeto)
   - [Análise das 5 forças de Porter](#análise-das-5-forças-de-porter)
+    - [Fornecedores:](#fornecedores)
+    - [Consumidores:](#consumidores)
+    - [Entraves de de entrada](#entraves-de-de-entrada)
+    - [Concorrentes diretos:](#concorrentes-diretos)
+    - [Substitutos:](#substitutos)
   - [Proposta de Valor: Value Proposition Canvas](#proposta-de-valor-value-proposition-canvas)
+    - [Produto:](#produto)
+    - [Cliente](#cliente)
   - [Matriz de Risco](#matriz-de-risco)
   - [Matriz de avaliação de valor Oceano Azul](#matriz-de-avaliação-de-valor-oceano-azul)
 - [Requisitos do Sistema](#requisitos-do-sistema)
@@ -65,9 +72,6 @@ Concepção de sistema de automação industrial
 - [UX e UI Design](#ux-e-ui-design)
   - [Wireframe + Storyboard](#wireframe--storyboard)
   - [Design de Interface](#design-de-interface)
-    - [Dimensões e características dos componentes da interface:](#dimensões-e-características-dos-componentes-da-interface)
-      - [Teclado de membrana:](#teclado-de-membrana)
-      - [Display LCD:](#display-lcd-1)
 - [Projeto de Banco de Dados](#projeto-de-banco-de-dados)
   - [Modelo Conceitual](#modelo-conceitual)
   - [Modelo Lógico](#modelo-lógico)
@@ -182,20 +186,41 @@ Por outro lado, com o processo de automatização realizado, o rendimento aument
 Em última análise, realizando-se os cálculos, chega-se à conclusão que o valor da automação deve custar algo próximo a 90 mil reais, com dois meses de operação. Assim, esse processo se pagaria em torno de 10 meses, pois o aumento de desempenho irá gerar nove mil reais a mais por mês, somando com o que o técnico, que terá mais tempo livre, conseguirá realizar com esse tempo de sobra.
 
 ## Análise das 5 forças de Porter
+- As 5 forças de Porter é uma análise feita em relação a como a empresa se encontra no ecossistema empresarial, levantando pontos relacionados aos seus principais stakeholder e como eles influenciam no desenvolvimento dela. Entre eles estão: 
+### Fornecedores: 
+- Eles possuem a influência na distribuição de insumos ou serviços necessários para as operações da empresa, sendos eles no contexto do IPT fornecedores de peças e materiais para construção de circuitos eletronicos, microprocessadores e materias gerais para a realização dos teste.
+### Consumidores: 
+- Eles possuem a influência na receita da empresa pela escolha de adquirir ou não o produto, para o IPT as empresas e instituições  que fecham contratatos com eles são importantes não só pelo funcionamento e mantimento das operações da empresa, mas para o incentivo de constante melhoria tendo em vista o grande aumento de tecnologia e na area de análise e pesquisas para diversas áreas. 
+### Entraves de de entrada
+- São os desafios das empresas que pretendem entrar nesse setor, analisando o setor do IPT um dos principais entraves é o auto investimento em infraestrutura para realizar as pesquisas, além da necessidade de mão de obra qualificada que aumenta a demanda de uma relação próxima com universidades e o valor a ser investido nos serviços desses profissionais. 
+### Concorrentes diretos:
+- São empresas que possuem produtos ou serviços do mesmo setor e com a mesma finalidade. A princípio, os concorrentes diretos do IPT são outros intituos como ITA e IME, mas algumas empresas privadas também fornecem os mesmo produtos de testes e pesquisas podendo elas serem comcorrentes diretos.
+### Substitutos:
+- São empresas que possuem produtos que não são do mesmo setor mas possuem soluções que se aplicam para as dores do setor. Algumas empresas privadas que encontramos em uma pesquisa sobre produtos similares a análise do solo para mineração fornecem esse tipo de serviços mas de maneira diferente e não só para esse propósito podendo atuar como produtos substitutos.
+-   
 <p align="center">
 
 <img src="img/relatorio/cinco-forcas-porter.png">
 </p>
+<br>
 
 ## Proposta de Valor: Value Proposition Canvas
+- O canvas proposition é uma ferramenta que auxilia na criação do produto em relação as espectativa e demandas do cliente, ele é fundamental para o entendimento de como a solução será relevante e validar algumas hipótese sobre o produto. Essa ferreamenta é divido em dois pontos sobre o produto e sobre o cliente. Esses pontos servem para nortear os tópicos relevantes ao produto e quais são relevantes ao cliente. 
+### Produto:
+1. Aliviador de dores: Os aliviadores de dores tem correspondência com as dores e explicitam a forma como o produto resolve as dores de maneira direta do cliente. 
+2. Produtos e serviços: Essa área são as especifações gerais do produto, o que ele é de fato.
+3. Criadores de ganhos: Eles são os ganhos indiretos que a solução propõe para o cliente e agrega valor intriseco a ele. 
+### Cliente
+1. Dores: São os problemas do cliente diretamente exemplificado o que ele precisa que seja solucionado.
+2. Tarefas do cliente: São instruções que o cliente precisa fazer ou para a solução funcionar ou para que ela auxilie ele na resolução das dores.
+3. Ganhos: Valor agregado do produto que irá impactar diretamente o cliente.
+   
 <p align="center">
 
 <img src="img/relatorio/value-proposition-canvas.png">
 </p>
 
 ## Matriz de Risco
-
-
 A partir da análise que realizamos sobre o contexto do projeto, percebemos que os aspectos que gerariam maiores riscos foram relacionados com um funcionamento impreciso da solução, gerado por algum erro durante o processo de desenvolvimento.
 
 Em contrapartida, os aspectos que gerariam maiores oportunidades seriam relacionados com a possibilidade de se obter uma separação mais precisa e com a capacidade de variação do campo magnético.
@@ -205,6 +230,8 @@ Em contrapartida, os aspectos que gerariam maiores oportunidades seriam relacion
 </p>
 
 ## Matriz de avaliação de valor Oceano Azul
+- A matriz de oceano Azul é uma análise feita sobre a empresa e a solução proposta, em relação a outras empresas e soluções parecidas. A matriz leva em consideração alguns atributos como: Preço, qualidade, tecnologia, conforto, comodidade e  praticidade. Assim, através desses atributos é classificado de 0 a 10 o valor desses atributos em relação as empresas e a solução.
+  
 <p align="center">
 
  <img src="img/relatorio/matriz-avaliacao-valor-oceano-azul.png">
@@ -253,6 +280,7 @@ na faixa de 800 a 12.000 Gauss;
 # Arquitetura do Sistema
 
 ## Croqui
+
 <p align="center">
 
 <img src="img/relatorio/croqui.png">
@@ -407,46 +435,20 @@ na faixa de 800 a 12.000 Gauss;
 
 ## Design de Interface 
   A conexão homem máquina da solução do grupo será realizada por meio do LCD, de modo que a interface se mantenha simples e prática, sem a necessidade de outros dispositivos ou acesso à internet. A entrada de dados será feita por um teclado de membrana, por meio do qual o usuário poderá realizar alterações de funcionamento do robô, como ajuste da intensidade de corrente elétrica de acionamento do ímã, distância do braço do robô, assim como sua velocidade, sendo os dois primeiros responsáveis por alterar a intensidade de fluxo magnético produzido pelo ímã e o último apenas a velocidade de varredura.
-  Dessa forma, a arquitetura da solução foi idealizada com o intuito de dar maior praticidade ao operador, com a interface completa acoplada ao robô, tendo apenas o cabo de conexão como única distância entre eles. Para isso, o grupo decidiu usar o teclado de membrana como meio de comunicação direta entre o usuário final e o sistema, de modo que cada tecla corresponde a uma ação específica do braço. Somado a isso, o display LCD, associado ao teclado, apresenta o feedback de sucesso ou fracasso dessas ações. 
+  Dessa forma, a arquitetura da solução foi idealizada com o intuito de dar maior praticidade ao operador, com a interface completa acoplada ao robô, tendo apenas o cabo de conexão como única distância entre eles. Para isso, o grupo decidiu usar o teclado de membrana como meio de comunicação direta entre o usuário final e o sistema, de modo que cada tecla corresponde a uma ação específica do braço. Somado a isso, o display LCD, associado ao teclado, apresenta o feedback de sucesso ou fracasso dessas ações.
+
+  Para a criação deste protótipo, podemos listar os seguintes componentes a serem utilizados:
+
+  1. Teclado Matricial de Membrana;
+  2. Display LCD;
+   
+<b>Nota: as especificações dos componentes acima, podem ser encontrado de forma detalha na seção de "Documentação dos componentes."<b>
+
+<br>
+
 <p align="center">
 
   <img src="img/relatorio/esquematico-interface.png">
-</p>
-<br>
-
-### Dimensões e características dos componentes da interface:
-
-#### Teclado de membrana: 
-- Teclas: 16;
-- Conector: 8 pinos (2,54mm);
-- Montagem: Auto-Adesivo;
-- Limites de Operação: 35VDC, 100mA;
-- Isolação: 100MΩ, 100V;
-- Tempo de contato: 5ms;
-- Durabilidade: 1 milhão de ciclos por tecla;
-- Temperatura de Funcionamento: 0-70°C;
-- Tamanho: 69 x 77 x 0,8mm;
-- Comprimento Cabo: 86mm;
-- Peso: 10g;
-  
-<p align="center">
-<img src="img/relatorio/teclado-matricial.jpg" width="400px">
-</p>
-<br>
-
-#### Display LCD: 
-- Controlador: HD44780;
-- Cor backlight: Azul;
-- Cor escrita: Branca;
-- Dimensão Total: 80mm X 36mm X 12mm;
-- Dimensão Área visível: 64.5mm X 14mm;
-- Dimensão Caracter: 3mm X 5.02mm;
-- Dimensão Ponto: 0.52mm X 0.54mm.
-  
-<p align="center">
-
-<img src="img/relatorio/lcd.jpg" width="500px">
-
 </p>
 <br>
 
@@ -476,9 +478,15 @@ Para a primeira versão do protótipo do braço robótico (Magician Lite), foi c
 </center>
 
 ### Eletroímã
+Para fim de primeira versão do protótipo do eletroímã, realizamos por meio da ligação de um eletroímã a uma ponte H, por meio disto podemos testar três níveis inicias de intercidades do campo magnético passado energia manualmente pela fonte digital. Durante os teste, encontramos algumas possíveis delimitações dos componentes, aos quais pode afetar a construção do protótipo:
+ 
+1. Delimitações do Eletroímã:
+- Como o tamanho do eletroímã é relativamente pequeno, dado a quantidade de amostra que iremos processar e o objetivo de tornar este processo de execução fosse realizado de forma mais rápido. Notamos que apenas um eletroímã ligado a uma ponte H, não nos ajudaria, desta forma partimos do pressuposto de utilizar dois eletroímãs ligados a uma ponte h. Em consequência, o peso de nosso eletroímã por completo aumenta, nos fazendo pensar alternativas que no auxiliem diminuir o peso e também talvez da necessidade de dividirmos o processo de varredura da separação de amostras por quadrantes, já que devemos considerar o peso dos eletroímãs com o coletado da amostra.
 
-A construção do eletroímã foi realizado por meio da ligação de dois eletroímãs à uma ponte H, por meio disto podemos testar três níveis inicias de intercidades do campo magnético passado energia manualmente pela fonte digital. Desta forma, concluímos que a utilização de apenas um eletroímã, não ira conseguir cobrir uma área tão grande durante a varredura do processo de separação da amostra. Sendo assim, partimos do pressuposto que a utilização de dois eletroímãs, iria conseguir atingir o nosso objetivo proposto, esse teste também nos possibilitou realizar o teste de velocidade de execução do braço com o peso de dois eletroímãs. Ao qual vimos que talvez haja a necessidade de dividirmos o processo de varredura da separação de amostras por quadrantes, já que devemos 
-considerar o peso dos eletroímãs com o coletado da amostra.
+   
+2. Delimitações da Ponte H:
+- Foi disponibilizado para nós a Ponte H L298n Driver Motor Dc ao qual tem a capacidade de aguentar té 2A e 30v, mas para o projeto e protótipo desenvolvido. A necessidade desse modelo tão poderoso talvez não seja necessário e sim alguma de potência mais baixa. Desta forma, seria possível reduzir consideravelmente o peso do protótipo do eletroímã produzido.
+
 <center>
 
 [![Foo](img/relatorio/teste-eletroima.png)](https://drive.google.com/file/d/1Zvlc5oBxqtvwXt64XTNt2HBSVcuGdnnM/view?usp=share_link)
@@ -486,9 +494,12 @@ considerar o peso dos eletroímãs com o coletado da amostra.
 </center>
 
 ### Módulo de peso
-Também durante está sprint 2, realizamos a construção do módulo de peso que serviram como uma das peças principais do nosso protótipo, pois serviram como mecanismo de parado do processo de separação de amostra. Durante a contrição, notamos a dificuldade de achar exemplos de construção do mesmo por meio da linguagem de programação Python. Apenas encontrado, exemplos de construções realizadas em C, por meio deste, notamos que talvez para a nossa solução, teremos que mudar a linguagem de programação, sendo adotada a linguagem C. 
+Também durante está sprint 2, realizamos a construção do módulo de peso que serviram como uma das peças principais do nosso protótipo, atuando como um mecanismo de forma de parada do processo de separação da amostra. Após a construção da primeira versão, realizamos testes para ver as possibilidades e possíveis delimitações (sendo encontrado mais delimitações para a ideia principal de uso do módulo):
 
-Também, notamos que inicialmente, para pesos maiores, o modulo de peso conseguem capturar os valores, mas para valores menores não consegue capturar com tanta precisão (este processo de teste foi realizado com parafusos e porcas). Desta forma, não podemos distinguir se esta limitação ocorre devido ao módulo ou pelo código-fonte, necessitando realizar teste com a amostra disponibilizada recentemente.
+1. Delimitações do módulo de peso:
+- Durante a contrição, notamos a dificuldade de achar exemplos de construção do mesmo por meio da linguagem de programação Python. Apenas encontrado, exemplos de construções realizadas em C, por meio deste, notamos que talvez para a nossa solução, teremos que mudar a linguagem de programação, sendo adotada a linguagem C.
+
+- Também, notamos que inicialmente, para pesos maiores, o modulo de peso conseguem capturar os valores, mas para valores menores não consegue capturar com tanta precisão (este processo de teste foi realizado com parafusos e porcas). Desta forma, não podemos distinguir se esta limitação ocorre devido ao módulo ou pelo código-fonte, necessitando realizar teste com a amostra disponibilizada recentemente.
 
 <center>
 
