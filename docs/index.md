@@ -147,10 +147,30 @@ Por outro lado, com o processo de automatização realizado, o rendimento aument
 Em última análise, realizando-se os cálculos, chega-se à conclusão que o valor da automação deve custar algo próximo a 90 mil reais, com dois meses de operação. Assim, esse processo se pagaria em torno de 10 meses, pois o aumento de desempenho irá gerar nove mil reais a mais por mês, somando com o que o técnico, que terá mais tempo livre, conseguirá realizar com esse tempo de sobra.
 
 ## Análise das 5 forças de Porter
+- As 5 forças de Porter é uma análise feita em relação a como a empresa se encontra no ecossistema empresarial, levantando pontos relacionados aos seus principais stakeholder e como eles influenciam no desenvolvimento dela. Entre eles estão: 
+### Fornecedores: 
+- Eles possuem a influência na distribuição de insumos ou serviços necessários para as operações da empresa, sendos eles no contexto do IPT fornecedores de peças e materiais para construção de circuitos eletronicos, microprocessadores e materias gerais para a realização dos teste.
+### Consumidores: 
+- Eles possuem a influência na receita da empresa pela escolha de adquirir ou não o produto, para o IPT as empresas e instituições  que fecham contratatos com eles são importantes não só pelo funcionamento e mantimento das operações da empresa, mas para o incentivo de constante melhoria tendo em vista o grande aumento de tecnologia e na area de análise e pesquisas para diversas áreas. 
+### Entraves de de entrada
+- São os desafios das empresas que pretendem entrar nesse setor, analisando o setor do IPT um dos principais entraves é o auto investimento em infraestrutura para realizar as pesquisas, além da necessidade de mão de obra qualificada que aumenta a demanda de uma relação próxima com universidades e o valor a ser investido nos serviços desses profissionais. 
+### Concorrentes diretos:
+- São empresas que possuem produtos ou serviços do mesmo setor e com a mesma finalidade. A princípio, os concorrentes diretos do IPT são outros intituos como ITA e IME, mas algumas empresas privadas também fornecem os mesmo produtos de testes e pesquisas podendo elas serem comcorrentes diretos.
+### Substitutos:
+- São empresas que possuem produtos que não são do mesmo setor mas possuem soluções que se aplicam para as dores do setor. Algumas empresas privadas que encontramos em uma pesquisa sobre produtos similares a análise do solo para mineração fornecem esse tipo de serviços mas de maneira diferente e não só para esse propósito podendo atuar como produtos substitutos.
 
 ![Alt text](img/relatorio/cinco-forcas-porter.png)
 
 ## Proposta de Valor: Value Proposition Canvas
+- O canvas proposition é uma ferramenta que auxilia na criação do produto em relação as espectativa e demandas do cliente, ele é fundamental para o entendimento de como a solução será relevante e validar algumas hipótese sobre o produto. Essa ferreamenta é divido em dois pontos sobre o produto e sobre o cliente. Esses pontos servem para nortear os tópicos relevantes ao produto e quais são relevantes ao cliente. 
+### Produto:
+1. Aliviador de dores: Os aliviadores de dores tem correspondência com as dores e explicitam a forma como o produto resolve as dores de maneira direta do cliente. 
+2. Produtos e serviços: Essa área são as especifações gerais do produto, o que ele é de fato.
+3. Criadores de ganhos: Eles são os ganhos indiretos que a solução propõe para o cliente e agrega valor intriseco a ele. 
+### Cliente
+1. Dores: São os problemas do cliente diretamente exemplificado o que ele precisa que seja solucionado.
+2. Tarefas do cliente: São instruções que o cliente precisa fazer ou para a solução funcionar ou para que ela auxilie ele na resolução das dores.
+3. Ganhos: Valor agregado do produto que irá impactar diretamente o cliente.
 
 ![Alt text](img/relatorio/value-proposition-canvas.png)
 
@@ -159,6 +179,7 @@ Em última análise, realizando-se os cálculos, chega-se à conclusão que o va
 ![Alt text](img/relatorio/matriz-risco.png)
 
 ## Matriz de avaliação de valor Oceano Azul
+- A matriz de oceano Azul é uma análise feita sobre a empresa e a solução proposta, em relação a outras empresas e soluções parecidas. A matriz leva em consideração alguns atributos como: Preço, qualidade, tecnologia, conforto, comodidade e  praticidade. Assim, através desses atributos é classificado de 0 a 10 o valor desses atributos em relação as empresas e a solução.
 
  ![Alt text](img/relatorio/matriz-avaliacao-valor-oceano-azul.png)
 
