@@ -353,7 +353,7 @@ na faixa de 800 a 12.000 Gauss;
 - O display LCD é utilizado para apresentar frases e numeros tendo capacidade de mostrar 16 caracteres em 2 linhas, podendo ser progamado para apresentar dados e informaçoes de sensores ou atuadores ligados a ele, possibilitando assim, a vericação do estágio em que o código se encontra.
   
 <p align="center">
-<img src="img/relatorio/lcd.jpg" width="400px">
+<img src="img/relatorio/LCD.jpg" width="400px">
 </p>
 <br>
 
