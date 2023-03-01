@@ -52,6 +52,7 @@ Concepção de sistema de automação industrial
 - [Arquitetura do Sistema](#arquitetura-do-sistema)
   - [Croqui](#croqui)
   - [Documentação dos componentes](#documentação-dos-componentes)
+    - [Esquema Geral dos Componentes](#esquema-geral-dos-componentes)
     - [Componentes](#componentes)
       - [Raspberry Pi Pico W:](#raspberry-pi-pico-w)
       - [Especificações do Raspberry Pi Pico W:](#especificações-do-raspberry-pi-pico-w)
@@ -66,7 +67,7 @@ Concepção de sistema de automação industrial
       - [Ponte H:](#ponte-h)
       - [Especificações da Ponte H:](#especificações-da-ponte-h)
       - [Célula de Peso e Módulo Hx711 Sensor de Peso:](#célula-de-peso-e-módulo-hx711-sensor-de-peso)
-      - [Especificações do Célula de Peso e Módulo Hx711 Sensor de Peso](#especificações-do-célula-de-peso-e-módulo-hx711-sensor-de-peso)
+      - [Especificações do Célula de Peso e Módulo Hx711 Sensor de Peso:](#especificações-do-célula-de-peso-e-módulo-hx711-sensor-de-peso)
     - [Requisitos de software](#requisitos-de-software)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [UX e UI Design](#ux-e-ui-design)
@@ -197,7 +198,7 @@ Em última análise, realizando-se os cálculos, chega-se à conclusão que o va
 - São empresas que possuem produtos ou serviços do mesmo setor e com a mesma finalidade. A princípio, os concorrentes diretos do IPT são outros intituos como ITA e IME, mas algumas empresas privadas também fornecem os mesmo produtos de testes e pesquisas podendo elas serem comcorrentes diretos.
 ### Substitutos:
 - São empresas que possuem produtos que não são do mesmo setor mas possuem soluções que se aplicam para as dores do setor. Algumas empresas privadas que encontramos em uma pesquisa sobre produtos similares a análise do solo para mineração fornecem esse tipo de serviços mas de maneira diferente e não só para esse propósito podendo atuar como produtos substitutos.
--   
+   
 <p align="center">
 
 <img src="img/relatorio/cinco-forcas-porter.png">
@@ -219,7 +220,7 @@ Em última análise, realizando-se os cálculos, chega-se à conclusão que o va
 
 <img src="img/relatorio/value-proposition-canvas.png">
 </p>
-
+<br>
 ## Matriz de Risco
 A partir da análise que realizamos sobre o contexto do projeto, percebemos que os aspectos que gerariam maiores riscos foram relacionados com um funcionamento impreciso da solução, gerado por algum erro durante o processo de desenvolvimento.
 
@@ -230,7 +231,7 @@ Em contrapartida, os aspectos que gerariam maiores oportunidades seriam relacion
 </p>
 
 ## Matriz de avaliação de valor Oceano Azul
-- A matriz de oceano Azul é uma análise feita sobre a empresa e a solução proposta, em relação a outras empresas e soluções parecidas. A matriz leva em consideração alguns atributos como: Preço, qualidade, tecnologia, conforto, comodidade e  praticidade. Assim, através desses atributos é classificado de 0 a 10 o valor desses atributos em relação as empresas e a solução.
+A matriz de oceano Azul é uma análise feita sobre a empresa e a solução proposta, em relação a outras empresas e soluções parecidas. A matriz leva em consideração alguns atributos como: Preço, qualidade, tecnologia, conforto, comodidade e  praticidade. Assim, através desses atributos é classificado de 0 a 10 o valor desses atributos em relação as empresas e a solução.
   
 <p align="center">
 
@@ -258,6 +259,7 @@ na faixa de 800 a 12.000 Gauss;
 
 <img src="img/relatorio/personas-2.png">
 </p>
+<br>
 
 ## Histórias dos usuários (user stories)
 
@@ -287,6 +289,7 @@ na faixa de 800 a 12.000 Gauss;
 </p>
 
 ## Documentação dos componentes
+### Esquema Geral dos Componentes
 <p align="center">
 
 <img src="img/relatorio/documentacao-componentes.png">
@@ -336,13 +339,14 @@ na faixa de 800 a 12.000 Gauss;
 <br>
 
 #### Especificações do Teclado Matricial de Membrana:
-– Tensão de operação (máxima): 35VDC
-– Corrente de operação (máxima): 100mA
-– Quantidade de teclas: 16
-– Conector: 8 vias (4 linhas / 4 colunas)
-– Isolação: 100V / 100MΩ
-– Tempo de contato: 5ms
-– Temperatura de operação: 0 a 70° celsius 
+- Tensão de operação (máxima): 35VDC
+- Corrente de operação (máxima): 100mA
+- Quantidade de teclas: 16
+- Conector: 8 vias (4 linhas / 4 colunas)
+- Isolação: 100V / 100MΩ
+- Tempo de contato: 5ms
+- Temperatura de operação: 0 a 70° celsius 
+
 
 
 #### Display LCD:
@@ -402,13 +406,13 @@ na faixa de 800 a 12.000 Gauss;
 - Potência Máxima: 25W.
 
  #### Célula de Peso e Módulo Hx711 Sensor de Peso: 
- - O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferentes cargas que estejam sobre sua meia-ponte, entretanto para funcionamento deve atuar em conjunto com uma plataforma de prototipagem, entre elas, Arduino, PIC, ARM, AVR, entre outros. Como as Células de Carga instalados nas balanças não oferecem dados com grande precisão é necessário o Módulo Conversor HX711 que também funciona como um amplificador de sinal para oferecer dados mais precisos. O Módulo Conversor Amplificador Hx711 de 24bits se comunica através do padrão de comunicação TTL 232, possuindo estrutura simples, fácil de usar e com desempenho estável, além é claro, da elevada sensibilidade e velocidade de medida. 
+O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferentes cargas que estejam sobre sua meia-ponte, entretanto para funcionamento deve atuar em conjunto com uma plataforma de prototipagem, entre elas, Arduino, PIC, ARM, AVR, entre outros. Como as Células de Carga instalados nas balanças não oferecem dados com grande precisão é necessário o Módulo Conversor HX711 que também funciona como um amplificador de sinal para oferecer dados mais precisos. O Módulo Conversor Amplificador Hx711 de 24bits se comunica através do padrão de comunicação TTL 232, possuindo estrutura simples, fácil de usar e com desempenho estável, além é claro, da elevada sensibilidade e velocidade de medida. 
 <p align="center">
 <img src="img/relatorio/celula-peso.png" width="400px">
 </p>
 <br>
 
-#### Especificações do Célula de Peso e Módulo Hx711 Sensor de Peso
+#### Especificações do Célula de Peso e Módulo Hx711 Sensor de Peso:
 - Carga nominal: 1 kg
 - Potência nominal de saída: 1.0mv/v ± 0.15mv/v
 - Tensão de funcionamento recomendada: 3 ~ 12 VDC
@@ -442,7 +446,7 @@ na faixa de 800 a 12.000 Gauss;
   1. Teclado Matricial de Membrana;
   2. Display LCD;
    
-<b>Nota: as especificações dos componentes acima, podem ser encontrado de forma detalha na seção de "Documentação dos componentes."<b>
+<b>Nota: as especificações dos componentes acima, podem ser encontrado de forma detalha na seção de "Documentação dos componentes."</b>
 
 <br>
 
@@ -485,8 +489,7 @@ Para fim de primeira versão do protótipo do eletroímã, realizamos por meio d
 
    
 2. Delimitações da Ponte H:
-- Foi disponibilizado para nós a Ponte H L298n Driver Motor Dc ao qual tem a capacidade de aguentar té 2A e 30v, mas para o projeto e protótipo desenvolvido. A necessidade desse modelo tão poderoso talvez não seja necessário e sim alguma de potência mais baixa. Desta forma, seria possível reduzir consideravelmente o peso do protótipo do eletroímã produzido.
-
+- Foi disponibilizado para nós a Ponte H L298n Driver Motor Dc ao qual tem a capacidade de aguentar té 2A e 30v, mas para o projeto e protótipo desenvolvido. A necessidade desse modelo tão poderoso talvez não seja necessário e sim alguma de potência mais baixa. Desta forma, seria possível reduzir consideravelmente o peso do protótipo do eletroímã produzido. Por exemplo, um modelo adequado seria o L9110S, que tem tensão máxima de 12v ( que é o que utilizamos ) e corrente de 800mah por motor, sendo que o imã tem consumo de corrente de até 250mah
 <center>
 
 [![Foo](img/relatorio/teste-eletroima.png)](https://drive.google.com/file/d/1Zvlc5oBxqtvwXt64XTNt2HBSVcuGdnnM/view?usp=share_link)
