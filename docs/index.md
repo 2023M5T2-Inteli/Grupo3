@@ -46,21 +46,20 @@ Concepção de sistema de automação industrial
   - [Croqui](#croqui)
   - [Documentação dos componentes](#documentação-dos-componentes)
     - [Componentes](#componentes)
-      - [Raspberry Pi pico w](#raspberry-pi-pico-w)
-      - [Braço robótico Dobot Magician lite](#braço-robótico-dobot-magician-lite)
-      - [Teclado matricial de membrana](#teclado-matricial-de-membrana)
-      - [Display LCD](#display-lcd)
-      - [Eletroímã](#eletroímã)
-      - [Ponte H](#ponte-h)
-      - [Célula de peso e módulo Hx711 sensor de peso](#célula-de-peso-e-módulo-hx711-sensor-de-peso)
-  - [Especificações dos componentes](#especificações-dos-componentes)
-      - [Raspberry Pi pico w](#raspberry-pi-pico-w-1)
-      - [Braço robótico Dobot Magician lite](#braço-robótico-dobot-magician-lite-1)
-      - [Teclado matricial de membrana](#teclado-matricial-de-membrana-1)
-      - [Display LCD](#display-lcd-1)
-      - [Eletroímã](#eletroímã-1)
-      - [Ponte H](#ponte-h-1)
-      - [Célula de peso e módulo Hx711 sensor de peso](#célula-de-peso-e-módulo-hx711-sensor-de-peso-1)
+      - [Raspberry Pi Pico W:](#raspberry-pi-pico-w)
+      - [Especificações do Raspberry Pi Pico W:](#especificações-do-raspberry-pi-pico-w)
+      - [Braço Robótico Dobot Magician Lite](#braço-robótico-dobot-magician-lite)
+      - [Especificações do Braço Robótico Dobot Magician Lite:](#especificações-do-braço-robótico-dobot-magician-lite)
+      - [Teclado Matricial de Membrana:](#teclado-matricial-de-membrana)
+      - [Especificações do Teclado Matricial de Membrana:](#especificações-do-teclado-matricial-de-membrana)
+      - [Display LCD:](#display-lcd)
+      - [Especificações do Display LCD:](#especificações-do-display-lcd)
+      - [Eletroímã:](#eletroímã)
+      - [Especificações do Eletroímã:](#especificações-do-eletroímã)
+      - [Ponte H:](#ponte-h)
+      - [Especificações da Ponte H:](#especificações-da-ponte-h)
+      - [Célula de Peso e Módulo Hx711 Sensor de Peso:](#célula-de-peso-e-módulo-hx711-sensor-de-peso)
+      - [Especificações do Célula de Peso e Módulo Hx711 Sensor de Peso](#especificações-do-célula-de-peso-e-módulo-hx711-sensor-de-peso)
     - [Requisitos de software](#requisitos-de-software)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [UX e UI Design](#ux-e-ui-design)
@@ -68,14 +67,14 @@ Concepção de sistema de automação industrial
   - [Design de Interface](#design-de-interface)
     - [Dimensões e características dos componentes da interface:](#dimensões-e-características-dos-componentes-da-interface)
       - [Teclado de membrana:](#teclado-de-membrana)
-      - [Display LCD:](#display-lcd-2)
+      - [Display LCD:](#display-lcd-1)
 - [Projeto de Banco de Dados](#projeto-de-banco-de-dados)
   - [Modelo Conceitual](#modelo-conceitual)
   - [Modelo Lógico](#modelo-lógico)
 - [Teste de Software](#teste-de-software)
   - [Testes Unitários](#testes-unitários)
     - [Braço mecanico](#braço-mecanico)
-    - [Eletroímã](#eletroímã-2)
+    - [Eletroímã](#eletroímã-1)
     - [Módulo de peso](#módulo-de-peso)
   - [Teste de Usabilidade](#teste-de-usabilidade)
 - [Análise de Dados](#análise-de-dados)
@@ -109,11 +108,17 @@ No início do módulo, foi nos apresentado, durante o processo de exposição do
 
 ### Objetivos gerais
 
-Com o intuito de aliviar os problemas e as dores apresentadas, produziremos uma solução que emprega um braço mecânico para a automação da tarefa de separação de materiais magnéticos. O técnico precisará apenas inserir a amostra nas bandejas, configurar o campo magnético desejado e supervisionar o procedimento, que será executado automaticamente.
+Com o intuito de aliviar os problemas e as dores apresentadas, produziremos uma solução que emprega um braço robótico (Magician Lite) para a automação da tarefa de separação de materiais magnéticos. O técnico precisará apenas inserir a amostra nas bandejas, configurar o campo magnético desejado e supervisionar o procedimento, que será executado automaticamente.
 
 ### Objetivos específicos
+Para cumprir com o objetivo citado, os seguintes objetivos específicos devem ser concluídos:
 
-Para cumprir com o objetivo citado, o robô fará a tarefa de executar a varredura da bandeja inicial da amostra com um eletroímã, que deverá ser ajustado de acordo com o metal que deseja-se obter. Após essa configuração, o robô começará a varrer a amostra, mantendo uma distância e o campo magnético fixos. Em seguida à finalização da varredura, o robô irá submergir em água o que foi coletado, com o intuito de retirar as impurezas que ficaram retidas. Posteriormente, o braço irá se direcionar para a bandeja de coleta, onde o ímã será desativado e a amostra será depositada. O processo será repetido até que toda a amostra seja coletada.
+- O braço robótico fará a tarefa de executar a varredura da bandeja inicial da amostra com um eletroímã, que deverá ser ajustado conforme o metal que deseja-se obter;
+- O braço robótico também deverá começar a varrer a amostra, mantendo uma distância e o campo magnético fixos;
+- Após a conclusão da varredura, o robô irá submergir em água o que foi coletado, com o intuito de retirar as impurezas que ficaram retidas;
+- Posteriormente, o braço irá se direcionar para a bandeja de coleta, onde o ímã será desativado e a amostra será depositada;
+- O processo será repetido até que toda a amostra seja coletada.
+
 
 ## Partes interessadas
 
@@ -151,7 +156,7 @@ A necessidade de atualizar este processo vem das grandes demandas de empresas pr
 4. Quantidade de recursos disponíveis para mineração no local;
 5. Riscos ambientais envolvidos com o projeto.
 
-Com a separação magnética feita de forma automática com o braço mecânico, a medição dos minérios poderá ser mais efetiva, e assim, será possível analisar mais facilmente esses parâmetros para viabilização do projeto de mineração do ambiente pretendido.
+Com a separação magnética feita de forma automática com o braço robótico (Magician Lite), a medição dos minérios poderá ser mais efetiva, e assim, será possível analisar mais facilmente esses parâmetros para viabilização do projeto de mineração do ambiente pretendido.
 
 ## Dados levantados e analisados relativos ao problema
 
@@ -260,58 +265,14 @@ na faixa de 800 a 12.000 Gauss;
 </p>
 
 ### Componentes 
-#### Raspberry Pi pico w
+#### Raspberry Pi Pico W:
 - O Raspberry Pi pico w é um microcontrolador com acesso wireless, o que permite uma conexão via bluetooth e via wifi. Assim ele pode ser  usado para sistemas embarcados e controlar dados de sensores e mandar informações para atuadores sendo fundamental na execução do projeto tanto para enviar como receber os dados.
 <p align="center">
 <img src="img/relatorio/raspberry.jpeg" width="400px">
 </p>
 <br>
 
-#### Braço robótico Dobot Magician lite 
-- O braço robótico Dobot Magician lite é um robo que apresenta uma interface em software que dá suporte para a programação do hardware, possibilitando a utilização da garra para tarefas diversas tanto em protótipos reais como no estudo de interação entre inteligência artificial e hardware. 
-<p align="center">
-<img src="img/relatorio/magician-lite.png" width="400px">
-</p>
-<br>
-
-#### Teclado matricial de membrana
-- O teclado matricial de membrana é utilizado para projetos que utiizam um teclado alfa numérico que possua ligação com um monitor serial para que seja visivel as respostas de interação através de um monitor serial ligado a ele.
-  
-<p align="center">
-<img src="img/relatorio/teclado-matricial.jpg" width="400px">
-</p>
-
-#### Display LCD
-- O display LCD é utilizado para apresentar frases e numeros tendo capacidade de mostrar 16 caracteres em 2 linhas, podendo ser progamado para apresentar dados e informaçoes de sensores ou atuadores ligados a ele, possibilitando assim, a vericação do estágio em que o código se encontra.
-  
-<p align="center">
-<img src="img/relatorio/lcd.jpg" width="400px">
-</p>
-
-#### Eletroímã
- O Eletroimã é um componente eletrônico moderno com funcionalidade básica semelhante a de um imã, porém com a diferença de possuir maior capacidade de atração graças a presença de solenóides. Que através deles, quando expostos a uma tensão é capaz de gerar um campo magnético no seu interior e exterior, podendo controlar este campo a medida que se controla a intesidade da tensão.
-
-<p align="center">
- <img src="img/relatorio/eletroima.jpg" width="400px">
-</p>
-<br>
-
- #### Ponte H
- - A ponte H é um driver usado em motores de corrente contínua, e que permite o motor girar tanto no sentido horário quanto no sentido anti-horário. Além de permitir alternar o sentido de rotação do motor, ela também exige pouquíssima energia do circuito de comando.
-<p align="center">
-<img src="img/relatorio/ponte-h.jpg" width="400px">
-</p>
-<br>
-
- #### Célula de peso e módulo Hx711 sensor de peso 
- - O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferentes cargas que estejam sobre sua meia-ponte, entretanto para funcionamento deve atuar em conjunto com uma plataforma de prototipagem, entre elas, Arduino, PIC, ARM, AVR, entre outros. Como as Células de Carga instalados nas balanças não oferecem dados com grande precisão é necessário o Módulo Conversor HX711 que também funciona como um amplificador de sinal para oferecer dados mais precisos. O Módulo Conversor Amplificador Hx711 de 24bits se comunica através do padrão de comunicação TTL 232, possuindo estrutura simples, fácil de usar e com desempenho estável, além é claro, da elevada sensibilidade e velocidade de medida. 
-<p align="center">
-<img src="img/relatorio/celula-peso.png" width="400px">
-</p>
-<br>
-
-## Especificações dos componentes
-#### Raspberry Pi pico w
+#### Especificações do Raspberry Pi Pico W:
 - Microcontrolador RP2040 (Silicon Designed by Raspberry Pi)
 - Dual-Core ARM Cortex M0+ com clock até 133MHz.
 - 264kB de memória SRAM.
@@ -321,7 +282,14 @@ na faixa de 800 a 12.000 Gauss;
 - Conectividade via WiFi 2.4GHz 802.11n.
 - Certificação ANATEL: 134082210629.
 
-#### Braço robótico Dobot Magician lite
+#### Braço Robótico Dobot Magician Lite 
+- O braço robótico Dobot Magician lite é um robo que apresenta uma interface em software que dá suporte para a programação do hardware, possibilitando a utilização da garra para tarefas diversas tanto em protótipos reais como no estudo de interação entre inteligência artificial e hardware. 
+<p align="center">
+<img src="img/relatorio/magician-lite.png" width="400px">
+</p>
+<br>
+
+#### Especificações do Braço Robótico Dobot Magician Lite:
 - Capacidade de Carga: 250 gramas
 - Potência: 60W máx
 - Número de eixos: 4
@@ -331,7 +299,15 @@ na faixa de 800 a 12.000 Gauss;
 - Alimentação: 12V/7A DC
 - Controle por USB virtual porta serial / Porta serial 
 
-#### Teclado matricial de membrana
+#### Teclado Matricial de Membrana:
+- O teclado matricial de membrana é utilizado para projetos que utiizam um teclado alfa numérico que possua ligação com um monitor serial para que seja visivel as respostas de interação através de um monitor serial ligado a ele.
+  
+<p align="center">
+<img src="img/relatorio/teclado-matricial.jpg" width="400px">
+</p>
+<br>
+
+#### Especificações do Teclado Matricial de Membrana:
 – Tensão de operação (máxima): 35VDC
 – Corrente de operação (máxima): 100mA
 – Quantidade de teclas: 16
@@ -340,7 +316,16 @@ na faixa de 800 a 12.000 Gauss;
 – Tempo de contato: 5ms
 – Temperatura de operação: 0 a 70° celsius 
 
-#### Display LCD 
+
+#### Display LCD:
+- O display LCD é utilizado para apresentar frases e numeros tendo capacidade de mostrar 16 caracteres em 2 linhas, podendo ser progamado para apresentar dados e informaçoes de sensores ou atuadores ligados a ele, possibilitando assim, a vericação do estágio em que o código se encontra.
+  
+<p align="center">
+<img src="img/relatorio/lcd.jpg" width="400px">
+</p>
+<br>
+
+#### Especificações do Display LCD: 
 - Controlador: HD44780;
 - Cor backlight: Azul;
 - Cor escrita: Branca;
@@ -349,7 +334,15 @@ na faixa de 800 a 12.000 Gauss;
 - Dimensão Caracter: 3mm X 5.02mm;
 - Dimensão Ponto: 0.52mm X 0.54mm.
 
-#### Eletroímã
+#### Eletroímã:
+ O Eletroimã é um componente eletrônico moderno com funcionalidade básica semelhante a de um imã, porém com a diferença de possuir maior capacidade de atração graças a presença de solenóides. Que através deles, quando expostos a uma tensão é capaz de gerar um campo magnético no seu interior e exterior, podendo controlar este campo a medida que se controla a intesidade da tensão.
+
+<p align="center">
+ <img src="img/relatorio/eletroima.jpg" width="400px">
+</p>
+<br>
+
+#### Especificações do Eletroímã:
 - Eletroimã / Solenóide 20mm;
 - Capacidade de atração elevada;
 - Princípo básico de funcionamento semelhante a imã;
@@ -363,7 +356,14 @@ na faixa de 800 a 12.000 Gauss;
 - Altura: 15mm;
 - Peso: 24g. 
 
-#### Ponte H 
+ #### Ponte H:
+ - A ponte H é um driver usado em motores de corrente contínua, e que permite o motor girar tanto no sentido horário quanto no sentido anti-horário. Além de permitir alternar o sentido de rotação do motor, ela também exige pouquíssima energia do circuito de comando.
+<p align="center">
+<img src="img/relatorio/ponte-h.jpg" width="400px">
+</p>
+<br>
+
+#### Especificações da Ponte H: 
 - Tensão de Operação: 4~35v.
 - Chip: ST L298N (Datasheet)
 - Controle de 2 motores DC ou 1 motor de passo.
@@ -372,7 +372,15 @@ na faixa de 800 a 12.000 Gauss;
 - Corrente lógica: 0~36mA.
 - Limites de Temperatura: -20 a +135°C.
 - Potência Máxima: 25W.
-#### Célula de peso e módulo Hx711 sensor de peso
+
+ #### Célula de Peso e Módulo Hx711 Sensor de Peso: 
+ - O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferentes cargas que estejam sobre sua meia-ponte, entretanto para funcionamento deve atuar em conjunto com uma plataforma de prototipagem, entre elas, Arduino, PIC, ARM, AVR, entre outros. Como as Células de Carga instalados nas balanças não oferecem dados com grande precisão é necessário o Módulo Conversor HX711 que também funciona como um amplificador de sinal para oferecer dados mais precisos. O Módulo Conversor Amplificador Hx711 de 24bits se comunica através do padrão de comunicação TTL 232, possuindo estrutura simples, fácil de usar e com desempenho estável, além é claro, da elevada sensibilidade e velocidade de medida. 
+<p align="center">
+<img src="img/relatorio/celula-peso.png" width="400px">
+</p>
+<br>
+
+#### Especificações do Célula de Peso e Módulo Hx711 Sensor de Peso
 - Carga nominal: 1 kg
 - Potência nominal de saída: 1.0mv/v ± 0.15mv/v
 - Tensão de funcionamento recomendada: 3 ~ 12 VDC
@@ -453,15 +461,15 @@ na faixa de 800 a 12.000 Gauss;
 ## Testes Unitários
 
 ### Braço mecanico 
-Para a primeira versão do protótipo do braço mecânico, foi construído um código-fonte que permitisse a comunicação entre o braço mecânico e um computador atraves do controle de seus eixos X, Y e Z por meio de um controle de Xbox. A escolha do controle de Xbox foi feita, inicialmente, pelo fato de ser o que chega ao mais próximo de nosso interface proposta, já que ambos se comunicarem por meio de um cabo a um receptor de entrada/saída (computador). Sendo assim, realizamos teste de movimentação ao qual notamos os seguintes problemas/ delimitações do Dobot Magician:
+Para a primeira versão do protótipo do braço robótico (Magician Lite), foi construído um código-fonte que permitisse a comunicação entre o braço robótico e um computador atraves do controle de seus eixos X, Y e Z por meio de um controle de Xbox. A escolha do controle de Xbox foi feita, inicialmente, pelo fato de ser o que chega ao mais próximo de nosso interface proposta, já que ambos se comunicarem por meio de um cabo a um receptor de entrada/saída (computador). Sendo assim, realizamos teste de movimentação ao qual notamos os seguintes problemas/ delimitações do Dobot Magician:
 
 1. Limites máximo de movimentação:
 
-- Ao atingirmos o limite máximo do braço mecânico, nos ângulos -135° e 135°, o Dobot Magician acaba travando e sendo necessário realizar o desligamento e ligamento do braço mecânico para voltar a utilizar novamente.
+- Ao atingirmos o limite máximo do braço robótico, nos ângulos -135° e 135°, o Dobot Magician acaba travando e sendo necessário realizar o desligamento e ligamento do braço robótico para voltar a utilizar novamente.
 
-2. Movimentação forçada do braço mecânico (batidas ou movimentações manuais):
+1. Movimentação forçada do braço robótico (batidas ou movimentações manuais):
 
-- O mesmo travamento acontece quando está ocorrendo a execução de um determinado código-fonte no braço mecânico, por algum evento acabe ocorrendo uma movimentação forçada (batida ou reajuste no braço mecânico manualmente). Sendo assim, para a construção de códigos-fonte de execução de processos mais complexo há a necessidade de tratamento para estes possíveis acontecimentos.
+- O mesmo travamento acontece quando está ocorrendo a execução de um determinado código-fonte no braço robótico, por algum evento acabe ocorrendo uma movimentação forçada (batida ou reajuste no braço robótico manualmente). Sendo assim, para a construção de códigos-fonte de execução de processos mais complexo há a necessidade de tratamento para estes possíveis acontecimentos.
 <center>
 
 [![Foo](img/relatorio/teste-robo.png)](https://drive.google.com/file/d/1z_-WjqqmEGV3r7EgLiq7NLJw4R8_bzBm/view?usp=sharing)
