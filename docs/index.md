@@ -200,7 +200,7 @@ Em última análise, realizando-se os cálculos, chega-se à conclusão que o va
 - São empresas que possuem produtos ou serviços do mesmo setor e com a mesma finalidade. A princípio, os concorrentes diretos do IPT são outros intituos como ITA e IME, mas algumas empresas privadas também fornecem os mesmo produtos de testes e pesquisas podendo elas serem comcorrentes diretos.
 ### Substitutos:
 - São empresas que possuem produtos que não são do mesmo setor mas possuem soluções que se aplicam para as dores do setor. Algumas empresas privadas que encontramos em uma pesquisa sobre produtos similares a análise do solo para mineração fornecem esse tipo de serviços mas de maneira diferente e não só para esse propósito podendo atuar como produtos substitutos.
-   
+
 <p align="center">
 
 <img src="img/relatorio/cinco-forcas-porter.png">
@@ -217,12 +217,13 @@ Em última análise, realizando-se os cálculos, chega-se à conclusão que o va
 1. Dores: São os problemas do cliente diretamente exemplificado o que ele precisa que seja solucionado.
 2. Tarefas do cliente: São instruções que o cliente precisa fazer ou para a solução funcionar ou para que ela auxilie ele na resolução das dores.
 3. Ganhos: Valor agregado do produto que irá impactar diretamente o cliente.
-   
+ 
 <p align="center">
 
 <img src="img/relatorio/value-proposition-canvas.png">
 </p>
 <br>
+
 
 ## Matriz de Risco
 A partir da análise que realizamos sobre o contexto do projeto, percebemos que os aspectos que gerariam maiores riscos foram relacionados com um funcionamento impreciso da solução, gerado por algum erro durante o processo de desenvolvimento.
@@ -234,9 +235,11 @@ Em contrapartida, os aspectos que gerariam maiores oportunidades seriam relacion
 </p>
 
 ## Matriz de avaliação de valor Oceano Azul
+
 A matriz de oceano Azul é uma análise feita sobre a empresa e a solução proposta, em relação a outras empresas e soluções parecidas. A matriz leva em consideração alguns atributos como: Preço, qualidade, tecnologia, conforto, comodidade e  praticidade. Assim, através desses atributos é classificado de 0 a 10 o valor desses atributos em relação as empresas e a solução.
   
 <p align="center">
+
 
  <img src="img/relatorio/matriz-avaliacao-valor-oceano-azul.png">
  </p>
