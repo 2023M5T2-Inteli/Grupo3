@@ -30,8 +30,6 @@ Concepção de sistema de automação industrial
     - [Objetivos específicos](#objetivos-específicos)
   - [Partes interessadas](#partes-interessadas)
 - [Análise do Problema](#análise-do-problema)
-      - [1 — Demonstração do processo manual de separação de amostras realizado pelo IPT.](#1--demonstração-do-processo-manual-de-separação-de-amostras-realizado-pelo-ipt)
-      - [2 - Processo manual de separação de amostras realizado pelo IPT.](#2---processo-manual-de-separação-de-amostras-realizado-pelo-ipt)
   - [Dados levantados e analisados relativos ao problema](#dados-levantados-e-analisados-relativos-ao-problema)
   - [Análise da área de atuação](#análise-da-área-de-atuação)
   - [Análise financeira do projeto](#análise-financeira-do-projeto)
@@ -123,25 +121,25 @@ Para cumprir com o objetivo citado, o robô fará a tarefa de executar a varredu
 - INTELI - Instituto de Tecnologia e Liderança.
 
 # Análise do Problema
+No início do módulo, foi nos apresentado, durante o processo de exposição do projeto para a turma de Engenharia da Computação do Inteli, o Instituto de Pesquisa Tecnológicas - IPT . Tal projeto traz como principal foco o processo de separação de minérios (imagem 1), ao qual ainda é realizado manualmente por um operador (técnico de laboratório do IPT) que leva em média de 20 – 30 minutos dependendo do tamanho de amostra e concentração de minérios de ferro encontrados na amostra. 
 <p align="center">
+<img src="img/relatorio/processo-separacao-minerios.png">
 
-![Alt text](img/relatorio/processo-separacao-minerios.png)
 
-
-#### 1 — Demonstração do processo manual de separação de amostras realizado pelo IPT.
+<p align="center"> 1 — Demonstração do processo manual de separação de amostras realizado pelo IPT.</p>
 
 </p>
   
-  <br>
+<br>
 O processo de separação de amostras atualmente ocorre da seguinte forma: sobre uma mesa são dispostos 3 ímãs de diferentes potenciais (medidos em Gauss); 3 bandejas; 1 saco plástico; 1 recipiente com a amostra (imagem 2). Em todas as 3 bandejas são colocados água para facilitar a manipulação da amostra - na primeira bandeja é despejado a amostra e as outras 2 bandejas irão ser utilizadas como apoio durante o processo de separação manual. Após estas etapas, é escolhido o ímã que mais atrai minérios magnéticos, o qual é envolvido em um plástico (para facilitar a retirada dos materiais de ferros recolhidos pelo ímã).
 
 Após esta fase, o ímã é mergulhado e passa pela bandeja que se encontra com água e a amostra, posteriormente na segunda bandeja só com água e por último solto e armazenado na última bandeja. Este processo é feito várias vezes com o ímã de maior potência e depois  com os outros dois ímãs de menor potência, sendo realizado as etapas da mesma forma.
-<center>
+<p align="center">
 
-![Alt text](img/relatorio/processo-separacao-minerios-etapas.png)
+<img src="img/relatorio/processo-separacao-minerios-etapas.png">
 
-#### 2 - Processo manual de separação de amostras realizado pelo IPT.
-</center>
+<p align="center"> 2 - Processo manual de separação de amostras realizado pelo IPT.</p>
+</p>
 
 <br>
 
@@ -179,31 +177,33 @@ Por outro lado, com o processo de automatização realizado, o rendimento aument
 Em última análise, realizando-se os cálculos, chega-se à conclusão que o valor da automação deve custar algo próximo a 90 mil reais, com dois meses de operação. Assim, esse processo se pagaria em torno de 10 meses, pois o aumento de desempenho irá gerar nove mil reais a mais por mês, somando com o que o técnico, que terá mais tempo livre, conseguirá realizar com esse tempo de sobra.
 
 ## Análise das 5 forças de Porter
-<center>
+<p align="center">
 
-![Alt text](img/relatorio/cinco-forcas-porter.png)
-</center>
+<img src="img/relatorio/cinco-forcas-porter.png">
+</p>
 
 ## Proposta de Valor: Value Proposition Canvas
-<center>
+<p align="center">
 
-![Alt text](img/relatorio/value-proposition-canvas.png)
-</center>
+<img src="img/relatorio/value-proposition-canvas.png">
+</p>
 
 ## Matriz de Risco
-<center>
+
 
 A partir da análise que realizamos sobre o contexto do projeto, percebemos que os aspectos que gerariam maiores riscos foram relacionados com um funcionamento impreciso da solução, gerado por algum erro durante o processo de desenvolvimento.
 
-Em contrapartida, os aspectos que gerariam maiores oportunidades seriam relacionados com a possibilidade de se obter uma separação mais precisa e com a capacidade de variação do campo magnético .
-![Alt text](img/relatorio/matriz-risco.png)
-</center>
+Em contrapartida, os aspectos que gerariam maiores oportunidades seriam relacionados com a possibilidade de se obter uma separação mais precisa e com a capacidade de variação do campo magnético.
+
+<p align="center">
+<img src="img/relatorio/matriz-risco.png">
+</p>
 
 ## Matriz de avaliação de valor Oceano Azul
-<center>
+<p align="center">
 
- ![Alt text](img/relatorio/matriz-avaliacao-valor-oceano-azul.png)
- </center>
+ <img src="img/relatorio/matriz-avaliacao-valor-oceano-azul.png">
+ </p>
 
 # Requisitos do Sistema
 
@@ -218,14 +218,14 @@ na faixa de 800 a 12.000 Gauss;
 7. Relatório apresentando todos os dados pertinentes do ensaio (opcional).
 
 ## Personas
-<center>
+<p  align="center">
 
-![Alt text](img/relatorio/personas-1.png)
-</center>
-<center>
+<img src="img/relatorio/personas-1.png">
+</p>
+<p align="center">
 
-![Alt text](img/relatorio/personas-2.png)
-</center>
+<img src="img/relatorio/personas-2.png">
+</p>
 
 ## Histórias dos usuários (user stories)
 
@@ -248,23 +248,23 @@ na faixa de 800 a 12.000 Gauss;
 # Arquitetura do Sistema
 
 ## Croqui
-<center>
+<p align="center">
 
-![Alt text](img/relatorio/croqui.png)
-</center>
+<img src="img/relatorio/croqui.png">
+</p>
 
 ## Documentação dos componentes
-<center>
+<p align="center">
 
-![Alt text](img/relatorio/documentacao-componentes.png)
-</center>
+<img src="img/relatorio/documentacao-componentes.png">
+</p>
 
 ### Componentes 
 #### Raspberry Pi pico w
 - O Raspberry Pi pico w é um microcontrolador com acesso wireless, o que permite uma conexão via bluetooth e via wifi. Assim ele pode ser  usado para sistemas embarcados e controlar dados de sensores e mandar informações para atuadores sendo fundamental na execução do projeto tanto para enviar como receber os dados.
-<center>
+<p align="center">
 <img src="img/relatorio/raspberry.jpeg" width="400px">
-</center>
+</p>
 <br>
 
 #### Braço robótico Dobot Magician lite 
@@ -276,38 +276,39 @@ na faixa de 800 a 12.000 Gauss;
 
 #### Teclado matricial de membrana
 - O teclado matricial de membrana é utilizado para projetos que utiizam um teclado alfa numérico que possua ligação com um monitor serial para que seja visivel as respostas de interação através de um monitor serial ligado a ele.
--  
-<center>
+  
+<p align="center">
 <img src="img/relatorio/teclado-matricial.jpg" width="400px">
-</center>
+</p>
 
 #### Display LCD
 - O display LCD é utilizado para apresentar frases e numeros tendo capacidade de mostrar 16 caracteres em 2 linhas, podendo ser progamado para apresentar dados e informaçoes de sensores ou atuadores ligados a ele, possibilitando assim, a vericação do estágio em que o código se encontra.
   
-<center>
+<p align="center">
 <img src="img/relatorio/lcd.jpg" width="400px">
-</center>
+</p>
 
 #### Eletroímã
  O Eletroimã é um componente eletrônico moderno com funcionalidade básica semelhante a de um imã, porém com a diferença de possuir maior capacidade de atração graças a presença de solenóides. Que através deles, quando expostos a uma tensão é capaz de gerar um campo magnético no seu interior e exterior, podendo controlar este campo a medida que se controla a intesidade da tensão.
 
-<center>
+<p align="center">
  <img src="img/relatorio/eletroima.jpg" width="400px">
-</center>
+</p>
+<br>
 
  #### Ponte H
  - A ponte H é um driver usado em motores de corrente contínua, e que permite o motor girar tanto no sentido horário quanto no sentido anti-horário. Além de permitir alternar o sentido de rotação do motor, ela também exige pouquíssima energia do circuito de comando.
-<center>
-
+<p align="center">
 <img src="img/relatorio/ponte-h.jpg" width="400px">
-</center>
+</p>
+<br>
 
  #### Célula de peso e módulo Hx711 sensor de peso 
  - O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferentes cargas que estejam sobre sua meia-ponte, entretanto para funcionamento deve atuar em conjunto com uma plataforma de prototipagem, entre elas, Arduino, PIC, ARM, AVR, entre outros. Como as Células de Carga instalados nas balanças não oferecem dados com grande precisão é necessário o Módulo Conversor HX711 que também funciona como um amplificador de sinal para oferecer dados mais precisos. O Módulo Conversor Amplificador Hx711 de 24bits se comunica através do padrão de comunicação TTL 232, possuindo estrutura simples, fácil de usar e com desempenho estável, além é claro, da elevada sensibilidade e velocidade de medida. 
-<center>
-
+<p align="center">
 <img src="img/relatorio/celula-peso.png" width="400px">
-</center>
+</p>
+<br>
 
 ## Especificações dos componentes
 #### Raspberry Pi pico w
@@ -399,10 +400,11 @@ na faixa de 800 a 12.000 Gauss;
 ## Design de Interface 
   A conexão homem máquina da solução do grupo será realizada por meio do LCD, de modo que a interface se mantenha simples e prática, sem a necessidade de outros dispositivos ou acesso à internet. A entrada de dados será feita por um teclado de membrana, por meio do qual o usuário poderá realizar alterações de funcionamento do robô, como ajuste da intensidade de corrente elétrica de acionamento do ímã, distância do braço do robô, assim como sua velocidade, sendo os dois primeiros responsáveis por alterar a intensidade de fluxo magnético produzido pelo ímã e o último apenas a velocidade de varredura.
   Dessa forma, a arquitetura da solução foi idealizada com o intuito de dar maior praticidade ao operador, com a interface completa acoplada ao robô, tendo apenas o cabo de conexão como única distância entre eles. Para isso, o grupo decidiu usar o teclado de membrana como meio de comunicação direta entre o usuário final e o sistema, de modo que cada tecla corresponde a uma ação específica do braço. Somado a isso, o display LCD, associado ao teclado, apresenta o feedback de sucesso ou fracasso dessas ações. 
-<center>
+<p align="center">
 
-  ![Alt text](img/relatorio/esquematico-interface.png)
-</center>
+  <img src="img/relatorio/esquematico-interface.png">
+</p>
+<br>
 
 ### Dimensões e características dos componentes da interface:
 
@@ -418,10 +420,11 @@ na faixa de 800 a 12.000 Gauss;
 - Tamanho: 69 x 77 x 0,8mm;
 - Comprimento Cabo: 86mm;
 - Peso: 10g;
-<center>
-
+  
+<p align="center">
 <img src="img/relatorio/teclado-matricial.jpg" width="400px">
-</center>
+</p>
+<br>
 
 #### Display LCD: 
 - Controlador: HD44780;
@@ -432,11 +435,12 @@ na faixa de 800 a 12.000 Gauss;
 - Dimensão Caracter: 3mm X 5.02mm;
 - Dimensão Ponto: 0.52mm X 0.54mm.
   
-<center>
+<p align="center">
 
 <img src="img/relatorio/lcd.jpg" width="500px">
 
-</center>
+</p>
+<br>
 
 # Projeto de Banco de Dados
 
