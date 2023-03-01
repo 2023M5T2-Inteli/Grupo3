@@ -221,6 +221,7 @@ Em última análise, realizando-se os cálculos, chega-se à conclusão que o va
 <img src="img/relatorio/value-proposition-canvas.png">
 </p>
 <br>
+
 ## Matriz de Risco
 A partir da análise que realizamos sobre o contexto do projeto, percebemos que os aspectos que gerariam maiores riscos foram relacionados com um funcionamento impreciso da solução, gerado por algum erro durante o processo de desenvolvimento.
 
@@ -370,7 +371,7 @@ na faixa de 800 a 12.000 Gauss;
  O Eletroimã é um componente eletrônico moderno com funcionalidade básica semelhante a de um imã, porém com a diferença de possuir maior capacidade de atração graças a presença de solenóides. Que através deles, quando expostos a uma tensão é capaz de gerar um campo magnético no seu interior e exterior, podendo controlar este campo a medida que se controla a intesidade da tensão.
 
 <p align="center">
- <img src="img/relatorio/eletroima.jpg" width="400px">
+ <img src="img/relatorio/Eletroima.jpg" width="400px">
 </p>
 <br>
 
