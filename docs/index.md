@@ -440,8 +440,9 @@ O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferen
 ## Wireframe + Storyboard
 
 ## Design de Interface 
-  A conexão homem máquina da solução do grupo será realizada por meio do LCD, de modo que a interface se mantenha simples e prática, sem a necessidade de outros dispositivos ou acesso à internet. A entrada de dados será feita por um teclado de membrana, por meio do qual o usuário poderá realizar alterações de funcionamento do robô, como ajuste da intensidade de corrente elétrica de acionamento do ímã, distância do braço do robô, assim como sua velocidade, sendo os dois primeiros responsáveis por alterar a intensidade de fluxo magnético produzido pelo ímã e o último apenas a velocidade de varredura.
+ A conexão homem máquina da solução do grupo será realizada por meio do LCD, de modo que a interface se mantenha simples e prática, sem a necessidade de outros dispositivos ou acesso à internet para a visualização do status da aplicação. A entrada de dados será feita por um teclado de membrana, por meio das teclas, o usuário poderá realizar alterações de funcionamento do robô, como ajuste da intensidade de corrente elétrica de acionamento do ímã, distância do braço do robô, assim como sua velocidade, sendo os dois primeiros responsáveis por alterar a intensidade de fluxo magnético produzido pelo ímã e o último apenas a velocidade de varredura.
   Dessa forma, a arquitetura da solução foi idealizada com o intuito de dar maior praticidade ao operador, com a interface completa acoplada ao robô, tendo apenas o cabo de conexão como única distância entre eles. Para isso, o grupo decidiu usar o teclado de membrana como meio de comunicação direta entre o usuário final e o sistema, de modo que cada tecla corresponde a uma ação específica do braço. Somado a isso, o display LCD, associado ao teclado, apresenta o feedback de sucesso ou fracasso dessas ações.
+
 
   Para a criação deste protótipo, podemos listar os seguintes componentes a serem utilizados:
 
