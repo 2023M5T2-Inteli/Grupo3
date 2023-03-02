@@ -289,7 +289,12 @@ na faixa de 800 a 12.000 Gauss;
 
 ## Croqui
 
+
+Um croqui  trata-se de um método de representação gráfica, utilizado principalmente por arquitetos, engenheiros e designers para esboçar ideias e conceitos visualmente. O objetivo do croqui é transmitir uma ideia de forma rápida e intuitiva, permitindo que o criador possa explorar diferentes possibilidades e testar soluções de forma prática. Neste sentido, o croqui foi uma ferramenta fundamental para o processo criativo da solução proposta pelo grupo.
+O projeto consisti na criação de um sistema automatizado de ensaio para análise de amostras de metal retiradas do solo, utilizando o braço robótico Dobot Magician Lite. Para otimizar a movimentação do braço, serão utilizadas três bandejas dispostas radialmente, permitindo maior velocidade de execução e reduzindo travamentos. A primeira bandeja será destinada à amostra bruta, a segunda será uma bandeja com água para limpar possíveis resíduos não magnéticos que foram puxados acidentalmente pelo eletroímã, e a terceira será para a amostra limpa. Para controle dos componentes, será utilizado o Raspberry Pi Pico W, eliminando a necessidade de um servidor externo e permitindo ao cliente acesso às configurações do ensaio através de um display de membrana e LCD. Além disso, será adicionado um sensor de peso à terceira bandeja, responsável pela amostra limpa, que, a cada rodada, realizará a pesagem e finalizará o ensaio quando não houver alteração de peso. Para acoplar as amostras ao braço robótico, será adicionado um eletroímã, que será regulado pelo Raspberry Pi Pico através de uma ponte H, permitindo a regulagem da força magnética. Espera-se obter, com a implementação dessas características, um sistema de ensaio automatizado eficiente e de fácil utilização. Um croqui deste sistema pode ser visto na figura [n da imagem]:
+
 <p align="center">
+
 
 <img src="img/relatorio/croqui.png">
 </p>
@@ -303,7 +308,7 @@ na faixa de 800 a 12.000 Gauss;
 
 ### Componentes 
 #### Raspberry Pi Pico W:
-- O Raspberry Pi pico w é um microcontrolador com acesso wireless, o que permite uma conexão via bluetooth e via wifi. Assim ele pode ser  usado para sistemas embarcados e controlar dados de sensores e mandar informações para atuadores sendo fundamental na execução do projeto tanto para enviar como receber os dados.
+- O Raspberry Pi pico w é um microcontrolador com acesso wireless, o que permite uma conexão via bluetooth e via wifi. Assim ele pode ser  usado para sistemas embarcados e controlar dados de sensores e mandar informações para atuadores, sendo fundamental na execução do projeto tanto para enviar como receber os dados.
 <p align="center">
 <img src="img/relatorio/raspberry.jpeg" width="400px">
 </p>
