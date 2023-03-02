@@ -31,7 +31,6 @@ Concepção de sistema de automação industrial
   - [Partes interessadas](#partes-interessadas)
 - [Análise do Problema](#análise-do-problema)
   - [Dados levantados e analisados relativos ao problema](#dados-levantados-e-analisados-relativos-ao-problema)
-  - [Análise da área de atuação](#análise-da-área-de-atuação)
   - [Análise financeira do projeto](#análise-financeira-do-projeto)
   - [Análise das 5 forças de Porter](#análise-das-5-forças-de-porter)
     - [Fornecedores:](#fornecedores)
@@ -176,10 +175,6 @@ Em relação à taxa de eficiência da separação magnética em minérios, no e
 
 Os metais que despertam o maior interesse da indústria atualmente são o ferro e o cobre. Entretanto, esses metais apresentam uma grande diferença de atração magnética, o que permite que a separação magnética seja bastante efetiva. Como o ferro apresenta um potencial de atração muito alto, um campo magnético muito baixo é o suficiente para atrair as amostras desse tipo de minério. Após a separação desse minério, poderá ser utilizado um campo magnético de intensidade maior, para que o cobre seja atraído com maior facilidade.
 
-## Análise da área de atuação
-
-*Descrição_da_análise_da_área_de_atuação*
-
 ## Análise financeira do projeto
 
 O cenário financeiro do parceiro, laboratório de mineração do IPT, atualmente é de 8 análises de solo por mês com cada uma custando na faixa de 3 mil reais. Ainda nesse sentido, podemos considerar o técnico que realiza o processo manual como único custo que deve ser considerado, pois esse será o único custo que, efetivamente, mudará, porque com a automação, o técnico ficará livre para realizar outros trabalhos gerando um valor apenas dependente de suas qualificações.
@@ -288,13 +283,9 @@ na faixa de 800 a 12.000 Gauss;
 # Arquitetura do Sistema
 
 ## Croqui
-
-
-Um croqui  trata-se de um método de representação gráfica, utilizado principalmente por arquitetos, engenheiros e designers para esboçar ideias e conceitos visualmente. O objetivo do croqui é transmitir uma ideia de forma rápida e intuitiva, permitindo que o criador possa explorar diferentes possibilidades e testar soluções de forma prática. Neste sentido, o croqui foi uma ferramenta fundamental para o processo criativo da solução proposta pelo grupo.
-O projeto consisti na criação de um sistema automatizado de ensaio para análise de amostras de metal retiradas do solo, utilizando o braço robótico Dobot Magician Lite. Para otimizar a movimentação do braço, serão utilizadas três bandejas dispostas radialmente, permitindo maior velocidade de execução e reduzindo travamentos. A primeira bandeja será destinada à amostra bruta, a segunda será uma bandeja com água para limpar possíveis resíduos não magnéticos que foram puxados acidentalmente pelo eletroímã, e a terceira será para a amostra limpa. Para controle dos componentes, será utilizado o Raspberry Pi Pico W, eliminando a necessidade de um servidor externo e permitindo ao cliente acesso às configurações do ensaio através de um display de membrana e LCD. Além disso, será adicionado um sensor de peso à terceira bandeja, responsável pela amostra limpa, que, a cada rodada, realizará a pesagem e finalizará o ensaio quando não houver alteração de peso. Para acoplar as amostras ao braço robótico, será adicionado um eletroímã, que será regulado pelo Raspberry Pi Pico através de uma ponte H, permitindo a regulagem da força magnética. Espera-se obter, com a implementação dessas características, um sistema de ensaio automatizado eficiente e de fácil utilização. Um croqui deste sistema pode ser visto na figura [n da imagem]:
+Um croqui trata-se de um método de representação gráfica, utilizado principalmente por arquitetos, engenheiros e designers para esboçar ideias e conceitos visualmente. O objetivo do croqui é transmitir uma ideia de forma rápida e intuitiva, permitindo que o criador possa explorar diferentes possibilidades e testar soluções de forma prática. Neste sentido, o croqui foi uma ferramenta fundamental para o processo criativo da solução proposta pelo grupo. O projeto consisti na criação de um sistema automatizado de ensaio para análise de amostras de metal retiradas do solo, utilizando o braço robótico Dobot Magician Lite. Para otimizar a movimentação do braço, serão utilizadas três bandejas dispostas radialmente, permitindo maior velocidade de execução e reduzindo travamentos. A primeira bandeja será destinada à amostra bruta, a segunda será uma bandeja com água para limpar possíveis resíduos não magnéticos que foram puxados acidentalmente pelo eletroímã, e a terceira será para a amostra limpa. Para controle dos componentes, será utilizado o Raspberry Pi Pico W, eliminando a necessidade de um servidor externo e permitindo ao cliente acesso às configurações do ensaio através de um display de membrana e LCD. Além disso, será adicionado um sensor de peso à terceira bandeja, responsável pela amostra limpa, que, a cada rodada, realizará a pesagem e finalizará o ensaio quando não houver alteração de peso. Para acoplar as amostras ao braço robótico, será adicionado um eletroímã, que será regulado pelo Raspberry Pi Pico através de uma ponte H, permitindo a regulagem da força magnética. Espera-se obter, com a implementação dessas características, um sistema de ensaio automatizado eficiente e de fácil utilização. Um croqui deste sistema pode ser visto na figura abaixo:
 
 <p align="center">
-
 
 <img src="img/relatorio/croqui.png">
 </p>
@@ -308,7 +299,7 @@ O projeto consisti na criação de um sistema automatizado de ensaio para análi
 
 ### Componentes 
 #### Raspberry Pi Pico W:
-- O Raspberry Pi pico w é um microcontrolador com acesso wireless, o que permite uma conexão via bluetooth e via wifi. Assim ele pode ser  usado para sistemas embarcados e controlar dados de sensores e mandar informações para atuadores, sendo fundamental na execução do projeto tanto para enviar como receber os dados.
+- O Raspberry Pi pico w é um microcontrolador com acesso wireless, o que permite uma conexão via bluetooth e via wifi. Assim ele pode ser  usado para sistemas embarcados e controlar dados de sensores e mandar informações para atuadores sendo fundamental na execução do projeto tanto para enviar como receber os dados.
 <p align="center">
 <img src="img/relatorio/raspberry.jpeg" width="400px">
 </p>
