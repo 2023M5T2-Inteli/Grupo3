@@ -94,13 +94,24 @@ class MagicBoxUploader:
         """
         Upload the files to the MagicBox
         """
+        print('Cleaning the MagicBox project sources...', end='')
         MagicBoxUploader.clean()  # Delete the project sources from the MagicBox
+        print('Done!')
 
+        print('Getting the project sources...')
         project_sources = FileManager.get_paths(Settings.PROJECT_SOURCES_PATH)  # Get the project sources
-        FileManager.copy_paths(project_sources, Settings.MAGICBOX_SCRIPT_PATH)  # Copy the project sources to the MagicBox
+        print('Founded the following paths:')
+        for path in project_sources:
+            print(f'\t{path}')
 
+        print('Uploading the project sources to the MagicBox...', end='')
+        FileManager.copy_paths(project_sources, Settings.MAGICBOX_SCRIPT_PATH)  # Copy the project sources to the MagicBox
+        print('Done!')
+
+        print('Renaming the main file...', end='')
         FileManager.rename(Settings.MAGICBOX_PROJECT_MAIN_FILE,
                            f"{Settings.MAGICBOX_SCRIPT_PATH}/{Settings.PROJECT_NAME}.py")
+        print('Done!')
 
 
 if __name__ == "__main__":
