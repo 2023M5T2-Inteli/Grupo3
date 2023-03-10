@@ -73,7 +73,7 @@ def iniSecondTray():
     
 def scanSecondTray():
     repeat = 0
-    while repeat != 10:
+    while repeat != 6:
         if (repeat % 2 == 0):
             Dobot.move_to(246,  -2,  -66, 0)
         else:  
