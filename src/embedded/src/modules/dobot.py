@@ -39,3 +39,7 @@ class Dobot:
     @staticmethod
     def clear_alarms() -> None:
         dType.ClearAllAlarmsState(0)
+
+    @staticmethod
+    def set_home() -> None:
+        dType.SetHOMECmdEx(0, 0, 1)
