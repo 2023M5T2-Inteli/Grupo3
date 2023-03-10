@@ -49,82 +49,80 @@ def showPosition():
 
 def iniFirstTray():
     Display.print("Scanneando primeira bandeja!")
-    Dobot.move_to(0,  -220,  0, 0)
-    Time.sleep(1000)
-    Dobot.move_to(-53,  -220,  -67, 0)
-    Time.sleep(1000)
-
+    Time.sleep(500)
+    Dobot.move_to(-0,  -247,  150, 0)
+    Time.sleep(500)
+    Dobot.move_to(-0,  -247,  -65, 0)
 
 def scanFirstTray():
     repeat = 0
-    MoveX = -53
     turnOnElectromagnet()
     while repeat != 10:
         if (repeat % 2 == 0):
-            moveY = -220
-        else:
-            moveY = -340     
-        Dobot.move_to(MoveX,  moveY,  -67, 0)
-        Time.sleep(1500)
-        MoveX = MoveX +10
+            Dobot.move_to(-0,  -247,  -65, 0)
+        else:    
+            Dobot.move_to(-21,  -340,  -65, 0)
         repeat = repeat + 1
 
 def iniSecondTray():
     Display.print("Separando na segunda bandeja!")
-    Dobot.move_to(248,  -4,  -48, 0)
-    Time.sleep(1000)
-    # Dobot.move_to(-53,  -220,  -67, 0)
-    # Time.sleep(1000)
-
-def shakeSecondTray():
-    repeat2 = 1
-    MoveX = 248
-    while repeat2 != 10:
-        if (repeat2 % 2 == 0):
-            moveY = -60
-        else:
-            moveY = -4    
-        Dobot.move_to(MoveX,  moveY,  -48, 0)
-        Time.sleep(1500)
-        MoveX = MoveX -10
-        repeat2 = repeat2 + 1
-
-def thirdTray():
+    Dobot.move_to(246,  -2,  100, 0)
+    Time.sleep(500)
+    Dobot.move_to(246,  -2,  -66, 0)
+    Time.sleep(500)
     
+def scanSecondTray():
+    repeat = 0
+    while repeat != 10:
+        if (repeat % 2 == 0):
+            Dobot.move_to(246,  -2,  -66, 0)
+        else:  
+            Dobot.move_to(342,  -16,  -66, 0)
+        repeat = repeat + 1
+
+def iniThirdTray():
     Display.print("Separando na terceira bandeja!")
-    Dobot.move_to(-53, 220, 0, 0)
-    Dobot.move_to(-53, 220, -65, 0)
-    turnOffElectromagnet()
-    Dobot.move_to(-53, 300, -65, 0)
-    Dobot.move_to(-53, 220, -65, 0)
-    upArm()
+    Dobot.move_to(2,  220,  100, 0)
+    Time.sleep(500)
+    Dobot.move_to(2,  220,  -65, 0)
+    Time.sleep(500)
     
-    
-
+def shakeThirdTray():
+    repeat = 0
+    while repeat != 10:
+        if (repeat % 2 == 0):
+            Dobot.move_to(2,  220,  -65, 0)
+        else:  
+            Dobot.move_to(2,  320,  -65, 0)
+        repeat = repeat + 1
+        
 def upArm():
     [x,y,z,r] = Dobot.get_pose()[0:4]
-    Dobot.move_to(x, y,  0, 0)
+    Time.sleep(1000)
+    Dobot.move_to(x, y,  100, 0)
 
 def finish():
     Dobot.set_home()
-    Dobot.move_to(162, -8, 39, 0)
     Time.sleep(500)
     Display.print("Ensaio finalizado!")
 
 def main():
     Dobot.setup()
-    showPosition()
-    upArm()
-    iniSecondTray()
-    shakeSecondTray()
-    # upArm()
-    # Dobot.set_home()
-    # Time.sleep(2000)
-    # iniFirstTray()
-    # scanFirstTray()
-    # upArm()
-    # Dobot.set_home()
-    # showPosition()
-    thirdTray()
-    shakeAfterTurnOff()
+    isScan = 0
+    while (isScan !=5):
+        upArm()
+        Dobot.set_home()
+        iniFirstTray()
+        scanFirstTray()
+        upArm()
+
+        iniSecondTray()
+        scanSecondTray()
+
+        upArm()
+
+        iniThirdTray()
+        shakeThirdTray()
+        isScan = isScan + 1
+    finish()
 
