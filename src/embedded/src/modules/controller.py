@@ -85,11 +85,13 @@ def iniThirdTray():
     Dobot.move_to(2,  220,  100, 0)
     Time.sleep(500)
     Dobot.move_to(2,  220,  -65, 0)
-    Time.sleep(500)
+    Time.sleep(100)
+    turnOffElectromagnet()
+    
     
 def shakeThirdTray():
     repeat = 0
-    while repeat != 10:
+    while repeat != 6:
         if (repeat % 2 == 0):
             Dobot.move_to(2,  220,  -65, 0)
         else:  
@@ -109,7 +111,7 @@ def finish():
 def main():
     Dobot.setup()
     isScan = 0
-    while (isScan !=5):
+    while (isScan !=3):
         upArm()
         Dobot.set_home()
         iniFirstTray()
