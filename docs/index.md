@@ -481,6 +481,33 @@ O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferen
 
 #### Projeto dos dispositivos mecânicos
 
+Lista de peças necessárias para fabricação:
+
+Encaixe do ímã: Estrutura para encaixe do ímã para acoplação com o braço robô, utilizando o encaixe para segurar caneta presente no kit Dobot Magician Lite. Dessa forma, produziremos uma estrutura em formato cilíndrico, (semelhante à caneta), que possuirá um furo superior para entrada de um parafuso, que servirá como ligação entre a estrutura e o eletroíma, pois será encaixado na entrada de parafuso M4 presente no eletroímã.
+Bandejas em formato circular: Bandejas que serão fabricadas em um formato circular específico para suprir o movimento do braço e torná-lo mais eficiente.
+
+<p align="center">
+<img src="img\relatorio\diagrama_mecanico.png" width="400px">
+</p>
+<br>
+
+Materiais:
+
+Filamento PLA:
+
+##### Especificações:
+- Matéria-prima: Poliácido Láctico
+- Diâmetro do filamento: 1,75 mm ± 0,05 mm
+- Dimensões do carretel: 20 cm x 6 cm (D x A)
+- Diâmetro do furo do carretel: ± 48,6 mm
+- Temperatura de impressão: 190º C - 215º C
+- Temperatura da mesa: > 59º C
+
+
+Método de fabricação dos projetos mecânicos:
+A lista de materiais feita utilizará diferentes métodos para fabricação dos componentes presentes. Nesse sentido, o encaixe do ímã será feito com uma impressora 3D e o filamento de resina citado na lista de materiais, além disso, como seu modelo já está pronto, basta utilizar um programa de design 3D para gerar sua estrutura.
+Por sua vez, as bandejas em formato circular serão fabricadas a fim de otimizar a movimentação do robô, fabricando-as no formato que o Dobot Magician Lite varre de forma mais eficiente, com atuação de um número menor de eixos e de forma a economizar tempo em cada análise. Dessa maneira, para podermos manipular o formato das bandejas de um material de tão difícil maleabilidade quanto o acrílico, o grupo decidiu por utilizar um cortador a laser e um soprador térmico, os quais provaram-se ser um método mais eficiente para o objetivo do que a impressão 3D.
+
 #### Projeto dos dispositivos Eletrônicos
 
 
