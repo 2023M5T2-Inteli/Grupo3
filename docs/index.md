@@ -729,6 +729,7 @@ Sendo assim, os próprios arquivos salvos no Magic Box serviram como um menu, ao
 
 Embora alguns resultados negativos, foi possível validar a ideia principal do que foi desenvolvido, além de ter algumas percepções do que talvez possa ser melhorado.
 
+
 ### Interface
 
 # Análise de Dados
