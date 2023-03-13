@@ -580,64 +580,64 @@ Dessa forma, a arquitetura da solução foi idealizada com o intuito de dar maio
 
 - Forma de uso da interface de usuário:
   
-O controle Magic Box é ligado segurando o botão redondo no centro por um tempo. Após isso, as opções citadas abaixo aparecerão e, para selecioná-las, o usuário deve usar o botão com um círculo como forma de confirmação. Por outro lado, a seta presente no botão esquerdo serve como retorno, cancelando ou voltando a operação realizada ou até mesmo para reiniciar o Magic Box.
+  O controle Magic Box é ligado segurando o botão redondo no centro por um tempo. Após isso, as opções citadas abaixo aparecerão e, para selecioná-las, o usuário deve usar o botão com um círculo como forma de confirmação. Por outro lado, a seta presente no botão esquerdo serve como retorno, cancelando ou voltando a operação realizada ou até mesmo para reiniciar o Magic Box.
 
-Seleção do método de uso: Nessa parte do processo, o usário poderá decidir entre as opções de uso do Magic Box, a primeira para rodar o script, contida na imagem abaixo. Vale ressaltar que para usar o controle, o usário deve ter conhecimento da função dos botões do controlador.
-<p align="center">
-<img src="img/relatorio/selecao_script.jpeg" width="400px">
-</p>
-<br>
+  Seleção do método de uso: Nessa parte do processo, o usário poderá decidir entre as opções de uso do Magic Box, a primeira para rodar o script, contida na imagem abaixo. Vale ressaltar que para usar o controle, o usário deve ter conhecimento da função dos botões do controlador.
+  <p align="center">
+  <img src="img/relatorio/selecao_script.jpeg" width="400px">
+  </p>
+  <br>
 
-Seleção de arquivos de script python(.py) em ambos os métodos de uso: Nessa parte do processo, o usuário poderá decidir entre os arquivos já carregados para o Magic Box. Dessa maneira, o grupo pensa em alterar os parâmetros em diferentes scripts para atender a todas as necessidades que o usuário possa ter.
+  Seleção de arquivos de script python(.py) em ambos os métodos de uso: Nessa parte do processo, o usuário poderá decidir entre os arquivos já carregados para o Magic Box. Dessa maneira, o grupo pensa em alterar os parâmetros em diferentes scripts para atender a todas as necessidades que o usuário possa ter.
 Opção para carregar do zero script enviado ao controlador.
 
-<p align="center">
-<img src="img/relatorio/iniciar_ensaio.jpeg" width="400px">
-</p>
-<br>
+  <p align="center">
+  <img src="img/relatorio/iniciar_ensaio.jpeg" width="400px">
+  </p>
+  <br>
 
-Já no método playback, o usuário apenas poderá escolher reexecutar o último arquivo de script executado.
+  Já no método playback, o usuário apenas poderá escolher reexecutar o último arquivo de script executado.
 
-<p align="center">
-<img src="img/relatorio/selecao_novamente.jpeg" width="400px">
-</p>
-<br>
-
-
-Status da operação: Nessa etapa do processo, o usuário acompanha pelo display em qual etapa está o processo, recebendo feedback se algo está fora dos conformes. Além disso, vale ressaltar que ele poderá cancelar o processo a qualquer momento que quiser, bastando apertar o botão de voltar e confirmar o cancelamento.
-
-Primeira bandeja, na qual o braço com o ímã ligado recolhe materiais magnéticos que vêm acompanhados de materiais não magnéticos da amostra.
-
-<p align="center">
-<img src="img/relatorio/primeira_bandeja.jpeg" width="400px">
-</p>
-<br>
-
-Segunda bandeja, na qual o braço com o ímã ligado passa em uma bandeja só com água para limpar o excesso de materiais, visando a limpeza de tudo que não seja magnético.
+  <p align="center">
+  <img src="img/relatorio/selecao_novamente.jpeg" width="400px">
+  </p>
+  <br>
 
 
-<p align="center">
-<img src="img/relatorio/segunda_bandeja.jpeg" width="400px">
-</p>
-<br>
+  Status da operação: Nessa etapa do processo, o usuário acompanha pelo display em qual etapa está o processo, recebendo feedback se algo está fora dos conformes. Além disso, vale ressaltar que ele poderá cancelar o processo a qualquer momento que quiser, bastando apertar o botão de voltar e confirmar o cancelamento.
 
-Terceira bandeja, na qual o braço quando se aproxima da bandeja com água, desliga o(s) ímã(s) a fim de soltar todo o material magnético na bandeja.
+  Primeira bandeja, na qual o braço com o ímã ligado recolhe materiais magnéticos que vêm acompanhados de materiais não magnéticos da amostra.
 
-<p align="center">
-<img src="img/relatorio/terceira_bandeja.jpeg" width="400px">
-</p>
-<br>
+  <p align="center">
+  <img src="img/relatorio/primeira_bandeja.jpeg" width="400px">
+  </p>
+  <br>
 
-
-Pronto, após a repetição dessa sequência algumas vezes, o ensaio é finalizado. Posteriormente, o grupo pensa em utilizar uma balança para ser a condição de parada do ensaio, terminando a operação quando a diferença entre duas varreduras completas for muito pequena.
-
-<p align="center">
-<img src="img/relatorio/ensaio_finalizado.jpeg" width="400px">
-</p>
-<br>
+  Segunda bandeja, na qual o braço com o ímã ligado passa em uma bandeja só com água para limpar o excesso de materiais, visando a limpeza de tudo que não seja magnético.
 
 
-<b>Nota: as especificações dos componentes acima, podem ser encontrado de forma detalha na seção de "Documentação dos componentes."</b>
+  <p align="center">
+  <img src="img/relatorio/segunda_bandeja.jpeg" width="400px">
+  </p>
+  <br>
+
+  Terceira bandeja, na qual o braço quando se aproxima da bandeja com água, desliga o(s) ímã(s) a fim de soltar todo o material magnético na bandeja.
+
+  <p align="center">
+  <img src="img/relatorio/terceira_bandeja.jpeg" width="400px">
+  </p>
+  <br>
+
+
+  Pronto, após a repetição dessa sequência algumas vezes, o ensaio é finalizado. Posteriormente, o grupo pensa em utilizar uma balança para ser a condição de parada do ensaio, terminando a operação quando a diferença entre duas varreduras completas for muito pequena.
+
+  <p align="center">
+  <img src="img/relatorio/ensaio_finalizado.jpeg" width="400px">
+  </p>
+  <br>
+
+
+  <b>Nota: as especificações dos componentes acima, podem ser encontrado de forma detalha na seção de "Documentação dos componentes."</b>
 
 
 # Projeto de Banco de Dados
