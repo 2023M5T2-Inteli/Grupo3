@@ -71,6 +71,9 @@ Concepção de sistema de automação industrial
     - [Módulos funcionais do sistema](#módulos-funcionais-do-sistema)
       - [Projeto dos dispositivos mecânicos](#projeto-dos-dispositivos-mecânicos)
       - [Projeto dos dispositivos Eletrônicos](#projeto-dos-dispositivos-eletrônicos)
+      - [Pinagem Magic Box:](#pinagem-magic-box)
+      - [Esquemático célula de peso:](#esquemático-célula-de-peso)
+- [Planejamento e método de fabricação:](#planejamento-e-método-de-fabricação)
       - [Descrição do Hardware](#descrição-do-hardware)
     - [Requisitos de software](#requisitos-de-software)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
@@ -87,6 +90,7 @@ Concepção de sistema de automação industrial
       - [Eletroímã](#eletroímã-1)
       - [Módulo de peso](#módulo-de-peso)
   - [Teste de Usabilidade](#teste-de-usabilidade)
+    - [Interface](#interface)
 - [Análise de Dados](#análise-de-dados)
 - [Manuais](#manuais)
   - [Manual de Implantação](#manual-de-implantação)
@@ -482,58 +486,81 @@ O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferen
 
 - As placas que serão utilizadas será apena a placa de circuito integrada para o módulo de peso e a célula de carga.
 - O esquemático da célula de peso, os cabos serão todos conectados em uma porta do Magic box sendo eles apresentados no esquemático abaixo. O cabo de cor preta será ligado na porta do GND, o cabo de cor vermelha será ligado na entrada de 5V, o cabo verde será ligado na porta EIO16, o cabo azul será ligado na entrada EIO15.
-  Para a construção da balança será usada uma célula de carga que é um sensor de peso com capacidade de 5kg que será utilizado para fazer a pesagem da amostragem na última bandeja. Esse sensor trata-se de um acessório eletrônico capaz de detectar diferentes cargas que estejam sobre ele, mas que para seu funcionamento deve atuar em conjunto com uma plataforma de prototipagem, que no caso será o microcontrolador embutido na MagicBox, e ligado a um Módulo Conversor Amplificador HX711 com a finalidade de converter alterações da resistência do sensor da balança em dados digitais por meio de um circuito ADC de 24-bits.
-  No centro do sensor de peso 5kg existe uma área sensível responsável por detectar a carga. Dessa forma, será acoplada uma base ao sensor para fazer melhor detecção da carga na última bandeja. Mecanicamente o sensor é composto por uma ponte resistiva que tem a resistência alterada ao ter um peso aplicado sobre ele. Eletricamente, quando o sensor de peso entra em operação, ou seja, quando uma força Peso é aplicada, ele envia uma tensão ao microcontrolador e conforme o peso essa tensão será oscilada. No entanto, a tensão que o sensor envia é tão fraca que é necessário utilizar um amplificador de sinal para a comunicação com o microcontrolador, comunicação esta que não deve ser feita por meio de pinos digitais.
-  O amplificador de sinal usado, então, será o Módulo Conversor Amplificador HX711 que converte as mudanças medidas em alteração do valor da resistência, através do circuito de conversão em potência elétrica.
+  
+- Para a construção da balança será usada uma célula de carga que é um sensor de peso com capacidade de 5kg que será utilizado para fazer a pesagem da amostragem na última bandeja. Esse sensor trata-se de um acessório eletrônico capaz de detectar diferentes cargas que estejam sobre ele, mas que para seu funcionamento deve atuar em conjunto com uma plataforma de prototipagem, que no caso será o microcontrolador embutido na MagicBox, e ligado a um Módulo Conversor Amplificador HX711 com a finalidade de converter alterações da resistência do sensor da balança em dados digitais por meio de um circuito ADC de 24-bits.
+- No centro do sensor de peso 5kg existe uma área sensível responsável por detectar a carga. Dessa forma, será acoplada uma base ao sensor para fazer melhor detecção da carga na última bandeja. Mecanicamente o sensor é composto por uma ponte resistiva que tem a resistência alterada ao ter um peso aplicado sobre ele. Eletricamente, quando o sensor de peso entra em operação, ou seja, quando uma força Peso é aplicada, ele envia uma tensão ao microcontrolador e conforme o peso essa tensão será oscilada. No entanto, a tensão que o sensor envia é tão fraca que é necessário utilizar um amplificador de sinal para a comunicação com o microcontrolador, comunicação esta que não deve ser feita por meio de pinos digitais.
+- O amplificador de sinal usado, então, será o Módulo Conversor Amplificador HX711 que converte as mudanças medidas em alteração do valor da resistência, através do circuito de conversão em potência elétrica.
 
-  ![Alt text](img/relatorio/c%C3%A9luladepeso.png)
-  ![Alt text](img/relatorio/pinosmagicbox.png)
+#### Pinagem Magic Box:
+<p align="center">
+<img src="img/relatorio/pinosmagicbox.png" width="400">
+</p>
+<br> 
+
+#### Esquemático célula de peso: 
+<p align="center">
+<img src="img/relatorio/céluladepeso.png" width="400">
+</p>
+<br> 
+
 
 - MagicBox
-  -Interface: Port1
-  -Pinos: Gnd - Ground
-  5V - Power
-  EIO16 - Interface geral I/O
-  EIO15 - Interface geral I/O
-  -Level Output: 5V - 5V/1A
-  EIO16 - 3.3V_10m output
-  EIO15 - 3.3V_10m output
-  -PWM: EIO16;
-  -Level input: EIO16 - 3.3V_10mA input
-  EIO15 - 3.3V_10mA input
-  -Padrão de resistência:
-  EIO16 - 3.3V com resistência de 51K
-  EIO15 - 3.3V com resistência de 51K
+  - Interface: Port1
+  - Pinos: Gnd - Ground
+  - 5V - Power
+  - EIO16 - Interface geral I/O
+  - EIO15 - Interface geral I/O
+  - Level Output: 5V - 5V/1A
+  - EIO16 - 3.3V_10m output
+  - EIO15 - 3.3V_10m output
+  - PWM: EIO16;
+  - Level input: EIO16 - 3.3V_10mA input
+  - EIO15 - 3.3V_10mA input
+  - Padrão de resistência:
+  - EIO16 - 3.3V com resistência de 51K
+  - EIO15 - 3.3V com resistência de 51K
 
-![Alt text](img/relatorio/Magic%20box.png)
+<p align="center">
+<img src="img/relatorio/Magic%20box.png">
+</p>
+<br>
+
+
 
 - Explicação das entradas:
-  1- Portas de interface PWM para utilização dos sensores.
-  2- interface de motor DC/ Motor de passo
-  3- Saída 12V
-  4- Botão retorno/resetar
-  5- Botão de power
-  6- Oled display
-  7- Botão de controle superior
-  8- Botão para confirmar ou deletar arquivos
-  9- Botão de controle inferior  
-  10- Porta de comunicação com Magician  
-  11- Alimentação de 12V provinda do magician Lite
-  12- Porta de comunicação para conectar com módulo joystick
-  13- Interface para alimentação de energia.
-  14- Entrada e saída de 12V
-  15 - Porta USB
-  16- Porta tipo C
 
-- Lista de materias: Magician box,
-  eletroímã e
-  módulo de peso e célula de peso.
+  1. Portas de interface PWM para utilização dos sensores.
 
-- # Planejamento e método de fabricação: A fabricação da placa de uso será através de uma placa de circuito integrado genérica com os componentes soldados e os cabos de alimentação serão ligados em uma porta do Magic Box.
+  2. interface de motor DC/ Motor de passo
+  3. Saída 12V
+  4. Botão retorno/resetar
+  5. Botão de power
+  6. Oled display
+  7. Botão de controle superior
+  8. Botão para confirmar ou deletar arquivos
+  9. Botão de controle inferior  
+  10. Porta de comunicação com Magician  
+  11. Alimentação de 12V provinda do magician Lite
+  12. Porta de comunicação para conectar com módulo joystick
+  13. Interface para alimentação de energia.
+  14. Entrada e saída de 12V
+  15. Porta USB
+  16. Porta tipo C
+
+
+- Lista de materias: 
+  
+  1. Magician box
+  2. Eletroímã 
+  3. Módulo de peso e célula de peso.
+
+# Planejamento e método de fabricação: 
+- A fabricação da placa de uso será através de uma placa de circuito integrado genérica com os componentes soldados e os cabos de alimentação serão ligados em uma porta do Magic Box.
 
 #### Descrição do Hardware
 
 Para o projeto, serão utilizados alguns componentes eletrônicos que têm a finalidade de cumprir com o objetivo da automação do processo de separação magnética de minérios e entre esses temos o braço robótico Magician Lite, que é conectado com um controlador externo que será o Magic Box através da porta de interface de comunicação com o Magician Lite (item 10 na imagem do campo de projeto de dispositivos eletrônicos). Além desses componentes serão usados, também, um eletroímã que será conectado ao Magic Box pela saída de 12 Volts e um módulo de peso que acompanha uma célula de carga que será conectada também ao Magic Box.
+
 O Magic Box atua como um microcontrolador capaz de rodar scripts que são iniciados e selecionados pela própria interface de display que ele possui, além disso ele também possui uma Ponte H integrado a ele que será utilizado para inverter o campo e desligar o eletroímã através de um comando efetuado no script. O Magician Lite é o braço robótico utilizado com estrutura física para realizar a separação de misturas efetuando o processo operacional dividido em 3 fases como proposto no TAPI, e assim o eletroímã é responsável por coletar o material ferromagnético, e com a ajuda do braço, depositá-lo no recipiente de amostra. Já o módulo de peso e a célula de carga serão utilizados como método de verificar o momento de encerrar o ciclo de separação de misturas através da checagem após o final da separação, em que haverá a verificação para saber se houve ou não alteração no peso da amostra. Assim, quando não houver mais alteração será indicado que não há mais conteúdo ferromagnético na amostra e o processo poderá ser encerrado.
 
 
@@ -548,6 +575,7 @@ O Magic Box atua como um microcontrolador capaz de rodar scripts que são inicia
 ## Design de Interface
 
 A conexão homem máquina da solução do grupo será realizada por meio do Magic Box, controle que faz parte do kit do Dobot Magician Lite, de modo que a interface se mantenha simples e prática, sem a necessidade de outros dispositivos ou acesso à internet para a visualização do status da aplicação. A entrada de dados será feita por meio de um script pré definido, esse que o usuário poderá carregar no Magic Box para iniciar a atuação do robô. Além disso, para ajuste da intensidade de corrente elétrica de acionamento do ímã, distância do braço do robô, assim como sua velocidade, somente será necessário o usuário carregar o script que melhor supra sua necessidade, tendo variações nesses três parâmetros.
+
 Dessa forma, a arquitetura da solução foi idealizada com o intuito de dar maior praticidade ao operador, com a interface completa acoplada ao robô, tendo apenas o cabo de conexão como única distância entre eles. Somado a isso, o grupo decidiu usar o controle como forma de alimentação do(s) ímã(s), além de servir como controlador e alimentação da célula de carga, responsável por realizar o cálculo que conclui a varredura do robô.
 
 - Forma de uso da interface de usuário:
@@ -611,13 +639,6 @@ Pronto, após a repetição dessa sequência algumas vezes, o ensaio é finaliza
 
 <b>Nota: as especificações dos componentes acima, podem ser encontrado de forma detalha na seção de "Documentação dos componentes."</b>
 
-<br>
-
-<p align="center">
-
-  <img src="img/relatorio/esquematico-interface.png">
-</p>
-<br>
 
 # Projeto de Banco de Dados
 
@@ -682,6 +703,8 @@ Também durante está sprint 2, realizamos a construção do módulo de peso que
 </center>
 
 ## Teste de Usabilidade
+
+### Interface
 
 # Análise de Dados
 
