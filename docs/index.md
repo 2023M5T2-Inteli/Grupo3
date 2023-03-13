@@ -90,7 +90,6 @@ Concepção de sistema de automação industrial
       - [Eletroímã](#eletroímã-1)
       - [Módulo de peso](#módulo-de-peso)
   - [Teste de Usabilidade](#teste-de-usabilidade)
-    - [Interface](#interface)
 - [Análise de Dados](#análise-de-dados)
 - [Manuais](#manuais)
   - [Manual de Implantação](#manual-de-implantação)
@@ -728,9 +727,6 @@ Sendo assim, os próprios arquivos salvos no Magic Box serviram como um menu, ao
 - Negativos: O botão de OK, sinalizado em um formato esférico (localizado à direita do teclado), não apresenta um formato intuitivo em relação à sua função. Adicionalmente,  em algumas situações, é necessário pressionar os botões com força para realizar a ação desejada, já que o teclado apresenta baixa sensibilidade.
 
 Embora alguns resultados negativos, foi possível validar a ideia principal do que foi desenvolvido, além de ter algumas percepções do que talvez possa ser melhorado.
-
-
-### Interface
 
 # Análise de Dados
 
