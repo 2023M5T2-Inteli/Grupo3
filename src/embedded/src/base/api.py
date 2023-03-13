@@ -307,6 +307,7 @@ class MbApi(object):
     def get_button_status(self, port):
         return mb.get_button_status(port-1)
 
+
 def print(*res):
     tem_res = ""
     for i in range(len(res)):
@@ -316,7 +317,6 @@ def print(*res):
 
 
 magicbox = MbApi()
-
 
 
 # inject api
@@ -412,6 +412,7 @@ class MliteApi(object):
     def get_arm_speed_ratio(self, mode):
         res = mgl.GetArmSpeedRatio(mode)
         return res[0]
+
 
 m_lite = MliteApi()
 
@@ -556,35 +557,36 @@ class MgApi(object):
         res.pop(0)
         return {"count": count, "aptag_obj": res}
 
+
 go = MgApi()
 
 
 # inject api
 class MagicianOfflineApi(object):
     def set_home(self):
-        mg.SetHOMECmd(1,1)
+        mg.SetHOMECmd(1, 1)
         return True
 
     def ptp(self, mode, x, y, z, r):
-        array_in=[x, y, z, r]
+        array_in = [x, y, z, r]
         mg.SetPTPCmd(1, mode, array_in)
         return True
 
     def set_r(self, r):
         temp = mg.GetPose()
-        temp_in=[temp[4], temp[5], temp[6], r]
+        temp_in = [temp[4], temp[5], temp[6], r]
         mg.SetPTPCmd(1, 2, temp_in)
         return True
 
     def motion_params(self, velocityRatio, accelerationRatio):
-        mg.SetPTPCommonParams(velocityRatio,accelerationRatio)
+        mg.SetPTPCommonParams(velocityRatio, accelerationRatio)
         return True
 
     def jump_params(self, zLimit, jumpHeight):
         mg.SetPTPJumpParams(jumpHeight, zLimit)
         return True
 
-    def set_endeffector_suctioncup(self,enable,on):
+    def set_endeffector_suctioncup(self, enable, on):
         if enable:
             if on:
                 mg.SetEndEffectorSuctionCup(1, 1)
@@ -596,7 +598,7 @@ class MagicianOfflineApi(object):
             mg.SetEndEffectorSuctionCup(0, 0)
             return True
 
-    def set_endeffector_gripper(self,enable,on):
+    def set_endeffector_gripper(self, enable, on):
         if enable:
             if on:
                 mg.SetEndEffectorGripper(1, 1)
@@ -641,5 +643,6 @@ class MagicianOfflineApi(object):
     def get_arm_speed_ratio(self, mode):
         res = mg.GetArmSpeedRatio(mode)
         return res[0]
+
 
 magician = MagicianOfflineApi()

@@ -3,11 +3,12 @@ import sys
 sys.path.append('Script')  # Add the path to the script folder
 
 if __name__ == '__main__':
-    import modules.controller as Controller
+    from modules import *
+
+    from base.api import *
+
+    while True:
+        magicbox.set_tts_tone(port=2, index=1)
+        Time.sleep(100)
 
     # Controller.main()
-    from base.api import *
-    from DobotEDU import *
-
-    m_lite.set_ptpcmd(ptp_mode=0, x=250, y=0, z=50, r=0)
-    m_lite.set_homecmd()

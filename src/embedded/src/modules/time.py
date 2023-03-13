@@ -1,4 +1,4 @@
-import dType
+from base.api import *
 
 
 class Time:
