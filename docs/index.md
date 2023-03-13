@@ -474,6 +474,12 @@ O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferen
 
 #### Projeto dos dispositivos Eletrônicos
 
+#### Descrição do Hardware
+
+Para o projeto, serão utilizados alguns componentes eletrônicos que têm a finalidade de cumprir com o objetivo da automação do processo de separação magnética de minérios e entre esses temos o braço robótico Magician Lite, que é conectado com um controlador externo que será o Magic Box através da porta de interface de comunicação com o Magician Lite (item 10 na imagem do campo de projeto de dispositivos eletrônicos). Além desses componentes serão usados, também, um eletroímã que será conectado ao Magic Box pela saída de 12 Volts e um módulo de peso que acompanha uma célula de carga que será conectada também ao Magic Box.
+O Magic Box atua como um microcontrolador capaz de rodar scripts que são iniciados e selecionados pela própria interface de display que ele possui, além disso ele também possui uma Ponte H integrado a ele que será utilizado para inverter o campo e desligar o eletroímã através de um comando efetuado no script. O Magician Lite é o braço robótico utilizado com estrutura física para realizar a separação de misturas efetuando o processo operacional dividido em 3 fases como proposto no TAPI, e assim o eletroímã é responsável por coletar o material ferromagnético, e com a ajuda do braço, depositá-lo no recipiente de amostra. Já o módulo de peso e a célula de carga serão utilizados como método de verificar o momento de encerrar o ciclo de separação de misturas através da checagem após o final da separação, em que haverá a verificação para saber se houve ou não alteração no peso da amostra. Assim, quando não houver mais alteração será indicado que não há mais conteúdo ferromagnético na amostra e o processo poderá ser encerrado.
+
+
 ### Requisitos de software
 
 ## Tecnologias Utilizadas
