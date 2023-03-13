@@ -704,6 +704,31 @@ Também durante está sprint 2, realizamos a construção do módulo de peso que
 
 ## Teste de Usabilidade
 
+Como citado anteriormente, o modelo de interface escolhido para o protótipo desenvolvido pelo grupo foi o próprio Magic Box do Dobot, ao qual é fornecido pelo kit. Essa escolha foi feita pelo fato de ser um microcontrolador, ponte-H, ter uma interface intuitiva e amigável, além de ter uma comunicação rápida e direta por meio de dois cabos: um de alimentação e outro de comunicação com o braço robótico. 
+
+O Magic Box já possui uma interface em inglês, totalmente criada para facilitar o processo de utilização. Entretanto, o Magic Box não permite a customização de sua interface, pois ainda não foi disponibilizado para open source. Além disso, são identificados apenas arquivos .py, mesmo que uma pasta seja criada em um dos seus menus: Scripts ou Playback, no que lhe concerne, não serão exibidos no display.
+
+Sendo assim, durante essa sprint, decidimos criar códigos em arquivos .py, aos quais foram nomeados de acordo com suas funcionalidades, para que assim fosse possível que os usuários identificassem de maneira rápida, sendo acrescentado uma numeração na frente, como mostra a imagem abaixo:
+
+
+ <p align="center">
+  <img src="img/relatorio/iniciar_ensaio.jpeg" width="400px">
+  </p>
+  <br>
+
+   <p align="center">
+  <img src="img/relatorio/reiniciar-ensaio.jpg" width="400px">
+  </p>
+  <br>
+
+Sendo assim, os próprios arquivos salvos no Magic Box serviram como um menu, aos quais os usuários poderão utilizar e navegar entre eles. Além de possibilitar que ao longo do desenvolvimento do protótipo e posteriormente, seja possível alterar e customizar de forma mais rápida e fácil. Após essa construção, foi realizado alguns testes com usuários, obtendo os seguintes resultados:
+
+- Positivos: O menu funciona conforme o pensado, além de ter uma interface mais limpa. Também é intuitivo para aqueles que não utilizaram a solução anteriormente.
+
+- Negativos: O botão de OK, sinalizado em um formato esférico (localizado à direita do teclado), não apresenta um formato intuitivo em relação à sua função. Adicionalmente,  em algumas situações, é necessário pressionar os botões com força para realizar a ação desejada, já que o teclado apresenta baixa sensibilidade.
+
+Embora alguns resultados negativos, foi possível validar a ideia principal do que foi desenvolvido, além de ter algumas percepções do que talvez possa ser melhorado.
+
 ### Interface
 
 # Análise de Dados
