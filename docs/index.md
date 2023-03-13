@@ -68,6 +68,10 @@ Concepção de sistema de automação industrial
       - [Especificações da Ponte H:](#especificações-da-ponte-h)
       - [Célula de Peso e Módulo Hx711 Sensor de Peso:](#célula-de-peso-e-módulo-hx711-sensor-de-peso)
       - [Especificações do Célula de Peso e Módulo Hx711 Sensor de Peso:](#especificações-do-célula-de-peso-e-módulo-hx711-sensor-de-peso)
+    - [Módulos funcionais do sistema](#módulos-funcionais-do-sistema)
+      - [Projeto dos dispositivos mecânicos](#projeto-dos-dispositivos-mecânicos)
+      - [Projeto dos dispositivos Eletrônicos](#projeto-dos-dispositivos-eletrônicos)
+      - [Descrição do Hardware](#descrição-do-hardware)
     - [Requisitos de software](#requisitos-de-software)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [UX e UI Design](#ux-e-ui-design)
@@ -78,9 +82,10 @@ Concepção de sistema de automação industrial
   - [Modelo Lógico](#modelo-lógico)
 - [Teste de Software](#teste-de-software)
   - [Testes Unitários](#testes-unitários)
-    - [Braço mecanico](#braço-mecanico)
-    - [Eletroímã](#eletroímã-1)
-    - [Módulo de peso](#módulo-de-peso)
+    - [Sprint 2](#sprint-2)
+      - [Braço mecanico](#braço-mecanico)
+      - [Eletroímã](#eletroímã-1)
+      - [Módulo de peso](#módulo-de-peso)
   - [Teste de Usabilidade](#teste-de-usabilidade)
 - [Análise de Dados](#análise-de-dados)
 - [Manuais](#manuais)
@@ -474,13 +479,13 @@ O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferen
 
 #### Projeto dos dispositivos Eletrônicos
 
-<<<<<<< HEAD
 
 - As placas que serão utilizadas será apena a placa de circuito integrada para o módulo de peso e a célula de carga.
 - O esquemático da célula de peso, os cabos serão todos conectados em uma porta do Magic box sendo eles apresentados no esquemático abaixo. O cabo de cor preta será ligado na porta do GND, o cabo de cor vermelha será ligado na entrada de 5V, o cabo verde será ligado na porta EIO16, o cabo azul será ligado na entrada EIO15.
   Para a construção da balança será usada uma célula de carga que é um sensor de peso com capacidade de 5kg que será utilizado para fazer a pesagem da amostragem na última bandeja. Esse sensor trata-se de um acessório eletrônico capaz de detectar diferentes cargas que estejam sobre ele, mas que para seu funcionamento deve atuar em conjunto com uma plataforma de prototipagem, que no caso será o microcontrolador embutido na MagicBox, e ligado a um Módulo Conversor Amplificador HX711 com a finalidade de converter alterações da resistência do sensor da balança em dados digitais por meio de um circuito ADC de 24-bits.
   No centro do sensor de peso 5kg existe uma área sensível responsável por detectar a carga. Dessa forma, será acoplada uma base ao sensor para fazer melhor detecção da carga na última bandeja. Mecanicamente o sensor é composto por uma ponte resistiva que tem a resistência alterada ao ter um peso aplicado sobre ele. Eletricamente, quando o sensor de peso entra em operação, ou seja, quando uma força Peso é aplicada, ele envia uma tensão ao microcontrolador e conforme o peso essa tensão será oscilada. No entanto, a tensão que o sensor envia é tão fraca que é necessário utilizar um amplificador de sinal para a comunicação com o microcontrolador, comunicação esta que não deve ser feita por meio de pinos digitais.
   O amplificador de sinal usado, então, será o Módulo Conversor Amplificador HX711 que converte as mudanças medidas em alteração do valor da resistência, através do circuito de conversão em potência elétrica.
+
   ![Alt text](img/relatorio/c%C3%A9luladepeso.png)
   ![Alt text](img/relatorio/pinosmagicbox.png)
 
@@ -531,7 +536,6 @@ O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferen
 Para o projeto, serão utilizados alguns componentes eletrônicos que têm a finalidade de cumprir com o objetivo da automação do processo de separação magnética de minérios e entre esses temos o braço robótico Magician Lite, que é conectado com um controlador externo que será o Magic Box através da porta de interface de comunicação com o Magician Lite (item 10 na imagem do campo de projeto de dispositivos eletrônicos). Além desses componentes serão usados, também, um eletroímã que será conectado ao Magic Box pela saída de 12 Volts e um módulo de peso que acompanha uma célula de carga que será conectada também ao Magic Box.
 O Magic Box atua como um microcontrolador capaz de rodar scripts que são iniciados e selecionados pela própria interface de display que ele possui, além disso ele também possui uma Ponte H integrado a ele que será utilizado para inverter o campo e desligar o eletroímã através de um comando efetuado no script. O Magician Lite é o braço robótico utilizado com estrutura física para realizar a separação de misturas efetuando o processo operacional dividido em 3 fases como proposto no TAPI, e assim o eletroímã é responsável por coletar o material ferromagnético, e com a ajuda do braço, depositá-lo no recipiente de amostra. Já o módulo de peso e a célula de carga serão utilizados como método de verificar o momento de encerrar o ciclo de separação de misturas através da checagem após o final da separação, em que haverá a verificação para saber se houve ou não alteração no peso da amostra. Assim, quando não houver mais alteração será indicado que não há mais conteúdo ferromagnético na amostra e o processo poderá ser encerrado.
 
-> > > > > > > 89553c2abf3410a27b0ffb1e39e63100199cdefc
 
 ### Requisitos de software
 
@@ -546,32 +550,65 @@ O Magic Box atua como um microcontrolador capaz de rodar scripts que são inicia
 A conexão homem máquina da solução do grupo será realizada por meio do Magic Box, controle que faz parte do kit do Dobot Magician Lite, de modo que a interface se mantenha simples e prática, sem a necessidade de outros dispositivos ou acesso à internet para a visualização do status da aplicação. A entrada de dados será feita por meio de um script pré definido, esse que o usuário poderá carregar no Magic Box para iniciar a atuação do robô. Além disso, para ajuste da intensidade de corrente elétrica de acionamento do ímã, distância do braço do robô, assim como sua velocidade, somente será necessário o usuário carregar o script que melhor supra sua necessidade, tendo variações nesses três parâmetros.
 Dessa forma, a arquitetura da solução foi idealizada com o intuito de dar maior praticidade ao operador, com a interface completa acoplada ao robô, tendo apenas o cabo de conexão como única distância entre eles. Somado a isso, o grupo decidiu usar o controle como forma de alimentação do(s) ímã(s), além de servir como controlador e alimentação da célula de carga, responsável por realizar o cálculo que conclui a varredura do robô.
 
-Forma de uso da interface de usuário:
-O controle Magic Box é ligado segurando o botão redondo no centro por um tempo. Após isso, as opções citadas abaixo aparecerão e, para selecioná-las, o usuário deve usar o botão com um círculo como forma de confirmação. Por outro lado, a seta presente no botão esquerdo serve como retorno, cancelando ou voltando a operação realizada.
+- Forma de uso da interface de usuário:
+  
+O controle Magic Box é ligado segurando o botão redondo no centro por um tempo. Após isso, as opções citadas abaixo aparecerão e, para selecioná-las, o usuário deve usar o botão com um círculo como forma de confirmação. Por outro lado, a seta presente no botão esquerdo serve como retorno, cancelando ou voltando a operação realizada ou até mesmo para reiniciar o Magic Box.
+
 Seleção do método de uso: Nessa parte do processo, o usário poderá decidir entre as opções de uso do Magic Box, a primeira para rodar o script, contida na imagem abaixo. Vale ressaltar que para usar o controle, o usário deve ter conhecimento da função dos botões do controlador.
-![Alt text](img/relatorio/selecao_script.jpeg)
-Por sua vez, a segunda opção de uso do Magic Box, o playback, serve para rodar o último código executado pelo Magic Box.
-![Alt text](img/relatorio/selecao_novamente.jpeg)
+<p align="center">
+<img src="img/relatorio/selecao_script.jpeg" width="400px">
+</p>
+<br>
 
 Seleção de arquivos de script python(.py) em ambos os métodos de uso: Nessa parte do processo, o usuário poderá decidir entre os arquivos já carregados para o Magic Box. Dessa maneira, o grupo pensa em alterar os parâmetros em diferentes scripts para atender a todas as necessidades que o usuário possa ter.
 Opção para carregar do zero script enviado ao controlador.
-![Alt text](img/relatorio/iniciar_ensaio.jpeg)
+
+<p align="center">
+<img src="img/relatorio/iniciar_ensaio.jpeg" width="400px">
+</p>
+<br>
+
 Já no método playback, o usuário apenas poderá escolher reexecutar o último arquivo de script executado.
-![Alt text](img/relatorio/selecao_novamente.jpeg)
+
+<p align="center">
+<img src="img/relatorio/selecao_novamente.jpeg" width="400px">
+</p>
+<br>
+
 
 Status da operação: Nessa etapa do processo, o usuário acompanha pelo display em qual etapa está o processo, recebendo feedback se algo está fora dos conformes. Além disso, vale ressaltar que ele poderá cancelar o processo a qualquer momento que quiser, bastando apertar o botão de voltar e confirmar o cancelamento.
 
 Primeira bandeja, na qual o braço com o ímã ligado recolhe materiais magnéticos que vêm acompanhados de materiais não magnéticos da amostra.
-![Alt text](img/relatorio/primeira_bandeja.jpeg)
+
+<p align="center">
+<img src="img/relatorio/primeira_bandeja.jpeg" width="400px">
+</p>
+<br>
 
 Segunda bandeja, na qual o braço com o ímã ligado passa em uma bandeja só com água para limpar o excesso de materiais, visando a limpeza de tudo que não seja magnético.
-![Alt text](img/relatorio/segunda_bandeja.jpeg)
+
+
+<p align="center">
+<img src="img/relatorio/segunda_bandeja.jpeg" width="400px">
+</p>
+<br>
 
 Terceira bandeja, na qual o braço quando se aproxima da bandeja com água, desliga o(s) ímã(s) a fim de soltar todo o material magnético na bandeja.
-![Alt text](img/relatorio/terceira_bandeja.jpeg)
+
+<p align="center">
+<img src="img/relatorio/terceira_bandeja.jpeg" width="400px">
+</p>
+<br>
+
 
 Pronto, após a repetição dessa sequência algumas vezes, o ensaio é finalizado. Posteriormente, o grupo pensa em utilizar uma balança para ser a condição de parada do ensaio, terminando a operação quando a diferença entre duas varreduras completas for muito pequena.
-![Alt text](img/relatorio/ensaio_finalizado.jpeg)
+
+<p align="center">
+<img src="img/relatorio/ensaio_finalizado.jpeg" width="400px">
+</p>
+<br>
+
+
 <b>Nota: as especificações dos componentes acima, podem ser encontrado de forma detalha na seção de "Documentação dos componentes."</b>
 
 <br>
@@ -592,7 +629,9 @@ Pronto, após a repetição dessa sequência algumas vezes, o ensaio é finaliza
 
 ## Testes Unitários
 
-### Braço mecanico
+### Sprint 2
+
+#### Braço mecanico
 
 Para a primeira versão do protótipo do braço robótico (Magician Lite), foi construído um código-fonte que permitisse a comunicação entre o braço robótico e um computador atraves do controle de seus eixos X, Y e Z por meio de um controle de Xbox. A escolha do controle de Xbox foi feita, inicialmente, pelo fato de ser o que chega ao mais próximo de nosso interface proposta, já que ambos se comunicarem por meio de um cabo a um receptor de entrada/saída (computador). Sendo assim, realizamos teste de movimentação ao qual notamos os seguintes problemas/ delimitações do Dobot Magician:
 
@@ -609,7 +648,7 @@ Para a primeira versão do protótipo do braço robótico (Magician Lite), foi c
 
 </center>
 
-### Eletroímã
+#### Eletroímã
 
 Para fim de primeira versão do protótipo do eletroímã, realizamos por meio da ligação de um eletroímã a uma ponte H, por meio disto podemos testar três níveis inicias de intercidades do campo magnético passado energia manualmente pela fonte digital. Durante os teste, encontramos algumas possíveis delimitações dos componentes, aos quais pode afetar a construção do protótipo:
 
@@ -626,7 +665,7 @@ Para fim de primeira versão do protótipo do eletroímã, realizamos por meio d
 
 </center>
 
-### Módulo de peso
+#### Módulo de peso
 
 Também durante está sprint 2, realizamos a construção do módulo de peso que serviram como uma das peças principais do nosso protótipo, atuando como um mecanismo de forma de parada do processo de separação da amostra. Após a construção da primeira versão, realizamos testes para ver as possibilidades e possíveis delimitações (sendo encontrado mais delimitações para a ideia principal de uso do módulo):
 
