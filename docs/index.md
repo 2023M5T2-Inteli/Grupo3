@@ -73,9 +73,8 @@ Concepção de sistema de automação industrial
       - [Projeto dos dispositivos Eletrônicos](#projeto-dos-dispositivos-eletrônicos)
       - [Pinagem Magic Box:](#pinagem-magic-box)
       - [Esquemático célula de peso:](#esquemático-célula-de-peso)
-- [Planejamento e método de fabricação:](#planejamento-e-método-de-fabricação)
-      - [Descrição do Hardware](#descrição-do-hardware)
-    - [Requisitos de software](#requisitos-de-software)
+- [Planejamento e método de fabricação:](#planejamento-e-método-de-fabricação) - [Descrição do Hardware](#descrição-do-hardware)
+  - [Requisitos de software](#requisitos-de-software)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [UX e UI Design](#ux-e-ui-design)
   - [Wireframe + Storyboard](#wireframe--storyboard)
@@ -329,25 +328,6 @@ Um croqui trata-se de um método de representação gráfica, utilizado principa
 
 ### Componentes
 
-#### Raspberry Pi Pico W:
-
-- O Raspberry Pi pico w é um microcontrolador com acesso wireless, o que permite uma conexão via bluetooth e via wifi. Assim ele pode ser usado para sistemas embarcados e controlar dados de sensores e mandar informações para atuadores sendo fundamental na execução do projeto tanto para enviar como receber os dados.
-<p align="center">
-<img src="img/relatorio/raspberry.jpeg" width="400px">
-</p>
-<br>
-
-#### Especificações do Raspberry Pi Pico W:
-
-- Microcontrolador RP2040 (Silicon Designed by Raspberry Pi)
-- Dual-Core ARM Cortex M0+ com clock até 133MHz.
-- 264kB de memória SRAM.
-- 2MB de memória Flash.
-- 26 pinos de GPIO multifunção.
-- 2× SPI, 2× I2C, 2× UART, 3× 12-bit ADC e 16× canais PWM.
-- Conectividade via WiFi 2.4GHz 802.11n.
-- Certificação ANATEL: 134082210629.
-
 #### Braço Robótico Dobot Magician Lite
 
 - O braço robótico Dobot Magician lite é um robo que apresenta uma interface em software que dá suporte para a programação do hardware, possibilitando a utilização da garra para tarefas diversas tanto em protótipos reais como no estudo de interação entre inteligência artificial e hardware.
@@ -366,44 +346,6 @@ Um croqui trata-se de um método de representação gráfica, utilizado principa
 - Fonte de Alimentação: 100V~240V, 50/60 Hz.
 - Alimentação: 12V/7A DC
 - Controle por USB virtual porta serial / Porta serial
-
-#### Teclado Matricial de Membrana:
-
-- O teclado matricial de membrana é utilizado para projetos que utiizam um teclado alfa numérico que possua ligação com um monitor serial para que seja visivel as respostas de interação através de um monitor serial ligado a ele.
-
-<p align="center">
-<img src="img/relatorio/teclado-matricial.jpg" width="400px">
-</p>
-<br>
-
-#### Especificações do Teclado Matricial de Membrana:
-
-- Tensão de operação (máxima): 35VDC
-- Corrente de operação (máxima): 100mA
-- Quantidade de teclas: 16
-- Conector: 8 vias (4 linhas / 4 colunas)
-- Isolação: 100V / 100MΩ
-- Tempo de contato: 5ms
-- Temperatura de operação: 0 a 70° celsius
-
-#### Display LCD:
-
-- O display LCD é utilizado para apresentar frases e numeros tendo capacidade de mostrar 16 caracteres em 2 linhas, podendo ser progamado para apresentar dados e informaçoes de sensores ou atuadores ligados a ele, possibilitando assim, a vericação do estágio em que o código se encontra.
-
-<p align="center">
-<img src="img/relatorio/LCD.jpg" width="400px">
-</p>
-<br>
-
-#### Especificações do Display LCD:
-
-- Controlador: HD44780;
-- Cor backlight: Azul;
-- Cor escrita: Branca;
-- Dimensão Total: 80mm X 36mm X 12mm;
-- Dimensão Área visível: 64.5mm X 14mm;
-- Dimensão Caracter: 3mm X 5.02mm;
-- Dimensão Ponto: 0.52mm X 0.54mm.
 
 #### Eletroímã:
 
@@ -428,25 +370,6 @@ O Eletroimã é um componente eletrônico moderno com funcionalidade básica sem
 - Diâmetro: 20mm;
 - Altura: 15mm;
 - Peso: 24g.
-
-#### Ponte H:
-
-- A ponte H é um driver usado em motores de corrente contínua, e que permite o motor girar tanto no sentido horário quanto no sentido anti-horário. Além de permitir alternar o sentido de rotação do motor, ela também exige pouquíssima energia do circuito de comando.
-<p align="center">
-<img src="img/relatorio/ponte-h.jpg" width="400px">
-</p>
-<br>
-
-#### Especificações da Ponte H:
-
-- Tensão de Operação: 4~35v.
-- Chip: ST L298N (Datasheet)
-- Controle de 2 motores DC ou 1 motor de passo.
-- Corrente de Operação máxima: 2A por canal ou 4A max.
-- Tensão lógica: 5v.
-- Corrente lógica: 0~36mA.
-- Limites de Temperatura: -20 a +135°C.
-- Potência Máxima: 25W.
 
 #### Célula de Peso e Módulo Hx711 Sensor de Peso:
 
@@ -482,26 +405,25 @@ O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferen
 
 #### Projeto dos dispositivos Eletrônicos
 
-
 - As placas que serão utilizadas será apena a placa de circuito integrada para o módulo de peso e a célula de carga.
 - O esquemático da célula de peso, os cabos serão todos conectados em uma porta do Magic box sendo eles apresentados no esquemático abaixo. O cabo de cor preta será ligado na porta do GND, o cabo de cor vermelha será ligado na entrada de 5V, o cabo verde será ligado na porta EIO16, o cabo azul será ligado na entrada EIO15.
-  
 - Para a construção da balança será usada uma célula de carga que é um sensor de peso com capacidade de 5kg que será utilizado para fazer a pesagem da amostragem na última bandeja. Esse sensor trata-se de um acessório eletrônico capaz de detectar diferentes cargas que estejam sobre ele, mas que para seu funcionamento deve atuar em conjunto com uma plataforma de prototipagem, que no caso será o microcontrolador embutido na MagicBox, e ligado a um Módulo Conversor Amplificador HX711 com a finalidade de converter alterações da resistência do sensor da balança em dados digitais por meio de um circuito ADC de 24-bits.
 - No centro do sensor de peso 5kg existe uma área sensível responsável por detectar a carga. Dessa forma, será acoplada uma base ao sensor para fazer melhor detecção da carga na última bandeja. Mecanicamente o sensor é composto por uma ponte resistiva que tem a resistência alterada ao ter um peso aplicado sobre ele. Eletricamente, quando o sensor de peso entra em operação, ou seja, quando uma força Peso é aplicada, ele envia uma tensão ao microcontrolador e conforme o peso essa tensão será oscilada. No entanto, a tensão que o sensor envia é tão fraca que é necessário utilizar um amplificador de sinal para a comunicação com o microcontrolador, comunicação esta que não deve ser feita por meio de pinos digitais.
 - O amplificador de sinal usado, então, será o Módulo Conversor Amplificador HX711 que converte as mudanças medidas em alteração do valor da resistência, através do circuito de conversão em potência elétrica.
 
 #### Pinagem Magic Box:
+
 <p align="center">
 <img src="img/relatorio/pinosmagicbox.png" width="400">
 </p>
-<br> 
+<br>
 
-#### Esquemático célula de peso: 
+#### Esquemático célula de peso:
+
 <p align="center">
 <img src="img/relatorio/céluladepeso.png" width="400">
 </p>
-<br> 
-
+<br>
 
 - MagicBox
   - Interface: Port1
@@ -524,8 +446,6 @@ O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferen
 </p>
 <br>
 
-
-
 - Explicação das entradas:
 
   1. Portas de interface PWM para utilização dos sensores.
@@ -537,8 +457,8 @@ O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferen
   6. Oled display
   7. Botão de controle superior
   8. Botão para confirmar ou deletar arquivos
-  9. Botão de controle inferior  
-  10. Porta de comunicação com Magician  
+  9. Botão de controle inferior
+  10. Porta de comunicação com Magician
   11. Alimentação de 12V provinda do magician Lite
   12. Porta de comunicação para conectar com módulo joystick
   13. Interface para alimentação de energia.
@@ -546,14 +466,14 @@ O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferen
   15. Porta USB
   16. Porta tipo C
 
+- Lista de materias:
 
-- Lista de materias: 
-  
   1. Magician box
-  2. Eletroímã 
+  2. Eletroímã
   3. Módulo de peso e célula de peso.
 
-# Planejamento e método de fabricação: 
+# Planejamento e método de fabricação:
+
 - A fabricação da placa de uso será através de uma placa de circuito integrado genérica com os componentes soldados e os cabos de alimentação serão ligados em uma porta do Magic Box.
 
 #### Descrição do Hardware
@@ -561,7 +481,6 @@ O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferen
 Para o projeto, serão utilizados alguns componentes eletrônicos que têm a finalidade de cumprir com o objetivo da automação do processo de separação magnética de minérios e entre esses temos o braço robótico Magician Lite, que é conectado com um controlador externo que será o Magic Box através da porta de interface de comunicação com o Magician Lite (item 10 na imagem do campo de projeto de dispositivos eletrônicos). Além desses componentes serão usados, também, um eletroímã que será conectado ao Magic Box pela saída de 12 Volts e um módulo de peso que acompanha uma célula de carga que será conectada também ao Magic Box.
 
 O Magic Box atua como um microcontrolador capaz de rodar scripts que são iniciados e selecionados pela própria interface de display que ele possui, além disso ele também possui uma Ponte H integrado a ele que será utilizado para inverter o campo e desligar o eletroímã através de um comando efetuado no script. O Magician Lite é o braço robótico utilizado com estrutura física para realizar a separação de misturas efetuando o processo operacional dividido em 3 fases como proposto no TAPI, e assim o eletroímã é responsável por coletar o material ferromagnético, e com a ajuda do braço, depositá-lo no recipiente de amostra. Já o módulo de peso e a célula de carga serão utilizados como método de verificar o momento de encerrar o ciclo de separação de misturas através da checagem após o final da separação, em que haverá a verificação para saber se houve ou não alteração no peso da amostra. Assim, quando não houver mais alteração será indicado que não há mais conteúdo ferromagnético na amostra e o processo poderá ser encerrado.
-
 
 ### Requisitos de software
 
@@ -598,66 +517,61 @@ Dessa forma, a arquitetura da solução foi idealizada com o intuito de dar maio
 
 
 - Forma de uso da interface de usuário:
-  
+
   O controle Magic Box é ligado segurando o botão redondo no centro por um tempo. Após isso, as opções citadas abaixo aparecerão e, para selecioná-las, o usuário deve usar o botão com um círculo como forma de confirmação. Por outro lado, a seta presente no botão esquerdo serve como retorno, cancelando ou voltando a operação realizada ou até mesmo para reiniciar o Magic Box.
 
   Seleção do método de uso: Nessa parte do processo, o usário poderá decidir entre as opções de uso do Magic Box, a primeira para rodar o script, contida na imagem abaixo. Vale ressaltar que para usar o controle, o usário deve ter conhecimento da função dos botões do controlador.
-  <p align="center">
-  <img src="img/relatorio/selecao_script.jpeg" width="400px">
-  </p>
-  <br>
+    <p align="center">
+    <img src="img/relatorio/selecao_script.jpeg" width="400px">
+    </p>
+    <br>
 
   Seleção de arquivos de script python(.py) em ambos os métodos de uso: Nessa parte do processo, o usuário poderá decidir entre os arquivos já carregados para o Magic Box. Dessa maneira, o grupo pensa em alterar os parâmetros em diferentes scripts para atender a todas as necessidades que o usuário possa ter.
-Opção para carregar do zero script enviado ao controlador.
+  Opção para carregar do zero script enviado ao controlador.
 
-  <p align="center">
-  <img src="img/relatorio/iniciar_ensaio.jpeg" width="400px">
-  </p>
-  <br>
+    <p align="center">
+    <img src="img/relatorio/iniciar_ensaio.jpeg" width="400px">
+    </p>
+    <br>
 
   Já no método playback, o usuário apenas poderá escolher reexecutar o último arquivo de script executado.
 
-  <p align="center">
-  <img src="img/relatorio/selecao_novamente.jpeg" width="400px">
-  </p>
-  <br>
-
+    <p align="center">
+    <img src="img/relatorio/selecao_novamente.jpeg" width="400px">
+    </p>
+    <br>
 
   Status da operação: Nessa etapa do processo, o usuário acompanha pelo display em qual etapa está o processo, recebendo feedback se algo está fora dos conformes. Além disso, vale ressaltar que ele poderá cancelar o processo a qualquer momento que quiser, bastando apertar o botão de voltar e confirmar o cancelamento.
 
   Primeira bandeja, na qual o braço com o ímã ligado recolhe materiais magnéticos que vêm acompanhados de materiais não magnéticos da amostra.
 
-  <p align="center">
-  <img src="img/relatorio/primeira_bandeja.jpeg" width="400px">
-  </p>
-  <br>
+    <p align="center">
+    <img src="img/relatorio/primeira_bandeja.jpeg" width="400px">
+    </p>
+    <br>
 
   Segunda bandeja, na qual o braço com o ímã ligado passa em uma bandeja só com água para limpar o excesso de materiais, visando a limpeza de tudo que não seja magnético.
 
-
-  <p align="center">
-  <img src="img/relatorio/segunda_bandeja.jpeg" width="400px">
-  </p>
-  <br>
+    <p align="center">
+    <img src="img/relatorio/segunda_bandeja.jpeg" width="400px">
+    </p>
+    <br>
 
   Terceira bandeja, na qual o braço quando se aproxima da bandeja com água, desliga o(s) ímã(s) a fim de soltar todo o material magnético na bandeja.
 
-  <p align="center">
-  <img src="img/relatorio/terceira_bandeja.jpeg" width="400px">
-  </p>
-  <br>
-
+    <p align="center">
+    <img src="img/relatorio/terceira_bandeja.jpeg" width="400px">
+    </p>
+    <br>
 
   Pronto, após a repetição dessa sequência algumas vezes, o ensaio é finalizado. Posteriormente, o grupo pensa em utilizar uma balança para ser a condição de parada do ensaio, terminando a operação quando a diferença entre duas varreduras completas for muito pequena.
 
-  <p align="center">
-  <img src="img/relatorio/ensaio_finalizado.jpeg" width="400px">
-  </p>
-  <br>
-
+    <p align="center">
+    <img src="img/relatorio/ensaio_finalizado.jpeg" width="400px">
+    </p>
+    <br>
 
   <b>Nota: as especificações dos componentes acima, podem ser encontrado de forma detalha na seção de "Documentação dos componentes."</b>
-
 
 # Projeto de Banco de Dados
 
@@ -723,12 +637,11 @@ Também durante está sprint 2, realizamos a construção do módulo de peso que
 
 ## Teste de Usabilidade
 
-Como citado anteriormente, o modelo de interface escolhido para o protótipo desenvolvido pelo grupo foi o próprio Magic Box do Dobot, ao qual é fornecido pelo kit. Essa escolha foi feita pelo fato de ser um microcontrolador, ponte-H, ter uma interface intuitiva e amigável, além de ter uma comunicação rápida e direta por meio de dois cabos: um de alimentação e outro de comunicação com o braço robótico. 
+Como citado anteriormente, o modelo de interface escolhido para o protótipo desenvolvido pelo grupo foi o próprio Magic Box do Dobot, ao qual é fornecido pelo kit. Essa escolha foi feita pelo fato de ser um microcontrolador, ponte-H, ter uma interface intuitiva e amigável, além de ter uma comunicação rápida e direta por meio de dois cabos: um de alimentação e outro de comunicação com o braço robótico.
 
 O Magic Box já possui uma interface em inglês, totalmente criada para facilitar o processo de utilização. Entretanto, o Magic Box não permite a customização de sua interface, pois ainda não foi disponibilizado para open source. Além disso, são identificados apenas arquivos .py, mesmo que uma pasta seja criada em um dos seus menus: Scripts ou Playback, no que lhe concerne, não serão exibidos no display.
 
 Sendo assim, durante essa sprint, decidimos criar códigos em arquivos .py, aos quais foram nomeados de acordo com suas funcionalidades, para que assim fosse possível que os usuários identificassem de maneira rápida, sendo acrescentado uma numeração na frente, como mostra a imagem abaixo:
-
 
  <p align="center">
   <img src="img/relatorio/iniciar_ensaio.jpeg" width="400px">
@@ -744,7 +657,7 @@ Sendo assim, os próprios arquivos salvos no Magic Box serviram como um menu, ao
 
 - Positivos: O menu funciona conforme o pensado, além de ter uma interface mais limpa. Também é intuitivo para aqueles que não utilizaram a solução anteriormente.
 
-- Negativos: O botão de OK, sinalizado em um formato esférico (localizado à direita do teclado), não apresenta um formato intuitivo em relação à sua função. Adicionalmente,  em algumas situações, é necessário pressionar os botões com força para realizar a ação desejada, já que o teclado apresenta baixa sensibilidade.
+- Negativos: O botão de OK, sinalizado em um formato esférico (localizado à direita do teclado), não apresenta um formato intuitivo em relação à sua função. Adicionalmente, em algumas situações, é necessário pressionar os botões com força para realizar a ação desejada, já que o teclado apresenta baixa sensibilidade.
 
 Embora alguns resultados negativos, foi possível validar a ideia principal do que foi desenvolvido, além de ter algumas percepções do que talvez possa ser melhorado.
 
