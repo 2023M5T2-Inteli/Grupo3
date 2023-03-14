@@ -168,6 +168,17 @@ def finish():
     Time.sleep(500) # Wait for 500 milliseconds
     Display.print("Ensaio finalizado!") # Print "Ensaio finalizado!" message to the display
 
+def movimentationCircle():
+    Dobot.set_home()
+    Dobot.move_to(-240,-255,-55, 0)
+    Time.sleep(1000)
+    Dobot.move_to(-240,255,-55, 0)
+    Time.sleep(1000)
+
+    Dobot.move_to(-165,172,-55, 0)
+    Time.sleep(1000)
+    Dobot.move_to(-165,-172,-55, 0)
+    
 def main():
     Dobot.setup() # Set up Dobot
     isScan = 0 # Initialize isScan variable to 0
