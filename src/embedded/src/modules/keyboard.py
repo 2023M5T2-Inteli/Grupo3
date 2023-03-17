@@ -4,11 +4,11 @@ from modules import Time
 
 
 class ButtonsPinMaping:
-    UP = 'Y1'
-    DOWN = 'Y2'
-    LEFT = 'Y3'
-    RIGHT = 'Y4'
-    CENTER = 'Y5'
+    UP = 'E3'
+    DOWN = 'C13'
+    LEFT = 'C15'
+    RIGHT = 'C14'
+    CENTER = 'D4'
 
 
 class Button:
