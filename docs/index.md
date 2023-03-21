@@ -305,13 +305,13 @@ A matriz de oceano Azul é uma análise feita sobre a empresa e a solução prop
 1. Eu, como engenheiro responsável pelo laboratório do IPT, desejo que a amostra analisada seja de maior confiabilidade do que possui hoje em dia.
 2. Eu, como engenheiro responsável pelo laboratório do IPT, desejo que a amostra seja analisada de maneira mais rápida para maior satisfação dos clientes.
 3. Eu, como engenheiro responsável pelo laboratório do IPT, desejo que a aplicação seja de fácil manutenção para não parar por muito tempo o atendimento dos clientes do laboratório.
-4. Eu, como engenheiro responsável pelo laboratório do IPT, desejo que a interface da aplicação seja simples e que eu consiga fazer todas as alterações possíveis por meio de uma tela LCD.
+4. Eu, como engenheiro responsável pelo laboratório do IPT, desejo que a interface da aplicação seja simples e que eu consiga fazer todas as alterações possíveis por meio do Magic Box.
 
 # Arquitetura do Sistema
 
 ## Croqui
 
-Um croqui trata-se de um método de representação gráfica, utilizado principalmente por arquitetos, engenheiros e designers para esboçar ideias e conceitos visualmente. O objetivo do croqui é transmitir uma ideia de forma rápida e intuitiva, permitindo que o criador possa explorar diferentes possibilidades e testar soluções de forma prática. Neste sentido, o croqui foi uma ferramenta fundamental para o processo criativo da solução proposta pelo grupo. O projeto consisti na criação de um sistema automatizado de ensaio para análise de amostras de metal retiradas do solo, utilizando o braço robótico Dobot Magician Lite. Para otimizar a movimentação do braço, serão utilizadas três bandejas dispostas radialmente, permitindo maior velocidade de execução e reduzindo travamentos. A primeira bandeja será destinada à amostra bruta, a segunda será uma bandeja com água para limpar possíveis resíduos não magnéticos que foram puxados acidentalmente pelo eletroímã, e a terceira será para a amostra limpa. Para controle dos componentes, será utilizado o Raspberry Pi Pico W, eliminando a necessidade de um servidor externo e permitindo ao cliente acesso às configurações do ensaio através de um display de membrana e LCD. Além disso, será adicionado um sensor de peso à terceira bandeja, responsável pela amostra limpa, que, a cada rodada, realizará a pesagem e finalizará o ensaio quando não houver alteração de peso. Para acoplar as amostras ao braço robótico, será adicionado um eletroímã, que será regulado pelo Raspberry Pi Pico através de uma ponte H, permitindo a regulagem da força magnética. Espera-se obter, com a implementação dessas características, um sistema de ensaio automatizado eficiente e de fácil utilização. Um croqui deste sistema pode ser visto na figura abaixo:
+Um croqui trata-se de um método de representação gráfica, utilizado principalmente por arquitetos, engenheiros e designers para esboçar ideias e conceitos visualmente. O objetivo do croqui é transmitir uma ideia de forma rápida e intuitiva, permitindo que o criador possa explorar diferentes possibilidades e testar soluções de forma prática. Neste sentido, o croqui foi uma ferramenta fundamental para o processo criativo da solução proposta pelo grupo. O projeto consiste na criação de um sistema automatizado de ensaio para análise de amostras de metal retiradas do solo, utilizando o braço robótico Dobot Magician Lite. Para otimizar a movimentação do braço, serão utilizadas três bandejas dispostas radialmente, permitindo maior velocidade de execução e reduzindo travamentos. A primeira bandeja será destinada à amostra bruta, a segunda será uma bandeja com água para limpar possíveis resíduos não magnéticos que foram puxados acidentalmente pelo eletroímã, e a terceira será para a amostra limpa. Para controle dos componentes, será utilizado o Magic-Box, eliminando a necessidade de um servidor externo e permitindo ao cliente acesso às configurações do ensaio através de botões e display imbutidos. Além disso, será adicionado um sensor de peso à terceira bandeja, responsável pela amostra limpa, que, a cada rodada, realizará a pesagem e finalizará o ensaio quando não houver alteração de peso. Para acoplar as amostras ao braço robótico, será adicionado um eletroímã, que será regulado pelo Magic-Box através de uma ponte H interna, permitindo a regulagem da força magnética. Espera-se obter, com a implementação dessas características, um sistema de ensaio automatizado eficiente e de fácil utilização. Um croqui deste sistema pode ser visto na figura abaixo:
 
 <p align="center">
 
@@ -403,6 +403,33 @@ O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferen
 ### Módulos funcionais do sistema
 
 #### Projeto dos dispositivos mecânicos
+
+Lista de peças necessárias para fabricação:
+
+Encaixe do ímã: Estrutura para encaixe do ímã para acoplação com o braço robô, utilizando o encaixe para segurar caneta presente no kit Dobot Magician Lite. Dessa forma, produziremos uma estrutura em formato cilíndrico, (semelhante à caneta), que possuirá um furo superior para entrada de um parafuso, que servirá como ligação entre a estrutura e o eletroíma, pois será encaixado na entrada de parafuso M4 presente no eletroímã.
+Bandejas em formato circular: Bandejas que serão fabricadas em um formato circular específico para suprir o movimento do braço e torná-lo mais eficiente.
+
+<p align="center">
+<img src="img\relatorio\diagrama_mecanico.png" width="400px">
+</p>
+<br>
+
+Materiais:
+
+Filamento PLA:
+
+##### Especificações:
+- Matéria-prima: Poliácido Láctico
+- Diâmetro do filamento: 1,75 mm ± 0,05 mm
+- Dimensões do carretel: 20 cm x 6 cm (D x A)
+- Diâmetro do furo do carretel: ± 48,6 mm
+- Temperatura de impressão: 190º C - 215º C
+- Temperatura da mesa: > 59º C
+
+
+Método de fabricação dos projetos mecânicos:
+A lista de materiais feita utilizará diferentes métodos para fabricação dos componentes presentes. Nesse sentido, o encaixe do ímã será feito com uma impressora 3D e o filamento de resina citado na lista de materiais, além disso, como seu modelo já está pronto, basta utilizar um programa de design 3D para gerar sua estrutura.
+Por sua vez, as bandejas em formato circular serão fabricadas a fim de otimizar a movimentação do robô, fabricando-as no formato que o Dobot Magician Lite varre de forma mais eficiente, com atuação de um número menor de eixos e de forma a economizar tempo em cada análise. Dessa maneira, para podermos manipular o formato das bandejas de um material de tão difícil maleabilidade quanto o acrílico, o grupo decidiu por utilizar um cortador a laser e um soprador térmico, os quais provaram-se ser um método mais eficiente para o objetivo do que a impressão 3D.
 
 #### Projeto dos dispositivos Eletrônicos
 
@@ -496,10 +523,30 @@ O Magic Box atua como um microcontrolador capaz de rodar scripts que são inicia
 ## Wireframe + Storyboard
 
 ## Design de Interface
-
+- Descrição da interface:
 A conexão homem máquina da solução do grupo será realizada por meio do Magic Box, controle que faz parte do kit do Dobot Magician Lite, de modo que a interface se mantenha simples e prática, sem a necessidade de outros dispositivos ou acesso à internet para a visualização do status da aplicação. A entrada de dados será feita por meio de um script pré definido, esse que o usuário poderá carregar no Magic Box para iniciar a atuação do robô. Além disso, para ajuste da intensidade de corrente elétrica de acionamento do ímã, distância do braço do robô, assim como sua velocidade, somente será necessário o usuário carregar o script que melhor supra sua necessidade, tendo variações nesses três parâmetros.
 
 Dessa forma, a arquitetura da solução foi idealizada com o intuito de dar maior praticidade ao operador, com a interface completa acoplada ao robô, tendo apenas o cabo de conexão como única distância entre eles. Somado a isso, o grupo decidiu usar o controle como forma de alimentação do(s) ímã(s), além de servir como controlador e alimentação da célula de carga, responsável por realizar o cálculo que conclui a varredura do robô.
+
+<p align="center">
+  <img src="img/relatorio/interface_usuario.jpg" width="400px">
+  </p>
+  <br>
+
+
+   <b>Nota: Desenho do esquemático representativo fora de escala."</b>
+
+  - Função dos componentes presentes no esquemático:
+  
+  1. Magic Box: A função desse componente é ser o microcontrolador da solução, servindo tanto como alimentação da célula de carga, do(s) ímã(s), assim como interpretador das informações enviadas por esses componentes. Além disso, o Magic Box é responsável por carregar os scripts de Python para o DOBOT, executando a atuação variável  do braço dependente dos parâmetros do script. 
+    Por fim, o grupo pensa em terminar a atuação do robô quando a célula de carga, contida na terceira bandeja, não sofrer alteração na aferição, incumbindo ao Magic Box a responsabilidade de guardar o último valor e fazer a comparação entre o peso da terceira bendeja nas duas últimas varreduras.
+
+  2. DOBOT Magician Lite: A função principal do braço robótico é executar o código enviado pelo Magic Box, alterando a atuação dependente dos parâmetros descritos no script carregado.
+  
+  3. Eletroimã: A função desse componente é gerar o campo magnético responsável por atrair materiais magnéticos.
+
+  4. Célula de carga com módulo de peso: A função desse componente é enviar informações para o Magic Box sobre o peso depositado sobre ela.
+
 
 - Forma de uso da interface de usuário:
   

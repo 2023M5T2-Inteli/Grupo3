@@ -6,7 +6,7 @@ DEBUG = False
 
 
 class Settings:
-    PROJECT_NAME = "IPT_Search"  # Name of the project in the MagicBox
+    PROJECT_NAME = "1 - Iniciar ensaio"  # Name of the project in the MagicBox
     PROJECT_MAIN_FILE_NAME = "main.py"  # Name of the main file of the project
 
     PROJECT_SOURCES_PATH = f"src/"  # Path to the project sources
