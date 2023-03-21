@@ -1,22 +1,18 @@
 from utime import sleep_us, time
 from machine import Pin
 from micropython import const
-from modules.magicbox import MagicBox, PinMode
 
 
 class HX711Exception(Exception):
-    def __init__(self, message):
-        super().__init__(message)
+    pass
 
 
 class InvalidMode(HX711Exception):
-    def __init__(self):
-        super().__init__('Invalid channel mode')
+    pass
 
 
 class DeviceIsNotReady(HX711Exception):
-    def __init__(self):
-        super().__init__('Device is not ready')
+    pass
 
 
 class HX711(object):
@@ -35,12 +31,9 @@ class HX711(object):
     SLEEP_DELAY_USEC = const(80)
 
     def __init__(self, d_out: int, pd_sck: int, channel: int = CHANNEL_A_128):
-        self.d_out_pin = d_out
-        self.pd_sck_pin = pd_sck
+        self.d_out_pin = Pin(d_out, Pin.IN)
+        self.pd_sck_pin = Pin(pd_sck, Pin.OUT, value=0)
         self.channel = channel
-
-        MagicBox.IO.set_pin_mode(self.d_out_pin, PinMode.IOFunctionDI)
-        MagicBox.IO.set_pin_mode(self.pd_sck_pin, PinMode.IOFunctionDO)
 
     def __repr__(self):
         return "HX711 on channel %s, gain=%s" % self.channel
@@ -62,8 +55,8 @@ class HX711(object):
         1 pulse for Channel A with gain 128
         """
         for i in range(self._channel):
-            MagicBox.IO.set_pin_value(self.pd_sck_pin, 1)
-            MagicBox.IO.set_pin_value(self.pd_sck_pin, 0)
+            self.pd_sck_pin.value(1)
+            self.pd_sck_pin.value(0)
 
     def _wait(self):
         """
@@ -105,8 +98,8 @@ class HX711(object):
             self._wait()
 
         for i in range(self.DATA_BITS):
-            MagicBox.IO.set_pin_value(self.pd_sck_pin, 1)
-            MagicBox.IO.set_pin_value(self.pd_sck_pin, 0)
+            self.pd_sck_pin.value(1)
+            self.pd_sck_pin.value(0)
 
         self._set_channel()
 
@@ -115,7 +108,7 @@ class HX711(object):
         When output data is not ready for retrieval,
         digital output pin DOUT is high.
         """
-        return MagicBox.IO.read_pin_value(self.d_out_pin) == 0
+        return self.d_out_pin.value() == 0
 
     def power_off(self):
         """
@@ -123,8 +116,8 @@ class HX711(object):
         and stays at high for longer than 60 us ,
         HX711 enters power down mode.
         """
-        MagicBox.IO.set_pin_value(self.pd_sck_pin, 0)
-        MagicBox.IO.set_pin_value(self.pd_sck_pin, 1)
+        self.pd_sck_pin.value(0)
+        self.pd_sck_pin.value(1)
         sleep_us(self.SLEEP_DELAY_USEC)
 
     def power_on(self):
@@ -132,7 +125,7 @@ class HX711(object):
         When PD_SCK returns to low, HX711 will reset
         and enter normal operation mode.
         """
-        MagicBox.IO.set_pin_value(self.pd_sck_pin, 0)
+        self.pd_sck_pin.value(0)
         self.channel = self._channel
 
     def read(self, raw=False):
@@ -146,9 +139,9 @@ class HX711(object):
 
         raw_data = 0
         for i in range(self.DATA_BITS):
-            MagicBox.IO.set_pin_value(self.pd_sck_pin, 1)
-            MagicBox.IO.set_pin_value(self.pd_sck_pin, 0)
-            raw_data = raw_data << 1 | MagicBox.IO.read_pin_value(self.d_out_pin)
+            self.pd_sck_pin.value(1)
+            self.pd_sck_pin.value(0)
+            raw_data = raw_data << 1 | self.d_out_pin.value()
         self._set_channel()
 
         if raw:
