@@ -1,12 +1,4 @@
-import dType
-
-
-class PinMode:
-    IOFunctionDummy = 0
-    IOFunctionDO = 1
-    IOFunctionPWM = 2
-    IOFunctionDI = 3
-    IOFunctionADC = 4
+from base.api import *
 
 
 class MagicBox:
@@ -22,16 +14,21 @@ class MagicBox:
             enable: whether to enable the motor
             speed: the speed of the motor
             '''
-            dType.SetEMotorExtEx(0, index, enable, speed, 0)
+            magicbox.set_emotor(index, enable, speed)
 
     class IO:
         @staticmethod
         def set_pin_mode(pin: int, mode: int) -> None:
             '''
             pin: the EIO number
-            mode: the pin mode ( PinMode enum )
+            mode: the pin mode:
+                magicbox.DUMMY
+                magicbox.DI
+                magicbox.DO
+                magicbox.ADC
+                magicbox.PWM
             '''
-            dType.SetIOMultiplexingExtEx(0, pin, mode, 0)
+            magicbox.set_port(pin, mode)
 
         @staticmethod
         def set_pin_value(pin: int, value: int) -> None:
@@ -39,14 +36,21 @@ class MagicBox:
             pin: the EIO number
             value: the value to set the pin to
             '''
-            dType.SetIODOExtEx(0, pin, value, 1)
+            magicbox.set_io(pin, value)
 
         @staticmethod
-        def read_pin_value(pin: int) -> int:
+        def read_in_pin_value(pin: int) -> int:
             '''
             pin: the EIO number
             '''
-            return dType.GetIODIExt(0, pin)[0]
+            return magicbox.get_di(pin)["level"]
+
+        @staticmethod
+        def read_out_pin_value(pin: int) -> int:
+            '''
+            pin: the EIO number
+            '''
+            return magicbox.get_do(pin)["level"]
 
         @staticmethod
         def set_pin_pwm(pin: int, frequency: int, duty_cycle: int) -> None:
@@ -55,18 +59,11 @@ class MagicBox:
             frequency: the frequency of the PWM signal
             duty_cycle: the duty cycle of the PWM signal
             '''
-            dType.SetIOPWMExtEx(0, pin, frequency, duty_cycle, 1)
-
-        @staticmethod
-        def get_pin_pwm(pin: int) -> int:
-            '''
-            pin: the EIO number
-            '''
-            return dType.GetIOPWMExt(0, pin)
+            magicbox.set_pwm(pin, frequency, duty_cycle)
 
         @staticmethod
         def get_pin_adc(pin: int) -> int:
             '''
             pin: the EIO number
             '''
-            return dType.GetIOADCExt(0, pin)
+            return magicbox.get_ad(pin)["level"]
