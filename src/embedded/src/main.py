@@ -6,9 +6,11 @@ if __name__ == '__main__':
     from modules import *
 
     from base.api import *
+    import modules.controller as Controller
+    from modules.magnet import Magnet
+    Magnet.setup()
 
     while True:
-        magicbox.set_tts_tone(port=2, index=1)
-        Time.sleep(100)
+        Magnet.on()
 
-    # Controller.main()
+    #Controller.main()

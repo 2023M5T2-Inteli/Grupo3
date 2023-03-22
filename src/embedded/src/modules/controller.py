@@ -3,6 +3,7 @@ import dType
 from modules import *
 # from components import *
 from base.api import *
+from components import HX711
 
 # Function to test the properties of a dType object
 
@@ -19,20 +20,25 @@ def test_list_props(item):
 # Function to test the HX711 sensor
 
 
-# def test_hx711():
-#    # Create a new HX711 object with the specified pin numbers
-#    hx711 = HX711(15, 16)
-
-#    # Loop until the program is interrupted
-#    while True:
-#        try:
-#            # Read the weight from the sensor and display it
-#            Display.print(str(hx711.read(True)))
-#        except:
-#            # If there's an error reading the sensor, display a message
-#            Display.print("Waiting for HX711 to be ready")
-#        # Wait 500ms before trying to read the sensor again
-#        Time.sleep(500)
+def test_hx711():
+   # Create a new HX711 object with the specified pin numbers
+   Display.print("olá")
+   print("Entrando teste")
+   Time.sleep(1000)
+   print("Iniciando objeto de teste")
+   hx711 = HX711("D12", "D13")
+   print("Criado objeto de teste")
+   # Loop until the program is interrupted
+   while True:
+       #print("Runtime loop")
+       try:
+           # Read the weight from the sensor and display it
+           print(str(hx711.read(True)))
+       except:
+           # If there's an error reading the sensor, display a message
+           print("Waiting for HX711 to be ready")
+       # Wait 500ms before trying to read the sensor again
+       Time.sleep(500)
 
 # Function to turn on the electromagnet
 
@@ -191,22 +197,23 @@ def finish():
 
 
 def main():
-    Dobot.setup()  # Set up Dobot
-    isScan = 0  # Initialize isScan variable to 0
-    # Run the loop until isScan is equal to 3
-    while (isScan != 3):
-        upArm()  # Move the arm up
-        Dobot.set_home()  # Set Dobot to its home position
-        iniFirstTray()  # Initialize the first tray
-        scanFirstTray()  # Scan the first tray
-        upArm()  # Move the arm up again
+    test_hx711()
+    # Dobot.setup()  # Set up Dobot
+    # isScan = 0  # Initialize isScan variable to 0
+    # # Run the loop until isScan is equal to 3
+    # while (isScan != 3):
+    #     upArm()  # Move the arm up
+    #     Dobot.set_home()  # Set Dobot to its home position
+    #     iniFirstTray()  # Initialize the first tray
+    #     scanFirstTray()  # Scan the first tray
+    #     upArm()  # Move the arm up again
 
-        iniSecondTray()  # Initialize the second tray
-        scanSecondTray()  # Scan the second tray
+    #     iniSecondTray()  # Initialize the second tray
+    #     scanSecondTray()  # Scan the second tray
 
-        upArm()  # Move the arm up again
+    #     upArm()  # Move the arm up again
 
-        iniThirdTray()  # Initialize the third tray
-        shakeThirdTray()  # Shake the third tray
-        isScan = isScan + 1  # Increment the isScan variable by 1
-    finish()  # Call the finish function to set Dobot to its home position, wait, and print a message.
+    #     iniThirdTray()  # Initialize the third tray
+    #     shakeThirdTray()  # Shake the third tray
+    #     isScan = isScan + 1  # Increment the isScan variable by 1
+    # finish()  # Call the finish function to set Dobot to its home position, wait, and print a message.
