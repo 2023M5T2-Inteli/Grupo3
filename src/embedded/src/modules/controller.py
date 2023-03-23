@@ -23,27 +23,29 @@ def test_list_props(item):
 
 
 def test_hx711():
-    print("Conectando ao módulo de peso")
-    Time.sleep(1000)
     # Create a new HX711 object with the specified pin numbers
     pin_OUT = Pin("D12", Pin.IN, pull=Pin.PULL_DOWN)
     pin_SCK = Pin("D13", Pin.OUT)
-
-    spi = SPI(mode=SPI, baudrate=1000000, polarity=0,phase=0, pins=(None, pin_SCK, pin_OUT))
+    spi_SCK = Pin("D13")
+    print("Conectando ao modulo de peso")
+    Time.sleep(1000)
+    spi = SPI(baudrate=1000000, polarity=0,
+          phase=0, sck=spi_SCK, mosi=pin_SCK, miso=pin_OUT)
 
     hx711 = HX711(pin_SCK, pin_OUT, spi)
-    hx711.tare()
+    
 
    # Loop until the program is interrupted
     while True:
         try:
-            value = hx711.read()
+            hx711.tare()
+            hx711.read()
             value = hx711.get_value()
             # Read the weight from the sensor and display it
             print(str(value))
         except:
             # If there's an error reading the sensor, display a message
-            print("Erro: módulo de peso não encontrado")
+            print("Erro: modulo de peso não encontrado")
         # Wait 500ms before trying to read the sensor again
         Time.sleep(500)
 
