@@ -3,6 +3,9 @@ import dType
 from modules import *
 # from components import *
 from base.api import *
+from components import HX711
+from machine import Pin, SPI
+
 
 # Function to test the properties of a dType object
 
@@ -19,20 +22,31 @@ def test_list_props(item):
 # Function to test the HX711 sensor
 
 
-# def test_hx711():
-#    # Create a new HX711 object with the specified pin numbers
-#    hx711 = HX711(15, 16)
+def test_hx711():
+    print("Conectando ao módulo de peso")
+    Time.sleep(1000)
+    # Create a new HX711 object with the specified pin numbers
+    pin_OUT = Pin("D12", Pin.IN, pull=Pin.PULL_DOWN)
+    pin_SCK = Pin("D13", Pin.OUT)
 
-#    # Loop until the program is interrupted
-#    while True:
-#        try:
-#            # Read the weight from the sensor and display it
-#            Display.print(str(hx711.read(True)))
-#        except:
-#            # If there's an error reading the sensor, display a message
-#            Display.print("Waiting for HX711 to be ready")
-#        # Wait 500ms before trying to read the sensor again
-#        Time.sleep(500)
+    spi = SPI(mode=SPI, baudrate=1000000, polarity=0,phase=0, pins=(None, pin_SCK, pin_OUT))
+
+    hx711 = HX711(pin_SCK, pin_OUT, spi)
+    hx711.tare()
+
+   # Loop until the program is interrupted
+    while True:
+        try:
+            value = hx711.read()
+            value = hx711.get_value()
+            # Read the weight from the sensor and display it
+            print(str(value))
+        except:
+            # If there's an error reading the sensor, display a message
+            print("Erro: módulo de peso não encontrado")
+        # Wait 500ms before trying to read the sensor again
+        Time.sleep(500)
+
 
 # Function to turn on the electromagnet
 
@@ -189,24 +203,54 @@ def finish():
     Time.sleep(500)  # Wait for 500 milliseconds
     Display.print("Ensaio finalizado!")  # Print "Ensaio finalizado!" message to the display
 
+def set_magnetic_field():
+    is_confirm = False
+    magnetic_field = 0
+    while(is_confirm == False):
+        print("Campo: ", magnetic_field)
+        if Keyboard.UP.is_pressed() and magnetic_field <12:
+            Time.sleep(1000)
+            magnetic_field = magnetic_field + 1
+            print(str(magnetic_field))
+
+        if Keyboard.DOWN.is_pressed() and magnetic_field >0:
+            Time.sleep(1000)
+            magnetic_field = magnetic_field - 1
+            
+            print(str(magnetic_field))
+            
+        if Keyboard.RIGHT.is_pressed():
+            print("Campo escolhido!")
+            Time.sleep(2000)
+            is_confirm = True
+    return magnetic_field
+
+
 
 def main():
-    Dobot.setup()  # Set up Dobot
-    isScan = 0  # Initialize isScan variable to 0
-    # Run the loop until isScan is equal to 3
-    while (isScan != 3):
-        upArm()  # Move the arm up
-        Dobot.set_home()  # Set Dobot to its home position
-        iniFirstTray()  # Initialize the first tray
-        scanFirstTray()  # Scan the first tray
-        upArm()  # Move the arm up again
+    test_hx711()
+    # magnetic_field = set_magnetic_field()
+    # Buzzer.play(200)
+    # Time.sleep(150)
+    # Buzzer.play(200)
+    # while True:
+    #     print("Iniciando ensaio")
+    # Dobot.setup()  # Set up Dobot
+    # isScan = 0  # Initialize isScan variable to 0
+    # # Run the loop until isScan is equal to 3
+    # while (isScan != 3):
+    #     upArm()  # Move the arm up
+    #     Dobot.set_home()  # Set Dobot to its home position
+    #     iniFirstTray()  # Initialize the first tray
+    #     scanFirstTray()  # Scan the first tray
+    #     upArm()  # Move the arm up again
 
-        iniSecondTray()  # Initialize the second tray
-        scanSecondTray()  # Scan the second tray
+    #     iniSecondTray()  # Initialize the second tray
+    #     scanSecondTray()  # Scan the second tray
 
-        upArm()  # Move the arm up again
+    #     upArm()  # Move the arm up again
 
-        iniThirdTray()  # Initialize the third tray
-        shakeThirdTray()  # Shake the third tray
-        isScan = isScan + 1  # Increment the isScan variable by 1
-    finish()  # Call the finish function to set Dobot to its home position, wait, and print a message.
+    #     iniThirdTray()  # Initialize the third tray
+    #     shakeThirdTray()  # Shake the third tray
+    #     isScan = isScan + 1  # Increment the isScan variable by 1
+    # finish()  # Call the finish function to set Dobot to its home position, wait, and print a message.

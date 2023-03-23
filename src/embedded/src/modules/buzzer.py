@@ -13,7 +13,7 @@ class Buzzer:
     @staticmethod
     def play(duration: int = 128) -> None:
         Buzzer.__PIN.on()
-        time.sleep_ms(duration)
+        Time.sleep(duration)
         Buzzer.__PIN.off()
 
     @staticmethod
