@@ -8,51 +8,61 @@ from machine import Pin, SPI
 
 
 # Function to test the properties of a dType object
-
-
 def test_list_props(item):
     # Get list of properties of the object
     properties_of_dType = dir(item)
-
     # Iterate over the properties and print them out
     for property_of_dType in properties_of_dType:
         dType.PrintInfo(0, property_of_dType)
         dType.dSleep(750)
 
-# Function to test the HX711 sensor
 
-
+# Define init and connect hx711
 def init_hx711():
-    # Create a new HX711 object with the specified pin numbers
+    
+    # Create new Pin objects for the input and output pins of the HX711 module
     pin_OUT = Pin("D12", Pin.IN, pull=Pin.PULL_DOWN)
     pin_SCK = Pin("D13", Pin.OUT)
+    
+    # Create a new Pin object for the SPI clock pin
     spi_SCK = Pin("D13")
+    
+    # Print a message to indicate that the program is connecting to the weight module
     print("Conectando ao modulo de peso")
+    
+    # Wait for 1 second (1000 milliseconds) before continuing
     Time.sleep(1000)
-    spi = SPI(baudrate=1000000, polarity=0,
-          phase=0, sck=spi_SCK, mosi=pin_SCK, miso=pin_OUT)
+    
+    # Create a new SPI object with the specified settings and pin assignments
+    spi = SPI(baudrate=1000000, polarity=0, phase=0, sck=spi_SCK, mosi=pin_SCK, miso=pin_OUT)
 
+    # Create a new HX711 object with the specified pin assignments and SPI object
     hx711 = HX711(pin_SCK, pin_OUT, spi)
     
-
-   # Loop until the program is interrupted
+    # Loop indefinitely
     while True:
         try:
+            # Zero out the sensor
             hx711.tare()
+            
+            # Read the weight from the sensor
             hx711.read()
+            
+            # Get the weight value from the HX711 object
             value = hx711.get_value()
-            # Read the weight from the sensor and display it
+            
+            # Display the weight value
             print(str(value))
+            
         except:
             # If there's an error reading the sensor, display a message
-            print("Erro: modulo de peso não encontrado")
-        # Wait 500ms before trying to read the sensor again
+            print("Erro: modulo de peso nao encontrado")
+        
+        # Wait for 500ms (half a second) before trying to read the sensor again
         Time.sleep(500)
 
 
 # Function to turn on the electromagnet
-
-
 def turnOnElectromagnet():
     # Set pin 12 to output mode
     MagicBox.IO.set_pin_mode(12, magicbox.DO)
@@ -64,8 +74,6 @@ def turnOnElectromagnet():
     Time.sleep(500)
 
 # Function to turn off the electromagnet
-
-
 def turnOffElectromagnet():
     # Set pin 12 to output mode
     MagicBox.IO.set_pin_mode(12, magicbox.DO)
@@ -77,8 +85,6 @@ def turnOffElectromagnet():
     Time.sleep(500)
 
 # Function to shake the arm after turning off the electromagnet
-
-
 def shakeAfterTurnOff():
     # Loop 4 times
     i = 0
@@ -91,18 +97,15 @@ def shakeAfterTurnOff():
         i += 1
 
 # Function to display the current position of the arm
-
-
 def showPosition():
     # Get the current pose of the arm
     position = Dobot.get_pose()
     # Convert the pose to a string and display it
     positionStr = "X {0} Y:{1} Z:{2}".format(position[0], position[1], position[2])
-    Display.print(positionStr)
+    #print positions at display
+    print(positionStr)
 
 # Function to initialize the first tray
-
-
 def iniFirstTray():
     # Display a message
     Display.print("Scanneando primeira bandeja!")
@@ -202,46 +205,63 @@ def upArm():
     # Move the arm up to a certain position.
     Dobot.move_to(x, y,  150, 0)
 
-
-def finish():
-    upArm()
+# Function to finish the experiment
+def finish():   
+    upArm()# up the arm
     Dobot.set_home()  # Set Dobot to its home position
     Time.sleep(500)  # Wait for 500 milliseconds
     Display.print("Ensaio finalizado!")  # Print "Ensaio finalizado!" message to the display
     play_buzzer()
 
+# Define a function to set magnetic field
 def set_magnetic_field():
+    
+    # Set initial values for variables
     is_confirm = False
     magnetic_field = 1
+    
+    # Loop until the magnetic field is confirmed
     while(is_confirm == False):
+        
+        # Print the current magnetic field value
         print("Campo: ", magnetic_field)
+        
+        # If the UP arrow key is pressed and the magnetic field is less than 12, increase the magnetic field by 1
         if Keyboard.UP.is_pressed() and magnetic_field <12:
             Time.sleep(1000)
             magnetic_field = magnetic_field + 1
             print(str(magnetic_field))
-
+        
+        # If the DOWN arrow key is pressed and the magnetic field is greater than 1, decrease the magnetic field by 1
         if Keyboard.DOWN.is_pressed() and magnetic_field >1:
             Time.sleep(1000)
             magnetic_field = magnetic_field - 1
-            
             print(str(magnetic_field))
             
+        # If the RIGHT arrow key is pressed, confirm the magnetic field value and exit the loop
         if Keyboard.RIGHT.is_pressed():
             print("Campo escolhido!")
             Time.sleep(2000)
             is_confirm = True
+    
+    # Return the chosen magnetic field value
     return magnetic_field
 
+
+#function to play a buzzer sound
 def play_buzzer():
+    #play a buzzer sound for 200ms
     Buzzer.play(200)
+    #wait for 150ms
     Time.sleep(150)
+    #play a buzzer sound for 200ms
     Buzzer.play(200)
 
 def main():
-    magnetic_field = set_magnetic_field()
-    play_buzzer()
+    magnetic_field = set_magnetic_field() # Set the magnetic field
+    play_buzzer() # Play a buzzer sound
     while True:
-        print("Iniciando ensaio")
+        print("Iniciando ensaio") # Print "Iniciando ensaio" message to the display
         isScan = 1  # Initialize isScan variable to 0
      # Run the loop until isScan is equal to 3
         while (isScan != 2):
@@ -258,4 +278,4 @@ def main():
             isScan = isScan + 1  # Increment the isScan variable by 1
         finish()  # Call the finish function to set Dobot to its home position, wait, and print a message.
         Time.sleep(2000)  # Wait for 2000 milliseconds
-        init_hx711()
+        init_hx711() #conecent hx711
