@@ -73,9 +73,8 @@ Concepção de sistema de automação industrial
       - [Projeto dos dispositivos Eletrônicos](#projeto-dos-dispositivos-eletrônicos)
       - [Pinagem Magic Box:](#pinagem-magic-box)
       - [Esquemático célula de peso:](#esquemático-célula-de-peso)
-- [Planejamento e método de fabricação:](#planejamento-e-método-de-fabricação)
-      - [Descrição do Hardware](#descrição-do-hardware)
-    - [Requisitos de software](#requisitos-de-software)
+- [Planejamento e método de fabricação:](#planejamento-e-método-de-fabricação) - [Descrição do Hardware](#descrição-do-hardware)
+  - [Requisitos de software](#requisitos-de-software)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [UX e UI Design](#ux-e-ui-design)
   - [Wireframe + Storyboard](#wireframe--storyboard)
@@ -305,16 +304,12 @@ A matriz de oceano Azul é uma análise feita sobre a empresa e a solução prop
 1. Eu, como engenheiro responsável pelo laboratório do IPT, desejo que a amostra analisada seja de maior confiabilidade do que possui hoje em dia.
 2. Eu, como engenheiro responsável pelo laboratório do IPT, desejo que a amostra seja analisada de maneira mais rápida para maior satisfação dos clientes.
 3. Eu, como engenheiro responsável pelo laboratório do IPT, desejo que a aplicação seja de fácil manutenção para não parar por muito tempo o atendimento dos clientes do laboratório.
-4. Eu, como engenheiro responsável pelo laboratório do IPT, desejo que a interface da aplicação seja simples e que eu consiga fazer todas as alterações possíveis por meio do Magic Box.
+4. Eu, como engenheiro responsável pelo laboratório do IPT, desejo que a interface da aplicação seja simples e que eu consiga fazer todas as alterações possíveis por meio de uma tela LCD.
 
 # Arquitetura do Sistema
 
 ## Croqui
-
-
 Um croqui trata-se de um método de representação gráfica, utilizado principalmente por arquitetos, engenheiros e designers para esboçar ideias e conceitos visualmente. O objetivo do croqui é transmitir uma ideia de forma rápida e intuitiva, permitindo que o criador possa explorar diferentes possibilidades e testar soluções de forma prática. Neste sentido, o croqui foi uma ferramenta fundamental para o processo criativo da solução proposta pelo grupo. O projeto consiste na criação de um sistema automatizado de ensaio para análise de amostras de metal retiradas do solo, utilizando o braço robótico Dobot Magician Lite. Para otimizar a movimentação do braço, serão utilizadas três bandejas dispostas radialmente, permitindo maior velocidade de execução e reduzindo travamentos. A primeira bandeja será destinada à amostra bruta, a segunda será uma bandeja com água para limpar possíveis resíduos não magnéticos que foram puxados acidentalmente pelo eletroímã e a terceira será para a amostra limpa. Para controle dos componentes, será utilizado o Magic-Box, eliminando a necessidade de um servidor externo e permitindo ao cliente acesso às configurações do ensaio através de botões e display embutidos. Além disso, será adicionado um sensor de peso à terceira bandeja, responsável pela amostra limpa que, a cada rodada, realizará a pesagem e finalizará o ensaio quando não houver alteração na aferição desse peso. Para captar as amostras com o braço robótico, será adicionado um eletroímã, que será regulado pelo Magic-Box através de uma ponte H interna, permitindo a regulagem da força magnética. Espera-se obter, com a implementação dessas características, um sistema de ensaio automatizado eficiente e de fácil utilização. Um croqui deste sistema pode ser visto na figura abaixo:
-
-
 <p align="center">
 
 <img src="img/relatorio/croqui.png">
@@ -323,11 +318,6 @@ Um croqui trata-se de um método de representação gráfica, utilizado principa
 ## Documentação dos componentes
 
 ### Esquema Geral dos Componentes
-
-<p align="center">
-
-<img src="img/relatorio/documentacao-componentes.png">
-</p>
 
 ### Componentes
 
@@ -406,55 +396,27 @@ O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferen
 
 #### Projeto dos dispositivos mecânicos
 
-Lista de peças necessárias para fabricação:
-
-Encaixe do ímã: Estrutura para encaixe do ímã para acoplação com o braço robô, utilizando o encaixe para segurar caneta presente no kit Dobot Magician Lite. Dessa forma, produziremos uma estrutura em formato cilíndrico, (semelhante à caneta), que possuirá um furo superior para entrada de um parafuso, que servirá como ligação entre a estrutura e o eletroíma, pois será encaixado na entrada de parafuso M4 presente no eletroímã.
-Bandejas em formato circular: Bandejas que serão fabricadas em um formato circular específico para suprir o movimento do braço e torná-lo mais eficiente.
-
-<p align="center">
-<img src="img\relatorio\diagrama_mecanico.png" width="400px">
-</p>
-<br>
-
-Materiais:
-
-Filamento PLA:
-
-##### Especificações:
-- Matéria-prima: Poliácido Láctico
-- Diâmetro do filamento: 1,75 mm ± 0,05 mm
-- Dimensões do carretel: 20 cm x 6 cm (D x A)
-- Diâmetro do furo do carretel: ± 48,6 mm
-- Temperatura de impressão: 190º C - 215º C
-- Temperatura da mesa: > 59º C
-
-
-Método de fabricação dos projetos mecânicos:
-A lista de materiais feita utilizará diferentes métodos para fabricação dos componentes presentes. Nesse sentido, o encaixe do ímã será feito com uma impressora 3D e o filamento de resina citado na lista de materiais, além disso, como seu modelo já está pronto, basta utilizar um programa de design 3D para gerar sua estrutura.
-Por sua vez, as bandejas em formato circular serão fabricadas a fim de otimizar a movimentação do robô, fabricando-as no formato que o Dobot Magician Lite varre de forma mais eficiente, com atuação de um número menor de eixos e de forma a economizar tempo em cada análise. Dessa maneira, para podermos manipular o formato das bandejas de um material de tão difícil maleabilidade quanto o acrílico, o grupo decidiu por utilizar um cortador a laser e um soprador térmico, os quais provaram-se ser um método mais eficiente para o objetivo do que a impressão 3D.
-
 #### Projeto dos dispositivos Eletrônicos
-
 
 - As placas que serão utilizadas será apena a placa de circuito integrada para o módulo de peso e a célula de carga.
 - O esquemático da célula de peso, os cabos serão todos conectados em uma porta do Magic box sendo eles apresentados no esquemático abaixo. O cabo de cor preta será ligado na porta do GND, o cabo de cor vermelha será ligado na entrada de 5V, o cabo verde será ligado na porta EIO16, o cabo azul será ligado na entrada EIO15.
-  
 - Para a construção da balança será usada uma célula de carga que é um sensor de peso com capacidade de 5kg que será utilizado para fazer a pesagem da amostragem na última bandeja. Esse sensor trata-se de um acessório eletrônico capaz de detectar diferentes cargas que estejam sobre ele, mas que para seu funcionamento deve atuar em conjunto com uma plataforma de prototipagem, que no caso será o microcontrolador embutido na MagicBox, e ligado a um Módulo Conversor Amplificador HX711 com a finalidade de converter alterações da resistência do sensor da balança em dados digitais por meio de um circuito ADC de 24-bits.
 - No centro do sensor de peso 5kg existe uma área sensível responsável por detectar a carga. Dessa forma, será acoplada uma base ao sensor para fazer melhor detecção da carga na última bandeja. Mecanicamente o sensor é composto por uma ponte resistiva que tem a resistência alterada ao ter um peso aplicado sobre ele. Eletricamente, quando o sensor de peso entra em operação, ou seja, quando uma força Peso é aplicada, ele envia uma tensão ao microcontrolador e conforme o peso essa tensão será oscilada. No entanto, a tensão que o sensor envia é tão fraca que é necessário utilizar um amplificador de sinal para a comunicação com o microcontrolador, comunicação esta que não deve ser feita por meio de pinos digitais.
 - O amplificador de sinal usado, então, será o Módulo Conversor Amplificador HX711 que converte as mudanças medidas em alteração do valor da resistência, através do circuito de conversão em potência elétrica.
 
 #### Pinagem Magic Box:
+
 <p align="center">
 <img src="img/relatorio/pinosmagicbox.png" width="400">
 </p>
-<br> 
+<br>
 
-#### Esquemático célula de peso: 
+#### Esquemático célula de peso:
+
 <p align="center">
 <img src="img/relatorio/céluladepeso.png" width="400">
 </p>
-<br> 
-
+<br>
 
 - MagicBox
   - Interface: Port1
@@ -477,8 +439,6 @@ Por sua vez, as bandejas em formato circular serão fabricadas a fim de otimizar
 </p>
 <br>
 
-
-
 - Explicação das entradas:
 
   1. Portas de interface PWM para utilização dos sensores.
@@ -490,8 +450,8 @@ Por sua vez, as bandejas em formato circular serão fabricadas a fim de otimizar
   6. Oled display
   7. Botão de controle superior
   8. Botão para confirmar ou deletar arquivos
-  9. Botão de controle inferior  
-  10. Porta de comunicação com Magician  
+  9. Botão de controle inferior
+  10. Porta de comunicação com Magician
   11. Alimentação de 12V provinda do magician Lite
   12. Porta de comunicação para conectar com módulo joystick
   13. Interface para alimentação de energia.
@@ -499,14 +459,14 @@ Por sua vez, as bandejas em formato circular serão fabricadas a fim de otimizar
   15. Porta USB
   16. Porta tipo C
 
+- Lista de materias:
 
-- Lista de materias: 
-  
   1. Magician box
-  2. Eletroímã 
+  2. Eletroímã
   3. Módulo de peso e célula de peso.
 
-# Planejamento e método de fabricação: 
+# Planejamento e método de fabricação:
+
 - A fabricação da placa de uso será através de uma placa de circuito integrado genérica com os componentes soldados e os cabos de alimentação serão ligados em uma porta do Magic Box.
 
 #### Descrição do Hardware
@@ -514,7 +474,6 @@ Por sua vez, as bandejas em formato circular serão fabricadas a fim de otimizar
 Para o projeto, serão utilizados alguns componentes eletrônicos que têm a finalidade de cumprir com o objetivo da automação do processo de separação magnética de minérios e entre esses temos o braço robótico Magician Lite, que é conectado com um controlador externo que será o Magic Box através da porta de interface de comunicação com o Magician Lite (item 10 na imagem do campo de projeto de dispositivos eletrônicos). Além desses componentes serão usados, também, um eletroímã que será conectado ao Magic Box pela saída de 12 Volts e um módulo de peso que acompanha uma célula de carga que será conectada também ao Magic Box.
 
 O Magic Box atua como um microcontrolador capaz de rodar scripts que são iniciados e selecionados pela própria interface de display que ele possui, além disso ele também possui uma Ponte H integrado a ele que será utilizado para inverter o campo e desligar o eletroímã através de um comando efetuado no script. O Magician Lite é o braço robótico utilizado com estrutura física para realizar a separação de misturas efetuando o processo operacional dividido em 3 fases como proposto no TAPI, e assim o eletroímã é responsável por coletar o material ferromagnético, e com a ajuda do braço, depositá-lo no recipiente de amostra. Já o módulo de peso e a célula de carga serão utilizados como método de verificar o momento de encerrar o ciclo de separação de misturas através da checagem após o final da separação, em que haverá a verificação para saber se houve ou não alteração no peso da amostra. Assim, quando não houver mais alteração será indicado que não há mais conteúdo ferromagnético na amostra e o processo poderá ser encerrado.
-
 
 ### Requisitos de software
 
@@ -525,98 +484,113 @@ O Magic Box atua como um microcontrolador capaz de rodar scripts que são inicia
 ## Wireframe + Storyboard
 
 ## Design de Interface
-- Descrição da interface:
+
 A conexão homem máquina da solução do grupo será realizada por meio do Magic Box, controle que faz parte do kit do Dobot Magician Lite, de modo que a interface se mantenha simples e prática, sem a necessidade de outros dispositivos ou acesso à internet para a visualização do status da aplicação. A entrada de dados será feita por meio de um script pré definido, esse que o usuário poderá carregar no Magic Box para iniciar a atuação do robô. Além disso, para ajuste da intensidade de corrente elétrica de acionamento do ímã, distância do braço do robô, assim como sua velocidade, somente será necessário o usuário carregar o script que melhor supra sua necessidade, tendo variações nesses três parâmetros.
 
 Dessa forma, a arquitetura da solução foi idealizada com o intuito de dar maior praticidade ao operador, com a interface completa acoplada ao robô, tendo apenas o cabo de conexão como única distância entre eles. Somado a isso, o grupo decidiu usar o controle como forma de alimentação do(s) ímã(s), além de servir como controlador e alimentação da célula de carga, responsável por realizar o cálculo que conclui a varredura do robô.
 
-<p align="center">
-  <img src="img/relatorio/interface_usuario.jpg" width="400px">
-  </p>
-  <br>
-
-
-   <b>Nota: Desenho do esquemático representativo fora de escala."</b>
-
-  - Função dos componentes presentes no esquemático:
-  
-  1. Magic Box: A função desse componente é ser o microcontrolador da solução, servindo tanto como alimentação da célula de carga, do(s) ímã(s), assim como interpretador das informações enviadas por esses componentes. Além disso, o Magic Box é responsável por carregar os scripts de Python para o DOBOT, executando a atuação variável  do braço dependente dos parâmetros do script. 
-    Por fim, o grupo pensa em terminar a atuação do robô quando a célula de carga, contida na terceira bandeja, não sofrer alteração na aferição, incumbindo ao Magic Box a responsabilidade de guardar o último valor e fazer a comparação entre o peso da terceira bendeja nas duas últimas varreduras.
-
-  2. DOBOT Magician Lite: A função principal do braço robótico é executar o código enviado pelo Magic Box, alterando a atuação dependente dos parâmetros descritos no script carregado.
-  
-  3. Eletroimã: A função desse componente é gerar o campo magnético responsável por atrair materiais magnéticos.
-
-  4. Célula de carga com módulo de peso: A função desse componente é enviar informações para o Magic Box sobre o peso depositado sobre ela.
-
-
 - Forma de uso da interface de usuário:
-  
+
   O controle Magic Box é ligado segurando o botão redondo no centro por um tempo. Após isso, as opções citadas abaixo aparecerão e, para selecioná-las, o usuário deve usar o botão com um círculo como forma de confirmação. Por outro lado, a seta presente no botão esquerdo serve como retorno, cancelando ou voltando a operação realizada ou até mesmo para reiniciar o Magic Box.
 
   Seleção do método de uso: Nessa parte do processo, o usário poderá decidir entre as opções de uso do Magic Box, a primeira para rodar o script, contida na imagem abaixo. Vale ressaltar que para usar o controle, o usário deve ter conhecimento da função dos botões do controlador.
-  <p align="center">
-  <img src="img/relatorio/selecao_script.jpeg" width="400px">
-  </p>
-  <br>
+    <p align="center">
+    <img src="img/relatorio/selecao_script.jpeg" width="400px">
+    </p>
+    <br>
 
   Seleção de arquivos de script python(.py) em ambos os métodos de uso: Nessa parte do processo, o usuário poderá decidir entre os arquivos já carregados para o Magic Box. Dessa maneira, o grupo pensa em alterar os parâmetros em diferentes scripts para atender a todas as necessidades que o usuário possa ter.
-Opção para carregar do zero script enviado ao controlador.
+  Opção para carregar do zero script enviado ao controlador.
 
-  <p align="center">
-  <img src="img/relatorio/iniciar_ensaio.jpeg" width="400px">
-  </p>
-  <br>
+    <p align="center">
+    <img src="img/relatorio/iniciar_ensaio.jpeg" width="400px">
+    </p>
+    <br>
 
   Já no método playback, o usuário apenas poderá escolher reexecutar o último arquivo de script executado.
 
-  <p align="center">
-  <img src="img/relatorio/selecao_novamente.jpeg" width="400px">
-  </p>
-  <br>
-
+    <p align="center">
+    <img src="img/relatorio/selecao_novamente.jpeg" width="400px">
+    </p>
+    <br>
 
   Status da operação: Nessa etapa do processo, o usuário acompanha pelo display em qual etapa está o processo, recebendo feedback se algo está fora dos conformes. Além disso, vale ressaltar que ele poderá cancelar o processo a qualquer momento que quiser, bastando apertar o botão de voltar e confirmar o cancelamento.
 
   Primeira bandeja, na qual o braço com o ímã ligado recolhe materiais magnéticos que vêm acompanhados de materiais não magnéticos da amostra.
 
-  <p align="center">
-  <img src="img/relatorio/primeira_bandeja.jpeg" width="400px">
-  </p>
-  <br>
+    <p align="center">
+    <img src="img/relatorio/primeira_bandeja.jpeg" width="400px">
+    </p>
+    <br>
 
   Segunda bandeja, na qual o braço com o ímã ligado passa em uma bandeja só com água para limpar o excesso de materiais, visando a limpeza de tudo que não seja magnético.
 
-
-  <p align="center">
-  <img src="img/relatorio/segunda_bandeja.jpeg" width="400px">
-  </p>
-  <br>
+    <p align="center">
+    <img src="img/relatorio/segunda_bandeja.jpeg" width="400px">
+    </p>
+    <br>
 
   Terceira bandeja, na qual o braço quando se aproxima da bandeja com água, desliga o(s) ímã(s) a fim de soltar todo o material magnético na bandeja.
 
-  <p align="center">
-  <img src="img/relatorio/terceira_bandeja.jpeg" width="400px">
-  </p>
-  <br>
-
+    <p align="center">
+    <img src="img/relatorio/terceira_bandeja.jpeg" width="400px">
+    </p>
+    <br>
 
   Pronto, após a repetição dessa sequência algumas vezes, o ensaio é finalizado. Posteriormente, o grupo pensa em utilizar uma balança para ser a condição de parada do ensaio, terminando a operação quando a diferença entre duas varreduras completas for muito pequena.
 
-  <p align="center">
-  <img src="img/relatorio/ensaio_finalizado.jpeg" width="400px">
-  </p>
-  <br>
-
+    <p align="center">
+    <img src="img/relatorio/ensaio_finalizado.jpeg" width="400px">
+    </p>
+    <br>
 
   <b>Nota: as especificações dos componentes acima, podem ser encontrado de forma detalha na seção de "Documentação dos componentes."</b>
 
+# Validação Magic Box
 
-# Projeto de Banco de Dados
+## Áreas de atuação
 
-## Modelo Conceitual
+### 1. Comunicação eletroimã
 
-## Modelo Lógico
+- A comunicação com o eltroimã é feita através da porta de interface PWM categorizada como ponto 1 na docuementação acima, no hardware ela é indetificavél pela cor vermelha. Através dessa porta é possivel controlar a tensão e a corrente podendo assim ligar e desligar o imã invertendo a corrente além de controlar o campo magnético pela variação de tensão.
+
+### 2. Comunicação celula de peso
+
+-
+
+### 3. Atuação como microcontrolador
+
+- O Magic Box atua como microcontrolador do tipo arduino, contudo pelo fato de ser desenvolvido pela Dobot ele possui costumizações feitas para melhorar a comunicação com os outros componentes como o Magician lite. Sendo assim possivel passar script e realizar a leitura de comandos programados.
+
+# Validação dispositivos mecânicos
+
+## Protótipos
+
+1. O primeiro protótipo foi pensado para encaixar no suporte do braço robótico (Magician Lite)como um módulo personalizado. Além disso ele foi projetado para acoplar 2 eletroimãs por baixo da estrutura, pensando em estabilizar os eletroimãs verticalmente com o parafuso m3 e horizontalmente pelo encaixe com o diametro exato da peça. Entre os dois eletroimãs seria vazado a fim de passar a fiação dos eletroimãs por dentro da pessa e conectar no Magic Box.
+<br>
+   <p align="center">
+  <img src="img/relatorio/supeletroima1.jpg" width="400px">
+  </p>
+
+2. O segundo protótipo manteve a mesma estrutura do seu anterior com a modifição da criação de uma parede entre os dois eletroimãs com o objetivo de facilitar o isolamento da fiação para evitar futuros problemas com os teste,tendo em vista que o teste são realizados com a submersão do eltroimã na água. Além disso foram adicionados alguns astes pensando na varredura da amostra durante o teste.
+<br>
+   <p align="center">
+  <img src="img/relatorio/suporte eletroimã3.jpg" width="400px">
+  </p>
+
+3. O terceiro protótipo foi mantido a estrutura primária com a retirada das astes adição de mais 2 eletroimãs que teve o objetivo de testar se o aumento da quantidade de eletroimãs aumentarias a superficie de contato com a amostra, melhorando o teste emn termos de eficiência. Além de ter adicionado uma tampa sobre os eletroimãs para facilitar a hipermeabilização.
+<br>
+   <p align="center">
+  <img src="img/relatorio/supeletroima2.jpg" width="400px">
+  </p>
+  <br>
+
+4. O quarto protótipo foi feito após o teste com o terceiro apresentarem problemas criticos como o bloqueio do campo magnético pela tampa e a falta de praticidade no encaixe dos eltroimãs que ficaram muito justos na peça, podendo acarretar em danos por desgaste.
+ <p align="center">
+<img src="img/relatorio/suporteeletroimã4.jpg" width="400px">
+</p>
+
+## Validação em testes
 
 # Teste de Software
 
@@ -676,12 +650,11 @@ Também durante está sprint 2, realizamos a construção do módulo de peso que
 
 ## Teste de Usabilidade
 
-Como citado anteriormente, o modelo de interface escolhido para o protótipo desenvolvido pelo grupo foi o próprio Magic Box do Dobot, ao qual é fornecido pelo kit. Essa escolha foi feita pelo fato de ser um microcontrolador, ponte-H, ter uma interface intuitiva e amigável, além de ter uma comunicação rápida e direta por meio de dois cabos: um de alimentação e outro de comunicação com o braço robótico. 
+Como citado anteriormente, o modelo de interface escolhido para o protótipo desenvolvido pelo grupo foi o próprio Magic Box do Dobot, ao qual é fornecido pelo kit. Essa escolha foi feita pelo fato de ser um microcontrolador, ponte-H, ter uma interface intuitiva e amigável, além de ter uma comunicação rápida e direta por meio de dois cabos: um de alimentação e outro de comunicação com o braço robótico.
 
 O Magic Box já possui uma interface em inglês, totalmente criada para facilitar o processo de utilização. Entretanto, o Magic Box não permite a customização de sua interface, pois ainda não foi disponibilizado para open source. Além disso, são identificados apenas arquivos .py, mesmo que uma pasta seja criada em um dos seus menus: Scripts ou Playback, no que lhe concerne, não serão exibidos no display.
 
 Sendo assim, durante essa sprint, decidimos criar códigos em arquivos .py, aos quais foram nomeados de acordo com suas funcionalidades, para que assim fosse possível que os usuários identificassem de maneira rápida, sendo acrescentado uma numeração na frente, como mostra a imagem abaixo:
-
 
  <p align="center">
   <img src="img/relatorio/iniciar_ensaio.jpeg" width="400px">
@@ -697,7 +670,7 @@ Sendo assim, os próprios arquivos salvos no Magic Box serviram como um menu, ao
 
 - Positivos: O menu funciona conforme o pensado, além de ter uma interface mais limpa. Também é intuitivo para aqueles que não utilizaram a solução anteriormente.
 
-- Negativos: O botão de OK, sinalizado em um formato esférico (localizado à direita do teclado), não apresenta um formato intuitivo em relação à sua função. Adicionalmente,  em algumas situações, é necessário pressionar os botões com força para realizar a ação desejada, já que o teclado apresenta baixa sensibilidade.
+- Negativos: O botão de OK, sinalizado em um formato esférico (localizado à direita do teclado), não apresenta um formato intuitivo em relação à sua função. Adicionalmente, em algumas situações, é necessário pressionar os botões com força para realizar a ação desejada, já que o teclado apresenta baixa sensibilidade.
 
 Embora alguns resultados negativos, foi possível validar a ideia principal do que foi desenvolvido, além de ter algumas percepções do que talvez possa ser melhorado.
 
