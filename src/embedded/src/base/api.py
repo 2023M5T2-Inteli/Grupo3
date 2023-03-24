@@ -185,7 +185,7 @@ class MbApi(object):
         return mb.GetInfraredSensor(port - 1)
 
     def set_port(self, port, io_func):
-        mb.SetIOMultiplexing(port, multiplex=io_func)
+        mb.SetIOMultiplexing(port, io_func)
         return True
 
     def set_converyor(self, index, enable, speed):

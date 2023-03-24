@@ -22,7 +22,7 @@ def test_list_props(item):
 # Function to test the HX711 sensor
 
 
-def test_hx711():
+def init_hx711():
     # Create a new HX711 object with the specified pin numbers
     pin_OUT = Pin("D12", Pin.IN, pull=Pin.PULL_DOWN)
     pin_SCK = Pin("D13", Pin.OUT)
@@ -86,7 +86,7 @@ def shakeAfterTurnOff():
         # Move the arm to position A
         Dobot.move_to(-53, 220, 20, 0)
         # Move the arm to position B
-        Dobot.move_to(-53, 220, 0, 0)
+        Dobot.move_to(-53, 220, -1, 0)
         # Increment the counter
         i += 1
 
@@ -109,11 +109,11 @@ def iniFirstTray():
     # Wait 500ms
     Time.sleep(500)
     # Move the arm to position A
-    Dobot.move_to(-0,  -247,  150, 0)
+    Dobot.move_to(-13,  -235,  150, 0,1)
     # Wait 500ms
     Time.sleep(500)
     # Move the arm to position B
-    Dobot.move_to(-0,  -247,  -65, 0)
+    Dobot.move_to(-13,  -230,  -4, 0,1)
 
 
 def scanFirstTray():
@@ -125,10 +125,10 @@ def scanFirstTray():
     while repeat != 10:
         # If the counter is even, move to a certain position.
         if (repeat % 2 == 0):
-            Dobot.move_to(-0,  -247,  -65, 0)
+            Dobot.move_to(-13,  -370,  -4, 0, 1)       
         # Otherwise, move to a different position.
         else:
-            Dobot.move_to(-21,  -340,  -65, 0)
+            Dobot.move_to(-13,  -230,  -4, 0, 1)
         # Increment the counter.
         repeat = repeat + 1
 
@@ -137,11 +137,11 @@ def iniSecondTray():
     # Display a message on a display.
     Display.print("Separando na segunda bandeja!")
     # Move the arm to a certain position.
-    Dobot.move_to(246,  -2,  100, 0)
+    Dobot.move_to(230,  10,  150, 0, 1)
     # Wait for a period of time.
     Time.sleep(500)
     # Move the arm to a different position.
-    Dobot.move_to(246,  -2,  -66, 0)
+    Dobot.move_to(243,  13,  -3, 0,1)
     # Wait for a period of time.
     Time.sleep(500)
 
@@ -153,10 +153,11 @@ def scanSecondTray():
     while repeat != 6:
         # If the counter is even, move to a certain position.
         if (repeat % 2 == 0):
-            Dobot.move_to(246,  -2,  -66, 0)
+            Dobot.move_to(360,  13,  -3, 0,1)
+            
         # Otherwise, move to a different position.
         else:
-            Dobot.move_to(342,  -16,  -66, 0)
+            Dobot.move_to(243,  13,  -3, 0,1)
         # Increment the counter.
         repeat = repeat + 1
 
@@ -165,11 +166,11 @@ def iniThirdTray():
     # Display a message on a display.
     Display.print("Separando na terceira bandeja!")
     # Move the arm to a certain position.
-    Dobot.move_to(2,  220,  100, 0)
+    Dobot.move_to(-1,  230,  150, 0,1)
     # Wait for a period of time.
     Time.sleep(500)
     # Move the arm to a different position.
-    Dobot.move_to(2,  220,  -65, 0)
+    Dobot.move_to(9,  223,  -4, 0,1)
     # Wait for a period of time.
     Time.sleep(100)
     # Turn off an electromagnet.
@@ -183,31 +184,35 @@ def shakeThirdTray():
     while repeat != 6:
         # If the counter is even, move to a certain position.
         if (repeat % 2 == 0):
-            Dobot.move_to(2,  220,  -65, 0)
+            Dobot.move_to(9,  360,  -4, 0,1)
         # Otherwise, move to a different position.
         else:
-            Dobot.move_to(2,  320,  -65, 0)
+            Dobot.move_to(9,  223,  -1, 0,1)
         # Increment the counter.
         repeat = repeat + 1
 
 
 def upArm():
     # Get the current position of the arm.
-    [x, y, z, r] = Dobot.get_pose()[0:4]
+    position = Dobot.get_pose()
+    x = position['x']
+    y = position['y']
     # Wait for a period of time.
     Time.sleep(1000)
     # Move the arm up to a certain position.
-    Dobot.move_to(x, y,  100, 0)
+    Dobot.move_to(x, y,  150, 0)
 
 
 def finish():
+    upArm()
     Dobot.set_home()  # Set Dobot to its home position
     Time.sleep(500)  # Wait for 500 milliseconds
     Display.print("Ensaio finalizado!")  # Print "Ensaio finalizado!" message to the display
+    play_buzzer()
 
 def set_magnetic_field():
     is_confirm = False
-    magnetic_field = 0
+    magnetic_field = 1
     while(is_confirm == False):
         print("Campo: ", magnetic_field)
         if Keyboard.UP.is_pressed() and magnetic_field <12:
@@ -215,7 +220,7 @@ def set_magnetic_field():
             magnetic_field = magnetic_field + 1
             print(str(magnetic_field))
 
-        if Keyboard.DOWN.is_pressed() and magnetic_field >0:
+        if Keyboard.DOWN.is_pressed() and magnetic_field >1:
             Time.sleep(1000)
             magnetic_field = magnetic_field - 1
             
@@ -227,32 +232,30 @@ def set_magnetic_field():
             is_confirm = True
     return magnetic_field
 
-
+def play_buzzer():
+    Buzzer.play(200)
+    Time.sleep(150)
+    Buzzer.play(200)
 
 def main():
-    test_hx711()
-    # magnetic_field = set_magnetic_field()
-    # Buzzer.play(200)
-    # Time.sleep(150)
-    # Buzzer.play(200)
-    # while True:
-    #     print("Iniciando ensaio")
-    # Dobot.setup()  # Set up Dobot
-    # isScan = 0  # Initialize isScan variable to 0
-    # # Run the loop until isScan is equal to 3
-    # while (isScan != 3):
-    #     upArm()  # Move the arm up
-    #     Dobot.set_home()  # Set Dobot to its home position
-    #     iniFirstTray()  # Initialize the first tray
-    #     scanFirstTray()  # Scan the first tray
-    #     upArm()  # Move the arm up again
-
-    #     iniSecondTray()  # Initialize the second tray
-    #     scanSecondTray()  # Scan the second tray
-
-    #     upArm()  # Move the arm up again
-
-    #     iniThirdTray()  # Initialize the third tray
-    #     shakeThirdTray()  # Shake the third tray
-    #     isScan = isScan + 1  # Increment the isScan variable by 1
-    # finish()  # Call the finish function to set Dobot to its home position, wait, and print a message.
+    magnetic_field = set_magnetic_field()
+    play_buzzer()
+    while True:
+        print("Iniciando ensaio")
+        isScan = 1  # Initialize isScan variable to 0
+     # Run the loop until isScan is equal to 3
+        while (isScan != 2):
+            upArm()  # Move the arm up
+            Dobot.set_home()  # Set Dobot to its home position
+            iniFirstTray()  # Initialize the first tray
+            scanFirstTray()  # Scan the first tray
+            upArm()  # Move the arm up again
+            iniSecondTray()  # Initialize the second tray
+            scanSecondTray()  # Scan the second tray
+            upArm()  # Move the arm up again
+            iniThirdTray()  # Initialize the third tray
+            shakeThirdTray()  # Shake the third tray
+            isScan = isScan + 1  # Increment the isScan variable by 1
+        finish()  # Call the finish function to set Dobot to its home position, wait, and print a message.
+        Time.sleep(2000)  # Wait for 2000 milliseconds
+        init_hx711()
