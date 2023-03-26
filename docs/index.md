@@ -420,6 +420,85 @@ A figura abaixo mostra o projeto das peças para molduragem da bandeja:
 </p>
 <br>
 
+Dessa forma, a primeira estrutaração para fabricação da bandeja foi pensada da seguinte forma:
+
+- As primeiras peças de montagem são as bases das bandejas, que serão cortadas na cortadora a laser nessa sequência:
+
+Base da bandeja que depositará a amostra misturada;
+<p align="center">
+<img src="![Alt text](img/relatorio/base_bandeja_suja.png)" width="400px">
+</p>
+<br>
+
+Base da bandeja na qual o braço limpará resíduos acoplados no imã, separando os materiais magnéticos e não magnéticos;
+<p align="center">
+<img src="![Alt text](img/relatorio/base_bandeja_limpeza.png)" width="400px">
+</p>
+<br>
+
+Base da bandeja em que será depositada a amostra já separada e limpa, apenas com materiais magnéticos;
+<p align="center">
+<img src="![Alt text](img/relatorio/base_bandeja_limpa.png)" width="400px">
+</p>
+<br>
+
+- As peças que foram pensadas para serem as paredes, tanto externas quanto internas, serão cortadas de forma retangular e depois dobradas com um soprador térmico;
+
+Paredes externas da estrutura da bandeja em ordem de varredura do braço;
+
+Parede externa da base da bandeja que contém a amostra misturada;
+<p align="center">
+<img src="![Alt text](img/relatorio/parede_externa_suja.png)" width="400px">
+</p>
+<br>
+
+Parede externa da base da bandeja que serve para limpeza da amostra acoplada ao ímã;
+<p align="center">
+<img src="![Alt text](img/relatorio/parede_externa_limpeza.png)" width="400px">
+</p>
+<br>
+
+Parede externa da base da bandeja que serve para depositar a amostra separada;
+<p align="center">
+<img src="![Alt text](img/relatorio/parede_externa_limpa.png)" width="400px">
+</p>
+<br>
+
+Paredes internas da estrutura da bandeja em ordem de varredura do braço;
+
+Parede interna da base da bandeja que contém a amostra misturada;
+<p align="center">
+<img src="![Alt text](img/relatorio/parede_interna_suja.png)" width="400px">
+</p>
+<br>
+
+Parede interna da base da bandeja que serve para limpeza da amostra acoplada ao ímã;
+<p align="center">
+<img src="![Alt text](img/relatorio/parede_interna_limpeza.png)" width="400px">
+</p>
+<br>
+
+Parede interna da base da bandeja que serve para depositar a amostra separada;
+<p align="center">
+<img src="![Alt text](img/relatorio/parede_interna_limpa.png)" width="400px">
+</p>
+<br>
+
+- Para separar as bandejas, o grupo chegou a conclusão de divisórias quadradas entre as bandejas;
+
+<p align="center">
+<img src="![Alt text](img/relatorio/divisorias.png)" width="400px">
+</p>
+<br>
+
+- Com isso, visando padronizar todos os ensaios, foi decidido que o robô precisaria de um encaixe, para que todos os ensaios realizados tenham a mesma varredura e as mesmas posições das bendejas;
+
+<p align="center">
+<img src="![Alt text](img/relatorio/encaixe_robo.png)" width="400px">
+</p>
+<br>
+
+
 ## Materiais:
 
 ### Filamento PLA:
