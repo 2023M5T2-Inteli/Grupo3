@@ -66,6 +66,7 @@ Concepção de sistema de automação industrial
   - [Materiais:](#materiais)
     - [Filamento PLA:](#filamento-pla)
     - [Especificações:](#especificações)
+      - [Método de fabricação dos projetos mecânicos:](#método-de-fabricação-dos-projetos-mecânicos)
       - [Projeto dos dispositivos Eletrônicos](#projeto-dos-dispositivos-eletrônicos)
       - [Pinagem Magic Box:](#pinagem-magic-box)
       - [Esquemático célula de peso:](#esquemático-célula-de-peso)
@@ -321,7 +322,11 @@ A matriz de oceano Azul é uma análise feita sobre a empresa e a solução prop
 # Arquitetura do Sistema
 
 ## Croqui
-Um croqui trata-se de um método de representação gráfica, utilizado principalmente por arquitetos, engenheiros e designers para esboçar ideias e conceitos visualmente. O objetivo do croqui é transmitir uma ideia de forma rápida e intuitiva, permitindo que o criador possa explorar diferentes possibilidades e testar soluções de forma prática. Neste sentido, o croqui foi uma ferramenta fundamental para o processo criativo da solução proposta pelo grupo. O projeto consiste na criação de um sistema automatizado de ensaio para análise de amostras de metal retiradas do solo, utilizando o braço robótico Dobot Magician Lite. Para otimizar a movimentação do braço, serão utilizadas três bandejas dispostas radialmente, permitindo maior velocidade de execução e reduzindo travamentos. A primeira bandeja será destinada à amostra bruta, a segunda será uma bandeja com água para limpar possíveis resíduos não magnéticos que foram puxados acidentalmente pelo eletroímã e a terceira será para a amostra limpa. Para controle dos componentes, será utilizado o Magic-Box, eliminando a necessidade de um servidor externo e permitindo ao cliente acesso às configurações do ensaio através de botões e display embutidos. Além disso, será adicionado um sensor de peso à terceira bandeja, responsável pela amostra limpa que, a cada rodada, realizará a pesagem e finalizará o ensaio quando não houver alteração na aferição desse peso. Para captar as amostras com o braço robótico, será adicionado um eletroímã, que será regulado pelo Magic-Box através de uma ponte H interna, permitindo a regulagem da força magnética. Espera-se obter, com a implementação dessas características, um sistema de ensaio automatizado eficiente e de fácil utilização. Um croqui deste sistema pode ser visto na figura abaixo:
+Um croqui trata-se de um método de representação gráfica, utilizado principalmente por arquitetos, engenheiros e designers para esboçar ideias e conceitos visualmente. O objetivo do croqui é transmitir uma ideia de forma rápida e intuitiva, permitindo que o criador possa explorar diferentes possibilidades e testar soluções de forma prática. Neste sentido, o croqui foi uma ferramenta fundamental para o processo criativo da solução proposta pelo grupo. O projeto consiste na criação de um sistema automatizado de ensaio para análise de amostras de metal retiradas do solo, utilizando o braço robótico Dobot Magician Lite. 
+
+Para otimizar a movimentação do braço, serão utilizadas três bandejas dispostas radialmente, permitindo maior velocidade de execução e reduzindo travamentos. A primeira bandeja será destinada à amostra bruta, a segunda será uma bandeja com água para limpar possíveis resíduos não magnéticos que foram puxados acidentalmente pelo eletroímã e a terceira será para a amostra limpa. Para controle dos componentes, será utilizado o Magic-Box, eliminando a necessidade de um servidor externo e permitindo ao cliente acesso às configurações do ensaio através de botões e display embutidos. Além disso, será adicionado um sensor de peso à terceira bandeja, responsável pela amostra limpa que, a cada rodada, realizará a pesagem e finalizará o ensaio quando não houver alteração na aferição desse peso.
+
+Para captar as amostras com o braço robótico, será adicionado um eletroímã, que será regulado pelo Magic-Box através de uma ponte H interna, permitindo a regulagem da força magnética. Espera-se obter, com a implementação dessas características, um sistema de ensaio automatizado eficiente e de fácil utilização. Um croqui deste sistema pode ser visto na figura abaixo:
 <p align="center">
 
 <img src="img/relatorio/croqui.png">
@@ -525,8 +530,9 @@ Base da bandeja em que será depositada a amostra já separada e limpa, apenas c
 - Temperatura da mesa: > 59º C
 
 
-Método de fabricação dos projetos mecânicos:
+#### Método de fabricação dos projetos mecânicos:
 A lista de materiais feita utilizará diferentes métodos para fabricação dos componentes presentes. Nesse sentido, o encaixe do ímã será feito com uma impressora 3D e o filamento de resina citado na lista de materiais, além disso, como seu modelo já está pronto, basta utilizar um programa de design 3D para gerar sua estrutura.
+
 Por sua vez, as bandejas em formato circular serão fabricadas a fim de otimizar a movimentação do robô, fabricando-as no formato que o Dobot Magician Lite varre de forma mais eficiente, com atuação de um número menor de eixos e de forma a economizar tempo em cada análise. Dessa maneira, para podermos manipular o formato das bandejas de um material de tão difícil maleabilidade quanto o acrílico, o grupo decidiu por utilizar um cortador a laser e um soprador térmico, os quais provaram-se ser um método mais eficiente para o objetivo do que a impressão 3D.
 
 #### Projeto dos dispositivos Eletrônicos
