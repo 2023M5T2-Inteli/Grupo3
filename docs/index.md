@@ -74,8 +74,6 @@ Concepção de sistema de automação industrial
       - [Descrição do Hardware](#descrição-do-hardware)
     - [Requisitos de software](#requisitos-de-software)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [UX e UI Design](#ux-e-ui-design)
-  - [Wireframe + Storyboard](#wireframe--storyboard)
   - [Design de Interface](#design-de-interface)
 - [Validação Magic Box](#validação-magic-box)
   - [Áreas de atuação](#áreas-de-atuação)
@@ -106,7 +104,6 @@ Concepção de sistema de automação industrial
 - [Manuais](#manuais)
   - [Manual de Implantação](#manual-de-implantação)
   - [Manual do Usuário](#manual-do-usuário)
-  - [Manual do Administrador](#manual-do-administrador)
 - [Referências](#referências)
 
 # Autores
@@ -208,7 +205,13 @@ Em última análise, realizando-se os cálculos, chega-se à conclusão que o va
 
 ## Análise das 5 forças de Porter
 
-- As 5 forças de Porter é uma análise feita em relação a como a empresa se encontra no ecossistema empresarial, levantando pontos relacionados aos seus principais stakeholder e como eles influenciam no desenvolvimento dela. Entre eles estão:
+As 5 forças de Porter é uma análise feita em relação a como a empresa se encontra no ecossistema empresarial, levantando pontos relacionados aos seus principais stakeholder e como eles influenciam no desenvolvimento dela. Entre eles estão:
+
+<p align="center">
+
+<img src="img/relatorio/cinco-forcas-porter.png">
+</p>
+<br>
 
 ### Fornecedores:
 
@@ -230,15 +233,15 @@ Em última análise, realizando-se os cálculos, chega-se à conclusão que o va
 
 - São empresas que possuem produtos que não são do mesmo setor mas possuem soluções que se aplicam para as dores do setor. Algumas empresas privadas que encontramos em uma pesquisa sobre produtos similares a análise do solo para mineração fornecem esse tipo de serviços mas de maneira diferente e não só para esse propósito podendo atuar como produtos substitutos.
 
-<p align="center">
-
-<img src="img/relatorio/cinco-forcas-porter.png">
-</p>
-<br>
-
 ## Proposta de Valor: Value Proposition Canvas
 
-- O canvas proposition é uma ferramenta que auxilia na criação do produto em relação as espectativa e demandas do cliente, ele é fundamental para o entendimento de como a solução será relevante e validar algumas hipótese sobre o produto. Essa ferreamenta é divido em dois pontos sobre o produto e sobre o cliente. Esses pontos servem para nortear os tópicos relevantes ao produto e quais são relevantes ao cliente.
+O canvas proposition é uma ferramenta que auxilia na criação do produto em relação as espectativa e demandas do cliente, ele é fundamental para o entendimento de como a solução será relevante e validar algumas hipótese sobre o produto. Essa ferreamenta é divido em dois pontos sobre o produto e sobre o cliente. Esses pontos servem para nortear os tópicos relevantes ao produto e quais são relevantes ao cliente.
+
+<p align="center">
+
+<img src="img/relatorio/value-proposition-canvas.png">
+</p>
+<br>
 
 ### Produto:
 
@@ -251,12 +254,6 @@ Em última análise, realizando-se os cálculos, chega-se à conclusão que o va
 1. Dores: São os problemas do cliente diretamente exemplificado o que ele precisa que seja solucionado.
 2. Tarefas do cliente: São instruções que o cliente precisa fazer ou para a solução funcionar ou para que ela auxilie ele na resolução das dores.
 3. Ganhos: Valor agregado do produto que irá impactar diretamente o cliente.
-
-<p align="center">
-
-<img src="img/relatorio/value-proposition-canvas.png">
-</p>
-<br>
 
 ## Matriz de Risco
 
@@ -295,9 +292,21 @@ A matriz de oceano Azul é uma análise feita sobre a empresa e a solução prop
 
 <img src="img/relatorio/personas-1.png">
 </p>
+<p  align="center">
+
+<img src="img/relatorio/personas-1-caracteristica.png">
+</p>
+
+<br>
+
 <p align="center">
 
 <img src="img/relatorio/personas-2.png">
+</p>
+
+<p align="center">
+
+<img src="img/relatorio/personas-2-caracteristica.png">
 </p>
 <br>
 
@@ -335,12 +344,17 @@ Para captar as amostras com o braço robótico, será adicionado um eletroímã,
 ## Documentação dos componentes
 
 ### Esquema Geral dos Componentes
+<p align="center">
+
+<img src="img/relatorio/documentacao-componentes.png">
+</p>
 
 ### Componentes
 
 #### Braço Robótico Dobot Magician Lite
 
 - O braço robótico Dobot Magician lite é um robo que apresenta uma interface em software que dá suporte para a programação do hardware, possibilitando a utilização da garra para tarefas diversas tanto em protótipos reais como no estudo de interação entre inteligência artificial e hardware.
+  
 <p align="center">
 <img src="img/relatorio/magician-lite.png" width="400px">
 </p>
@@ -617,10 +631,9 @@ O Magic Box atua como um microcontrolador capaz de rodar scripts que são inicia
 ### Requisitos de software
 
 ## Tecnologias Utilizadas
-
-# UX e UI Design
-
-## Wireframe + Storyboard
+- Dobot Magician Lite;
+- Magic Box (fornecido no kit do Dobot);
+- Liguagem de programação Python;
 
 ## Design de Interface
 
@@ -915,7 +928,5 @@ Embora alguns resultados negativos, foi possível validar a ideia principal do q
 ## Manual de Implantação
 
 ## Manual do Usuário
-
-## Manual do Administrador
 
 # Referências
