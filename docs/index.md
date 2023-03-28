@@ -120,13 +120,13 @@ Concepção de sistema de automação industrial
 
 ## Empresa
 
-O IPT (Instituto de Pesquisas Tecnológicas) é uma organização de pesquisa, desenvolvimento e inovação, vinculada ao Governo do Estado de São Paulo. As áreas de atuação do IPT são bastante diversificadas, produzindo soluções de engenharia, materiais, meio ambiente, energia, e saúde. O instituto é reconhecido nacional e internacionalmente pela excelência técnica e qualidade de seus serviços, e principalmente, pela capacidade de inovação.
+O IPT (Instituto de Pesquisas Tecnológicas) é uma organização de pesquisa, desenvolvimento e inovação, vinculada ao Governo do Estado de São Paulo. As áreas de atuação do IPT são bastante diversificadas, produzindo soluções de engenharia, materiais, meio ambiente, energia e saúde. O instituto é reconhecido nacional e internacionalmente pela excelência técnica e qualidade de seus serviços e, principalmente, pela capacidade de inovação.
 
-No setor de mineração, o IPT desenvolve pesquisas e desenvolvimento de tecnologias para essa indústria, e utiliza seus laboratórios e equipamentos principalmente para a realização de ensaios e análises de amostras de minérios, separação de minerais e estudos de solos com potencial de extração mineral.
+No setor de mineração, o IPT desenvolve pesquisas e desenvolvimento de tecnologias para indústria, utilizando seus laboratórios e equipamentos majoritariamente para a realização de ensaios e análises de amostras de minérios, separação de minerais e estudos de solos com potencial de extração mineral.
 
 ## O Problema
 
-No início do módulo, foi nos apresentado, durante o processo de exposição do projeto para a turma de Engenharia da Computação do Inteli, o Instituto de Pesquisa Tecnológicas - IPT . Tal projeto traz como principal foco o processo de separação de minérios (imagem 1), ao qual ainda é realizado manualmente por um operador (técnico de laboratório do IPT) que leva em média de 20 – 30 minutos dependendo do tamanho de amostra e concentração de minérios de ferro encontrados na amostra.
+No início do módulo, foi nos apresentado, durante o processo de exposição do projeto para a turma de Engenharia da Computação do Inteli, o Instituto de Pesquisa Tecnológicas - IPT. Tal projeto traz como principal foco o processo de separação de minérios (imagem 1), o qual ainda é realizado manualmente por um operador, técnico de laboratório do IPT, que leva em média de 20 – 30 minutos para finalizar a operação, dependendo do tamanho e concentração de minérios de ferro encontrados na amostra.
 
 ## Objetivos
 
@@ -138,11 +138,11 @@ Com o intuito de aliviar os problemas e as dores apresentadas, produziremos uma 
 
 Para cumprir com o objetivo citado, os seguintes objetivos específicos devem ser concluídos:
 
-- O braço robótico fará a tarefa de executar a varredura da bandeja inicial da amostra com um eletroímã, que deverá ser ajustado conforme o metal que deseja-se obter;
-- O braço robótico também deverá começar a varrer a amostra, mantendo uma distância e o campo magnético fixos;
-- Após a conclusão da varredura, o robô irá submergir em água o que foi coletado, com o intuito de retirar as impurezas que ficaram retidas;
+- O braço robótico fará a tarefa de executar a varredura da bandeja inicial, na qual é depositada a amostra misturada, com um eletroímã, que deverá ser ajustado conforme o metal que deseja-se obter;
+- O braço robótico deverá começar a varrer a amostra, mantendo uma distância e o campo magnético fixos;
+- Após a conclusão da varredura, o robô irá submergir em água o que foi coletado, a fim de retirar as impurezas que ficaram retidas no ímã;
 - Posteriormente, o braço irá se direcionar para a bandeja de coleta, onde o ímã será desativado e a amostra será depositada;
-- O processo será repetido até que toda a amostra seja coletada.
+- O processo será repetido até que toda a amostra seja coletada, tendo como critério de parada a aferição de peso da terceira bandeja.
 
 ## Partes interessadas
 
@@ -151,7 +151,7 @@ Para cumprir com o objetivo citado, os seguintes objetivos específicos devem se
 
 # Análise do Problema
 
-No início do módulo, foi nos apresentado, durante o processo de exposição do projeto para a turma de Engenharia da Computação do Inteli, o Instituto de Pesquisa Tecnológicas - IPT . Tal projeto traz como principal foco o processo de separação de minérios (imagem 1), ao qual ainda é realizado manualmente por um operador (técnico de laboratório do IPT) que leva em média de 20 – 30 minutos dependendo do tamanho de amostra e concentração de minérios de ferro encontrados na amostra.
+No início do módulo, foi nos apresentado, durante o processo de exposição do projeto para a turma de Engenharia da Computação do Inteli, o Instituto de Pesquisa Tecnológicas - IPT. Tal projeto traz como principal foco o processo de separação de minérios (imagem 1), o qual ainda é realizado manualmente por um operador, técnico de laboratório do IPT, que leva em média de 20 – 30 minutos para finalizar a operação, dependendo do tamanho e concentração de minérios de ferro encontrados na amostra.
 
 <p align="center">
 <img src="img/relatorio/processo-separacao-minerios.png">
@@ -161,9 +161,9 @@ No início do módulo, foi nos apresentado, durante o processo de exposição do
 </p>
   
 <br>
-O processo de separação de amostras atualmente ocorre da seguinte forma: sobre uma mesa são dispostos 3 ímãs de diferentes potenciais (medidos em Gauss); 3 bandejas; 1 saco plástico; 1 recipiente com a amostra (imagem 2). Em todas as 3 bandejas são colocados água para facilitar a manipulação da amostra - na primeira bandeja é despejado a amostra e as outras 2 bandejas irão ser utilizadas como apoio durante o processo de separação manual. Após estas etapas, é escolhido o ímã que mais atrai minérios magnéticos, o qual é envolvido em um plástico (para facilitar a retirada dos materiais de ferros recolhidos pelo ímã).
+O processo de separação de amostras atualmente ocorre da seguinte forma: sobre uma mesa são dispostos 3 ímãs de diferentes intensidades (medidos em Gauss); 3 bandejas; 1 saco plástico; 1 recipiente com a amostra (imagem 2). Todas as bandejas são cheias com água para facilitar a manipulação da amostra - na primeira bandeja é despejado a amostra misturada e as outras 2 bandejas são utilizadas como apoio durante o processo de separação manual. Após estas etapas, é escolhido o ímã com intensidade que faça mais sentido para o processo, sendo envolvido em um plástico (para facilitar a retirada dos materiais ferrosos recolhidos pelo ímã).
 
-Após esta fase, o ímã é mergulhado e passa pela bandeja que se encontra com água e a amostra, posteriormente na segunda bandeja só com água e por último solto e armazenado na última bandeja. Este processo é feito várias vezes com o ímã de maior potência e depois com os outros dois ímãs de menor potência, sendo realizado as etapas da mesma forma.
+Após esta fase, o ímã passa pela bandeja na qual se encontram água e a amostra, passando à segunda bandeja só com água para limpeza e por fim, desligado, depositando a amostra na última bandeja. Este processo é feito várias vezes com o ímã de maior intensidade e depois com os outros dois ímãs menores, com as etapas sendo realizadas da mesma forma.
 
 <p align="center">
 
@@ -174,7 +174,7 @@ Após esta fase, o ímã é mergulhado e passa pela bandeja que se encontra com 
 
 <br>
 
-A necessidade de atualizar este processo vem das grandes demandas de empresas procurando o IPT para realizar testes de separação de minérios em amostra de perfurações realizadas em alguns terrenos. Essas amostras, por sua vez, têm a intenção de analisar a viabilidade do investimento em mineração desses terrenos por meio de algumas métricas pré-estabelecidas, que procuram informações acerca de presença, quantidade e qualidade dos minérios de ferro para extração ponderando viabilidade financeira e ambiental. Algumas das informações almejadas para tal análise são:
+A necessidade de atualizar este processo vem das grandes demandas de empresas procurando o IPT para realizar testes de separação de minérios em amostras de perfurações realizadas em alguns terrenos. Essas amostras, por sua vez, têm a intenção de analisar a viabilidade do investimento em mineração desses terrenos por meio de algumas métricas pré-estabelecidas, que procuram informações acerca de presença, quantidade e qualidade dos minérios de ferro para extração, ponderando viabilidade financeira e ambiental. Algumas das informações almejadas para tal análise são:
 
 1. Concentração de ferro na amostra;
 2. Qualidade do minério para determinar a pureza desse;
@@ -640,6 +640,14 @@ O Magic Box atua como um microcontrolador capaz de rodar scripts que são inicia
 A conexão homem máquina da solução do grupo será realizada por meio do Magic Box, controle que faz parte do kit do Dobot Magician Lite, de modo que a interface se mantenha simples e prática, sem a necessidade de outros dispositivos ou acesso à internet para a visualização do status da aplicação. A entrada de dados será feita por meio de um script pré definido, esse que o usuário poderá carregar no Magic Box para iniciar a atuação do robô. Além disso, para ajuste da intensidade de corrente elétrica de acionamento do ímã, distância do braço do robô, assim como sua velocidade, somente será necessário o usuário carregar o script que melhor supra sua necessidade, tendo variações nesses três parâmetros.
 
 Dessa forma, a arquitetura da solução foi idealizada com o intuito de dar maior praticidade ao operador, com a interface completa acoplada ao robô, tendo apenas o cabo de conexão como única distância entre eles. Somado a isso, o grupo decidiu usar o controle como forma de alimentação do(s) ímã(s), além de servir como controlador e alimentação da célula de carga, responsável por realizar o cálculo que conclui a varredura do robô.
+
+Esquemático da interface de usuário:
+
+   <p align="center">
+    <img src="img/relatorio/interface_usuario.jpg" width="400px">
+    </p>
+    <br>
+
 
 - Forma de uso da interface de usuário:
 
