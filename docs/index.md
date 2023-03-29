@@ -311,14 +311,14 @@ A matriz de oceano Azul é uma análise feita sobre a empresa e a solução prop
 3. Eu, como técnico de laboratório do IPT, desejo que a estrutura de bandejas seja removível para maior facilidade de lavagem e remoção de amostras.
 4. Eu, como técnico de laboratório do IPT, desejo automatizar o processo de varredura e separação de amostras.
 5. Eu, como técnico de laboratório do IPT, desejo dedicar mais meu tempo para pesagem e análise química das amostras.
-6. Eu, como técnico de laboratório do IPT, desejo uma interface para uso do robô que seja de fácil utilização e simples manutenção.
+6. Eu, como técnico de laboratório do IPT, desejo uma interface para uso do robô que seja de fácil utilização, não precise de acesso à internet e tenha simples manutenção.
 
 ### Engenheiro responsável pelo laboratório
 
 1. Eu, como engenheiro responsável pelo laboratório do IPT, desejo que a amostra analisada seja de maior confiabilidade do que possui hoje em dia.
 2. Eu, como engenheiro responsável pelo laboratório do IPT, desejo que a amostra seja analisada de maneira mais rápida para maior satisfação dos clientes.
 3. Eu, como engenheiro responsável pelo laboratório do IPT, desejo que a aplicação seja de fácil manutenção para não parar por muito tempo o atendimento dos clientes do laboratório.
-4. Eu, como engenheiro responsável pelo laboratório do IPT, desejo que a interface da aplicação seja simples e que eu consiga fazer todas as alterações possíveis por meio de uma tela LCD.
+4. Eu, como engenheiro responsável pelo laboratório do IPT, desejo que a interface da aplicação seja simples e que eu consiga fazer todas as alterações possíveis por meio do MagicBox para apenas configurar o campo magnético, iniciar os ciclos de varredura e aferir o peso da amostra.
 
 # Arquitetura do Sistema
 
