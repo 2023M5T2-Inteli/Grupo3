@@ -266,7 +266,7 @@ A partir da análise que realizamos sobre o contexto do projeto, percebemos que 
 Em contrapartida, os aspectos que gerariam maiores oportunidades seriam relacionados com a possibilidade de se obter uma separação mais precisa e com a capacidade de variação do campo magnético.
 
 <p align="center">
-<img src="img/relatorio/matriz-risco.png">
+<img src="img/relatorio/matriz-risco.jpg">
 </p>
 
 ## Matriz de avaliação de valor Oceano Azul
