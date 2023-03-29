@@ -70,10 +70,11 @@ Concepção de sistema de automação industrial
       - [Projeto dos dispositivos Eletrônicos](#projeto-dos-dispositivos-eletrônicos)
       - [Pinagem Magic Box:](#pinagem-magic-box)
       - [Esquemático célula de peso:](#esquemático-célula-de-peso)
-- [Planejamento e método de fabricação:](#planejamento-e-método-de-fabricação)
-      - [Descrição do Hardware](#descrição-do-hardware)
-    - [Requisitos de software](#requisitos-de-software)
+- [Planejamento e método de fabricação:](#planejamento-e-método-de-fabricação) - [Descrição do Hardware](#descrição-do-hardware)
+  - [Requisitos de software](#requisitos-de-software)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [UX e UI Design](#ux-e-ui-design)
+  - [Wireframe + Storyboard](#wireframe--storyboard)
   - [Design de Interface](#design-de-interface)
 - [Validação Magic Box](#validação-magic-box)
   - [Áreas de atuação](#áreas-de-atuação)
@@ -104,6 +105,7 @@ Concepção de sistema de automação industrial
 - [Manuais](#manuais)
   - [Manual de Implantação](#manual-de-implantação)
   - [Manual do Usuário](#manual-do-usuário)
+  - [Manual do Administrador](#manual-do-administrador)
 - [Referências](#referências)
 
 # Autores
@@ -120,13 +122,13 @@ Concepção de sistema de automação industrial
 
 ## Empresa
 
-O IPT (Instituto de Pesquisas Tecnológicas) é uma organização de pesquisa, desenvolvimento e inovação, vinculada ao Governo do Estado de São Paulo. As áreas de atuação do IPT são bastante diversificadas, produzindo soluções de engenharia, materiais, meio ambiente, energia e saúde. O instituto é reconhecido nacional e internacionalmente pela excelência técnica e qualidade de seus serviços e, principalmente, pela capacidade de inovação.
+O IPT (Instituto de Pesquisas Tecnológicas) é uma organização de pesquisa, desenvolvimento e inovação, vinculada ao Governo do Estado de São Paulo. As áreas de atuação do IPT são bastante diversificadas, produzindo soluções de engenharia, materiais, meio ambiente, energia, e saúde. O instituto é reconhecido nacional e internacionalmente pela excelência técnica e qualidade de seus serviços, e principalmente, pela capacidade de inovação.
 
-No setor de mineração, o IPT desenvolve pesquisas e desenvolvimento de tecnologias para indústria, utilizando seus laboratórios e equipamentos majoritariamente para a realização de ensaios e análises de amostras de minérios, separação de minerais e estudos de solos com potencial de extração mineral.
+No setor de mineração, o IPT desenvolve pesquisas e desenvolvimento de tecnologias para essa indústria, e utiliza seus laboratórios e equipamentos principalmente para a realização de ensaios e análises de amostras de minérios, separação de minerais e estudos de solos com potencial de extração mineral.
 
 ## O Problema
 
-No início do módulo, foi nos apresentado, durante o processo de exposição do projeto para a turma de Engenharia da Computação do Inteli, o Instituto de Pesquisa Tecnológicas - IPT. Tal projeto traz como principal foco o processo de separação de minérios (imagem 1), o qual ainda é realizado manualmente por um operador, técnico de laboratório do IPT, que leva em média de 20 – 30 minutos para finalizar a operação, dependendo do tamanho e concentração de minérios de ferro encontrados na amostra.
+No início do módulo, foi nos apresentado, durante o processo de exposição do projeto para a turma de Engenharia da Computação do Inteli, o Instituto de Pesquisa Tecnológicas - IPT . Tal projeto traz como principal foco o processo de separação de minérios (imagem 1), ao qual ainda é realizado manualmente por um operador (técnico de laboratório do IPT) que leva em média de 20 – 30 minutos dependendo do tamanho de amostra e concentração de minérios de ferro encontrados na amostra.
 
 ## Objetivos
 
@@ -138,11 +140,11 @@ Com o intuito de aliviar os problemas e as dores apresentadas, produziremos uma 
 
 Para cumprir com o objetivo citado, os seguintes objetivos específicos devem ser concluídos:
 
-- O braço robótico fará a tarefa de executar a varredura da bandeja inicial, na qual é depositada a amostra misturada, com um eletroímã, que deverá ser ajustado conforme o metal que deseja-se obter;
-- O braço robótico deverá começar a varrer a amostra, mantendo uma distância e o campo magnético fixos;
-- Após a conclusão da varredura, o robô irá submergir em água o que foi coletado, a fim de retirar as impurezas que ficaram retidas no ímã;
+- O braço robótico fará a tarefa de executar a varredura da bandeja inicial da amostra com um eletroímã, que deverá ser ajustado conforme o metal que deseja-se obter;
+- O braço robótico também deverá começar a varrer a amostra, mantendo uma distância e o campo magnético fixos;
+- Após a conclusão da varredura, o robô irá submergir em água o que foi coletado, com o intuito de retirar as impurezas que ficaram retidas;
 - Posteriormente, o braço irá se direcionar para a bandeja de coleta, onde o ímã será desativado e a amostra será depositada;
-- O processo será repetido até que toda a amostra seja coletada, tendo como critério de parada a aferição de peso da terceira bandeja.
+- O processo será repetido até que toda a amostra seja coletada.
 
 ## Partes interessadas
 
@@ -151,7 +153,7 @@ Para cumprir com o objetivo citado, os seguintes objetivos específicos devem se
 
 # Análise do Problema
 
-No início do módulo, foi nos apresentado, durante o processo de exposição do projeto para a turma de Engenharia da Computação do Inteli, o Instituto de Pesquisa Tecnológicas - IPT. Tal projeto traz como principal foco o processo de separação de minérios (imagem 1), o qual ainda é realizado manualmente por um operador, técnico de laboratório do IPT, que leva em média de 20 – 30 minutos para finalizar a operação, dependendo do tamanho e concentração de minérios de ferro encontrados na amostra.
+No início do módulo, foi nos apresentado, durante o processo de exposição do projeto para a turma de Engenharia da Computação do Inteli, o Instituto de Pesquisa Tecnológicas - IPT . Tal projeto traz como principal foco o processo de separação de minérios (imagem 1), ao qual ainda é realizado manualmente por um operador (técnico de laboratório do IPT) que leva em média de 20 – 30 minutos dependendo do tamanho de amostra e concentração de minérios de ferro encontrados na amostra.
 
 <p align="center">
 <img src="img/relatorio/processo-separacao-minerios.png">
@@ -161,9 +163,9 @@ No início do módulo, foi nos apresentado, durante o processo de exposição do
 </p>
   
 <br>
-O processo de separação de amostras atualmente ocorre da seguinte forma: sobre uma mesa são dispostos 3 ímãs de diferentes intensidades (medidos em Gauss); 3 bandejas; 1 saco plástico; 1 recipiente com a amostra (imagem 2). Todas as bandejas são cheias com água para facilitar a manipulação da amostra - na primeira bandeja é despejado a amostra misturada e as outras 2 bandejas são utilizadas como apoio durante o processo de separação manual. Após estas etapas, é escolhido o ímã com intensidade que faça mais sentido para o processo, sendo envolvido em um plástico (para facilitar a retirada dos materiais ferrosos recolhidos pelo ímã).
+O processo de separação de amostras atualmente ocorre da seguinte forma: sobre uma mesa são dispostos 3 ímãs de diferentes potenciais (medidos em Gauss); 3 bandejas; 1 saco plástico; 1 recipiente com a amostra (imagem 2). Em todas as 3 bandejas são colocados água para facilitar a manipulação da amostra - na primeira bandeja é despejado a amostra e as outras 2 bandejas irão ser utilizadas como apoio durante o processo de separação manual. Após estas etapas, é escolhido o ímã que mais atrai minérios magnéticos, o qual é envolvido em um plástico (para facilitar a retirada dos materiais de ferros recolhidos pelo ímã).
 
-Após esta fase, o ímã passa pela bandeja na qual se encontram água e a amostra, passando à segunda bandeja só com água para limpeza e por fim, desligado, depositando a amostra na última bandeja. Este processo é feito várias vezes com o ímã de maior intensidade e depois com os outros dois ímãs menores, com as etapas sendo realizadas da mesma forma.
+Após esta fase, o ímã é mergulhado e passa pela bandeja que se encontra com água e a amostra, posteriormente na segunda bandeja só com água e por último solto e armazenado na última bandeja. Este processo é feito várias vezes com o ímã de maior potência e depois com os outros dois ímãs de menor potência, sendo realizado as etapas da mesma forma.
 
 <p align="center">
 
@@ -174,7 +176,7 @@ Após esta fase, o ímã passa pela bandeja na qual se encontram água e a amost
 
 <br>
 
-A necessidade de atualizar este processo vem das grandes demandas de empresas procurando o IPT para realizar testes de separação de minérios em amostras de perfurações realizadas em alguns terrenos. Essas amostras, por sua vez, têm a intenção de analisar a viabilidade do investimento em mineração desses terrenos por meio de algumas métricas pré-estabelecidas, que procuram informações acerca de presença, quantidade e qualidade dos minérios de ferro para extração, ponderando viabilidade financeira e ambiental. Algumas das informações almejadas para tal análise são:
+A necessidade de atualizar este processo vem das grandes demandas de empresas procurando o IPT para realizar testes de separação de minérios em amostra de perfurações realizadas em alguns terrenos. Essas amostras, por sua vez, têm a intenção de analisar a viabilidade do investimento em mineração desses terrenos por meio de algumas métricas pré-estabelecidas, que procuram informações acerca de presença, quantidade e qualidade dos minérios de ferro para extração ponderando viabilidade financeira e ambiental. Algumas das informações almejadas para tal análise são:
 
 1. Concentração de ferro na amostra;
 2. Qualidade do minério para determinar a pureza desse;
@@ -205,13 +207,7 @@ Em última análise, realizando-se os cálculos, chega-se à conclusão que o va
 
 ## Análise das 5 forças de Porter
 
-As 5 forças de Porter é uma análise feita em relação a como a empresa se encontra no ecossistema empresarial, levantando pontos relacionados aos seus principais stakeholder e como eles influenciam no desenvolvimento dela. Entre eles estão:
-
-<p align="center">
-
-<img src="img/relatorio/cinco-forcas-porter.png">
-</p>
-<br>
+- As 5 forças de Porter é uma análise feita em relação a como a empresa se encontra no ecossistema empresarial, levantando pontos relacionados aos seus principais stakeholder e como eles influenciam no desenvolvimento dela. Entre eles estão:
 
 ### Fornecedores:
 
@@ -219,7 +215,7 @@ As 5 forças de Porter é uma análise feita em relação a como a empresa se en
 
 ### Consumidores:
 
-- Eles possuem a influência na receita da empresa pela escolha de adquirir ou não o produto, para o IPT as empresas e instituições que fecham contratatos com eles são importantes não só pelo funcionamento e mantimento das operações da empresa, mas para o incentivo de constante melhoria tendo em vista o grande aumento de tecnologia e na area de análise e pesquisas para diversas áreas.
+- Eles possuem a influência na receita da empresa pela escolha de adquirir ou não o produto, para o IPT as empresas e instituições que fecham contratos com eles são importantes não só pelo funcionamento e mantimento das operações da empresa, mas para o incentivo de constante melhoria tendo em vista o grande aumento de tecnologia na área de análises e pesquisas para diversas áreas.
 
 ### Entraves de de entrada
 
@@ -231,17 +227,19 @@ As 5 forças de Porter é uma análise feita em relação a como a empresa se en
 
 ### Substitutos:
 
-- São empresas que possuem produtos que não são do mesmo setor mas possuem soluções que se aplicam para as dores do setor. Algumas empresas privadas que encontramos em uma pesquisa sobre produtos similares a análise do solo para mineração fornecem esse tipo de serviços mas de maneira diferente e não só para esse propósito podendo atuar como produtos substitutos.
+- São empresas que possuem produtos que não são do mesmo setor mas possuem soluções que se aplicam para as dores do setor. Algumas empresas privadas que encontramos em uma pesquisa sobre produtos similares à análise do solo para mineração fornecem esse tipo de serviços mas de maneira diferente e não só para esse propósito podendo atuar como produtos substitutos.
 
-## Proposta de Valor: Value Proposition Canvas
-
-O canvas proposition é uma ferramenta que auxilia na criação do produto em relação as espectativa e demandas do cliente, ele é fundamental para o entendimento de como a solução será relevante e validar algumas hipótese sobre o produto. Essa ferreamenta é divido em dois pontos sobre o produto e sobre o cliente. Esses pontos servem para nortear os tópicos relevantes ao produto e quais são relevantes ao cliente.
+## Visualização de 5 forças de Porter detalhada
 
 <p align="center">
 
-<img src="img/relatorio/value-proposition-canvas.png">
+<img src="img/relatorio/cinco-forcas-porter.png">
 </p>
 <br>
+
+## Proposta de Valor: Value Proposition Canvas
+
+- O canvas proposition é uma ferramenta que auxilia na criação do produto em relação as espectativa e demandas do cliente, ele é fundamental para o entendimento de como a solução será relevante e validar algumas hipóteses sobre o produto. Essa ferreamenta é divida em dois pontos sobre o produto e sobre o cliente. Esses pontos servem para nortear os tópicos relevantes ao produto e quais são relevantes ao cliente.
 
 ### Produto:
 
@@ -254,6 +252,12 @@ O canvas proposition é uma ferramenta que auxilia na criação do produto em re
 1. Dores: São os problemas do cliente diretamente exemplificado o que ele precisa que seja solucionado.
 2. Tarefas do cliente: São instruções que o cliente precisa fazer ou para a solução funcionar ou para que ela auxilie ele na resolução das dores.
 3. Ganhos: Valor agregado do produto que irá impactar diretamente o cliente.
+
+<p align="center">
+
+<img src="img/relatorio/value-proposition-canvas.png">
+</p>
+<br>
 
 ## Matriz de Risco
 
@@ -292,25 +296,13 @@ A matriz de oceano Azul é uma análise feita sobre a empresa e a solução prop
 
 <img src="img/relatorio/personas-1.png">
 </p>
-<p  align="center">
-
-<img src="img/relatorio/personas-1-caracteristica.png">
-</p>
-
-<br>
-
 <p align="center">
 
 <img src="img/relatorio/personas-2.png">
 </p>
-
-<p align="center">
-
-<img src="img/relatorio/personas-2-caracteristica.png">
-</p>
 <br>
 
-## Histórias dos usuários (user stories)
+## Histórias dos usuários (user stories) 2
 
 ### Técnico do laboratório IPT
 
@@ -331,11 +323,13 @@ A matriz de oceano Azul é uma análise feita sobre a empresa e a solução prop
 # Arquitetura do Sistema
 
 ## Croqui
-Um croqui trata-se de um método de representação gráfica, utilizado principalmente por arquitetos, engenheiros e designers para esboçar ideias e conceitos visualmente. O objetivo do croqui é transmitir uma ideia de forma rápida e intuitiva, permitindo que o criador possa explorar diferentes possibilidades e testar soluções de forma prática. Neste sentido, o croqui foi uma ferramenta fundamental para o processo criativo da solução proposta pelo grupo. O projeto consiste na criação de um sistema automatizado de ensaio para análise de amostras de metal retiradas do solo, utilizando o braço robótico Dobot Magician Lite. 
+
+Um croqui trata-se de um método de representação gráfica, utilizado principalmente por arquitetos, engenheiros e designers para esboçar ideias e conceitos visualmente. O objetivo do croqui é transmitir uma ideia de forma rápida e intuitiva, permitindo que o criador possa explorar diferentes possibilidades e testar soluções de forma prática. Neste sentido, o croqui foi uma ferramenta fundamental para o processo criativo da solução proposta pelo grupo. O projeto consiste na criação de um sistema automatizado de ensaio para análise de amostras de metal retiradas do solo, utilizando o braço robótico Dobot Magician Lite.
 
 Para otimizar a movimentação do braço, serão utilizadas três bandejas dispostas radialmente, permitindo maior velocidade de execução e reduzindo travamentos. A primeira bandeja será destinada à amostra bruta, a segunda será uma bandeja com água para limpar possíveis resíduos não magnéticos que foram puxados acidentalmente pelo eletroímã e a terceira será para a amostra limpa. Para controle dos componentes, será utilizado o Magic-Box, eliminando a necessidade de um servidor externo e permitindo ao cliente acesso às configurações do ensaio através de botões e display embutidos. Além disso, será adicionado um sensor de peso à terceira bandeja, responsável pela amostra limpa que, a cada rodada, realizará a pesagem e finalizará o ensaio quando não houver alteração na aferição desse peso.
 
 Para captar as amostras com o braço robótico, será adicionado um eletroímã, que será regulado pelo Magic-Box através de uma ponte H interna, permitindo a regulagem da força magnética. Espera-se obter, com a implementação dessas características, um sistema de ensaio automatizado eficiente e de fácil utilização. Um croqui deste sistema pode ser visto na figura abaixo:
+
 <p align="center">
 
 <img src="img/relatorio/croqui.png">
@@ -344,17 +338,12 @@ Para captar as amostras com o braço robótico, será adicionado um eletroímã,
 ## Documentação dos componentes
 
 ### Esquema Geral dos Componentes
-<p align="center">
-
-<img src="img/relatorio/documentacao-componentes.png">
-</p>
 
 ### Componentes
 
 #### Braço Robótico Dobot Magician Lite
 
 - O braço robótico Dobot Magician lite é um robo que apresenta uma interface em software que dá suporte para a programação do hardware, possibilitando a utilização da garra para tarefas diversas tanto em protótipos reais como no estudo de interação entre inteligência artificial e hardware.
-  
 <p align="center">
 <img src="img/relatorio/magician-lite.png" width="400px">
 </p>
@@ -427,8 +416,6 @@ O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferen
 
 #### Projeto dos dispositivos mecânicos
 
-Lista de peças necessárias para fabricação:
-
 Encaixe do ímã: Estrutura para encaixe do ímã para acoplação com o braço robô, utilizando o encaixe para segurar caneta presente no kit Dobot Magician Lite. Dessa forma, produziremos uma estrutura em formato cilíndrico, (semelhante à caneta), que possuirá um furo superior para entrada de um parafuso, que servirá como ligação entre a estrutura e o eletroíma, pois será encaixado na entrada de parafuso M4 presente no eletroímã.
 Bandejas em formato circular: Bandejas que serão fabricadas em um formato circular específico para suprir o movimento do braço e torná-lo mais eficiente.
 
@@ -438,7 +425,8 @@ Bandejas em formato circular: Bandejas que serão fabricadas em um formato circu
 <br>
 
 ### Projeto da bandeja circular
-Para a fabricação das bandejas será utilizada uma placa de poliestireno de 1m de largura por 1m de comprimento. A partir do ângulo de movimentação do braço mecânico, foram tiradas as medidas de abrangência do arco de varredura que será feito pelo braço, que no caso será um ângulo de 270° a partir da base do braço fixado. Dessa forma, a placa possuirá um formato circular com vários cortes para molduragem de 3 bandejas com 8,4 cm de profundidade, 15 cm de largura e comprimentos diferentes para as 3 partes do processo de separação magnética, as quais serão: 
+
+Para a fabricação das bandejas será utilizada uma placa de poliestireno de 1m de largura por 1m de comprimento. A partir do ângulo de movimentação do braço mecânico, foram tiradas as medidas de abrangência do arco de varredura que será feito pelo braço, que no caso será um ângulo de 270° a partir da base do braço fixado. Dessa forma, a placa possuirá um formato circular com vários cortes para molduragem de 3 bandejas com 8,4 cm de profundidade, 15 cm de largura e comprimentos diferentes para as 3 partes do processo de separação magnética, as quais serão:
 
 - A primeira bandeja possuirá 89,9 cm de comprimento externo e 54,6 cm de comprimento interno;
 - A segunda bandeja possuirá 26,9 cm de comprimento externo e 16,4 cm de comprimento interno;
@@ -456,18 +444,21 @@ Dessa forma, a primeira estrutaração para fabricação da bandeja foi pensada 
 - As primeiras peças de montagem são as bases das bandejas, que serão cortadas na cortadora a laser nessa sequência:
 
 Base da bandeja que depositará a amostra misturada;
+
 <p align="center">
 <img src="img/relatorio/base_bandeja_suja.png" width="400px">
 </p>
 <br>
 
 Base da bandeja na qual o braço limpará resíduos acoplados no imã, separando os materiais magnéticos e não magnéticos;
+
 <p align="center">
 <img src="img/relatorio/base_bandeja_limpeza.png" width="400px">
 </p>
 <br>
 
 Base da bandeja em que será depositada a amostra já separada e limpa, apenas com materiais magnéticos;
+
 <p align="center">
 <img src="img/relatorio/base_bandeja_limpa.png" width="400px">
 </p>
@@ -482,19 +473,16 @@ Base da bandeja em que será depositada a amostra já separada e limpa, apenas c
   <img src="img/relatorio/parede_externa_suja.png" width="400px">
   </p>
 
-
   - Parede externa da base da bandeja que serve para limpeza da amostra acoplada ao ímã;
 
   <p align="center">
   <img src="img/relatorio/parede_externa_limpeza.png" width="400px">
   </p>
 
-
   - Parede externa da base da bandeja que serve para depositar a amostra separada;
   <p align="center">
   <img src="img/relatorio/parede_externa_limpa.png" width="400px">
   </p>
-
 
 - Paredes internas da estrutura da bandeja em ordem de varredura do braço;
 
@@ -503,18 +491,15 @@ Base da bandeja em que será depositada a amostra já separada e limpa, apenas c
   <img src="img/relatorio/parede_interna_suja.png" width="400px">
   </p>
 
-
   - Parede interna da base da bandeja que serve para limpeza da amostra acoplada ao ímã;
   <p align="center">
   <img src="img/relatorio/parede_interna_limpeza.png" width="400px">
   </p>
 
-
   - Parede interna da base da bandeja que serve para depositar a amostra separada;
   <p align="center">
   <img src="img/relatorio/parede_interna_limpa.png" width="400px">
   </p>
-
 
 - Para separar as bandejas, o grupo chegou a conclusão de divisórias quadradas entre as bandejas;
 
@@ -530,12 +515,12 @@ Base da bandeja em que será depositada a amostra já separada e limpa, apenas c
 </p>
 <br>
 
-
 ## Materiais:
 
 ### Filamento PLA:
 
 ### Especificações:
+
 - Matéria-prima: Poliácido Láctico
 - Diâmetro do filamento: 1,75 mm ± 0,05 mm
 - Dimensões do carretel: 20 cm x 6 cm (D x A)
@@ -543,13 +528,13 @@ Base da bandeja em que será depositada a amostra já separada e limpa, apenas c
 - Temperatura de impressão: 190º C - 215º C
 - Temperatura da mesa: > 59º C
 
+### Método de fabricação dos projetos mecânicos:
 
-#### Método de fabricação dos projetos mecânicos:
-A lista de materiais feita utilizará diferentes métodos para fabricação dos componentes presentes. Nesse sentido, o encaixe do ímã será feito com uma impressora 3D e o filamento de resina citado na lista de materiais, além disso, como seu modelo já está pronto, basta utilizar um programa de design 3D para gerar sua estrutura.
+- A lista de materiais feita utilizará diferentes métodos para fabricação dos componentes presentes. Nesse sentido, o encaixe do ímã será feito com uma impressora 3D e o filamento de resina citado na lista de materiais, além disso, como seu modelo já está pronto, basta utilizar um programa de design 3D para gerar sua estrutura.
 
-Por sua vez, as bandejas em formato circular serão fabricadas a fim de otimizar a movimentação do robô, fabricando-as no formato que o Dobot Magician Lite varre de forma mais eficiente, com atuação de um número menor de eixos e de forma a economizar tempo em cada análise. Dessa maneira, para podermos manipular o formato das bandejas de um material de tão difícil maleabilidade quanto o acrílico, o grupo decidiu por utilizar um cortador a laser e um soprador térmico, os quais provaram-se ser um método mais eficiente para o objetivo do que a impressão 3D.
+- Por sua vez, as bandejas em formato circular serão fabricadas a fim de otimizar a movimentação do robô, fabricando-as no formato que o Dobot Magician Lite varre de forma mais eficiente, com atuação de um número menor de eixos e de forma a economizar tempo em cada análise. Dessa maneira, para podermos manipular o formato das bandejas de poliestileno, o grupo decidiu por utilizar um cortador a laser, os quais provaram-se ser um método mais eficiente para o objetivo do que a impressão 3D.
 
-#### Projeto dos dispositivos Eletrônicos
+### Projeto dos dispositivos Eletrônicos
 
 - As placas que serão utilizadas será apena a placa de circuito integrada para o módulo de peso e a célula de carga.
 - O esquemático da célula de peso, os cabos serão todos conectados em uma porta do Magic box sendo eles apresentados no esquemático abaixo. O cabo de cor preta será ligado na porta do GND, o cabo de cor vermelha será ligado na entrada de 5V, o cabo verde será ligado na porta EIO16, o cabo azul será ligado na entrada EIO15.
@@ -587,6 +572,8 @@ Por sua vez, as bandejas em formato circular serão fabricadas a fim de otimizar
   - EIO16 - 3.3V com resistência de 51K
   - EIO15 - 3.3V com resistência de 51K
 
+#### Portas do Magic Box
+
 <p align="center">
 <img src="img/relatorio/Magic%20box.png">
 </p>
@@ -622,32 +609,21 @@ Por sua vez, as bandejas em formato circular serão fabricadas a fim de otimizar
 
 - A fabricação da placa de uso será através de uma placa de circuito integrado genérica com os componentes soldados e os cabos de alimentação serão ligados em uma porta do Magic Box.
 
-#### Descrição do Hardware
+## Descrição do Hardware
 
-Para o projeto, serão utilizados alguns componentes eletrônicos que têm a finalidade de cumprir com o objetivo da automação do processo de separação magnética de minérios e entre esses temos o braço robótico Magician Lite, que é conectado com um controlador externo que será o Magic Box através da porta de interface de comunicação com o Magician Lite (item 10 na imagem do campo de projeto de dispositivos eletrônicos). Além desses componentes serão usados, também, um eletroímã que será conectado ao Magic Box pela saída de 12 Volts e um módulo de peso que acompanha uma célula de carga que será conectada também ao Magic Box.
+- Para o projeto, serão utilizados alguns componentes eletrônicos que têm a finalidade de cumprir com o objetivo da automação do processo de separação magnética de minérios e entre esses temos o braço robótico Magician Lite, que é conectado com um controlador externo que será o Magic Box através da porta de interface de comunicação com o Magician Lite (item 10 na imagem do campo de projeto de dispositivos eletrônicos). Além desses componentes serão usados, também, um eletroímã que será conectado ao Magic Box pela saída de 12 Volts e um módulo de peso que acompanha uma célula de carga que será conectada também ao Magic Box.
 
-O Magic Box atua como um microcontrolador capaz de rodar scripts que são iniciados e selecionados pela própria interface de display que ele possui, além disso ele também possui uma Ponte H integrado a ele que será utilizado para inverter o campo e desligar o eletroímã através de um comando efetuado no script. O Magician Lite é o braço robótico utilizado com estrutura física para realizar a separação de misturas efetuando o processo operacional dividido em 3 fases como proposto no TAPI, e assim o eletroímã é responsável por coletar o material ferromagnético, e com a ajuda do braço, depositá-lo no recipiente de amostra. Já o módulo de peso e a célula de carga serão utilizados como método de verificar o momento de encerrar o ciclo de separação de misturas através da checagem após o final da separação, em que haverá a verificação para saber se houve ou não alteração no peso da amostra. Assim, quando não houver mais alteração será indicado que não há mais conteúdo ferromagnético na amostra e o processo poderá ser encerrado.
+- O Magic Box atua como um microcontrolador capaz de rodar scripts que são iniciados e selecionados pela própria interface de display que ele possui, além disso ele também possui uma Ponte H integrado a ele que será utilizado para inverter o campo e desligar o eletroímã através de um comando efetuado no script. O Magician Lite é o braço robótico utilizado com estrutura física para realizar a separação de misturas efetuando o processo operacional dividido em 3 fases como proposto no TAPI, e assim o eletroímã é responsável por coletar o material ferromagnético, e com a ajuda do braço, depositá-lo no recipiente de amostra. Já o módulo de peso e a célula de carga serão utilizados como método de verificar o momento de encerrar o ciclo de separação de misturas através da checagem após o final da separação, em que haverá a verificação para saber se houve ou não alteração no peso da amostra. Assim, quando não houver mais alteração será indicado que não há mais conteúdo ferromagnético na amostra e o processo poderá ser encerrado.
 
 ### Requisitos de software
 
-## Tecnologias Utilizadas
-- Dobot Magician Lite;
-- Magic Box (fornecido no kit do Dobot);
-- Liguagem de programação Python;
+# UX e UI Design
 
 ## Design de Interface
 
 A conexão homem máquina da solução do grupo será realizada por meio do Magic Box, controle que faz parte do kit do Dobot Magician Lite, de modo que a interface se mantenha simples e prática, sem a necessidade de outros dispositivos ou acesso à internet para a visualização do status da aplicação. A entrada de dados será feita por meio de um script pré definido, esse que o usuário poderá carregar no Magic Box para iniciar a atuação do robô. Além disso, para ajuste da intensidade de corrente elétrica de acionamento do ímã, distância do braço do robô, assim como sua velocidade, somente será necessário o usuário carregar o script que melhor supra sua necessidade, tendo variações nesses três parâmetros.
 
 Dessa forma, a arquitetura da solução foi idealizada com o intuito de dar maior praticidade ao operador, com a interface completa acoplada ao robô, tendo apenas o cabo de conexão como única distância entre eles. Somado a isso, o grupo decidiu usar o controle como forma de alimentação do(s) ímã(s), além de servir como controlador e alimentação da célula de carga, responsável por realizar o cálculo que conclui a varredura do robô.
-
-Esquemático da interface de usuário:
-
-   <p align="center">
-    <img src="img/relatorio/interface_usuario.jpg" width="400px">
-    </p>
-    <br>
-
 
 - Forma de uso da interface de usuário:
 
@@ -716,7 +692,7 @@ Esquemático da interface de usuário:
 
 ### 2. Comunicação celula de peso
 
--
+- Utiliza comunicação SPI como base para a troca de informações entre Magic Box e HX711, sendo essa uma comunição que exige apenas duas GPIOs e uma entrada de GND e VCC. Todas as informaçoes de pinagem e de integração ja foram abordados em tópicos especificos do Magic Box e de componentes eletrônicos.
 
 ### 3. Atuação como microcontrolador
 
@@ -762,7 +738,7 @@ Esquemático da interface de usuário:
 
 ### Sprint 2
 
-#### Braço mecanico
+#### Braço mecânico
 
 Para a primeira versão do protótipo do braço robótico (Magician Lite), foi construído um código-fonte que permitisse a comunicação entre o braço robótico e um computador atraves do controle de seus eixos X, Y e Z por meio de um controle de Xbox. A escolha do controle de Xbox foi feita, inicialmente, pelo fato de ser o que chega ao mais próximo de nosso interface proposta, já que ambos se comunicarem por meio de um cabo a um receptor de entrada/saída (computador). Sendo assim, realizamos teste de movimentação ao qual notamos os seguintes problemas/ delimitações do Dobot Magician:
 
@@ -827,12 +803,13 @@ Por fim, a manipulação do Braço Robótico é feita por meio de um script util
 - Pontos positivos: Para chegar a esse resultado, foram necessários vários testes, tanto com as bibliotecas quanto com a montagem e o script rodando. Isso nos fez observar os pontos extremos que podemos alcançar com essa solução. Essa nova solução se torna mais barata para o cliente, pois exclui a utilização de outro microcontrolador, ponte H e construção de uma interface.
 
 - Pontos negativos: Algumas funções estruturadas foram criadas totalmente para o projeto. Desta forma, caso haja a necessidade de manutenção, os fabricantes não conseguirão ajudar com a resolução do problema.
-  
+
 <p align="center">
 <img src="img/relatorio/magic-box-cabos.jpg" width="400px">
 </p>
 
 #### Eletroímã e Magic Box
+
 Inicialmente, notamos que o Magic Box já possui duas portas denominadas SW1 e SW2, as quais possuem ponte H, possibilitando a utilização e manipulação do eletroímã por meio dessas portas. Dessa forma, conectamos os eletroímãs diretamente a essas portas por meio de jumpers fêmea-fêmea e os controlamos por meio da biblioteca Pin no código de execução. Durante a realização de testes, notamos alguns pontos positivos e negativos dessa parte da solução, sendo eles:
 
 - Ponto positivo: A manipulação consegue ser efetuada de forma fácil e rápida, já que não há nenhum tipo de delay e são poucos os intermediários que controlam.
@@ -850,16 +827,14 @@ Ao consultar a documentação do Dobot Magician Lite, notamos que a nomenclatura
 Partimos para um segundo plano, que consistia em criar um script que percorreria todas as portas, tentando exibir sua nomenclatura. Essa ideia funcionou corretamente, permitindo a realização do mapeamento das portas, do teclado da interface e do buzzer. A visualização do código criado pode ser realizada no arquivo denominado temp.py. Também é valido ressaltar os pontos negativos e positivos ocorridos:
 
 - Pontos positivos: o estudo e mapeamento de todo o Magic Box, abre um espaço para que nós alunos responsaveis do projeto possa criar algo no sentido de open source do Dobot Magcian Lite, já que a maioria do publico que utiliza essa versão do braço robotico é estudantes que estão fazendo algo relacionado a robotica ou engenharia.
-  
-- Pontos negativos: o tempo de demora para cumprir a espectativa estabeleciada foi muito alta, fazendo que o planejamento da sprin atrase por conta deste imprevisto. 
-
-
+- Pontos negativos: o tempo de demora para cumprir a espectativa estabeleciada foi muito alta, fazendo que o planejamento da sprin atrase por conta deste imprevisto.
 
 ### Sprint 4
 
 Partindo para a Sprint 4, continuamos construindo e adequando a soluções criadas e pensadas após a mudança no escopo do projeto. Desta forma, a maioria das frentes exploradas se davam na produção de códigos para a execução de funções como: ligar o modulo de peso ao Magic Box, tocar o Buzzer e alteração do valor do campo magnético por meio do teclado do Magic Box, além da produção dos suportes para o eletroímã.
 
 #### Buzzer
+
 Após o mapeamento realizado na Sprint 3, foi mais fácil realizar a construção da função, pois conseguimos encontrar a nomenclatura da porta de controle do buzzer e por meio da biblioteca “machine” do python, mais especificamente por meio da utilização da função “Pin”, foi criar as funções para ligar e desligar. A ideia é que o buzzer seja utilizado para indicar uma determinada ação, como, por exemplo, o fim de um ensaio ou confinação do campo magnético escolhido. Durante o processo de construção dessa funcionalidade, foi possível achar pontos positivos e negativos:
 
 - Pontos positivos: a utilização do buzzer faz sentido, segundo a própria validação com o parceiro em conversas mesmo.
@@ -867,7 +842,8 @@ Após o mapeamento realizado na Sprint 3, foi mais fácil realizar a construçã
 - Pontos negativos: o formato de construção, realizado da funcionalidade, pede que o parâmetro de tempo em milissegundo seja atribuído. Foi possível notar também um pequeno delay entre o tempo de execução do código e emissão do som.
 
 #### Alteração do Campo Magnético
-A construção desse requisito principal, solicitado pelo parceiro, foi construído por meio do mapeamento dos botões do teclado e também a utilização da biblioteca Pin do python. 
+
+A construção desse requisito principal, solicitado pelo parceiro, foi construído por meio do mapeamento dos botões do teclado e também a utilização da biblioteca Pin do python.
 
 Sendo assim, quando o usuário clicar com o botão para cima, ele aumentara o valor do campo magnético, por sua vez, quando clicar no botão para baixo limitado até o valor 1, caso queira confirma o valor do campo magnético basta apenas apertar o botão da direita. O valor é calculado por meio de cálculos da própria física e enviado para uma função PWM, ao qual é responsável por ajustar a intensidade transmitida. Existem algumas delimitações e pontos fortes da maneira ao atual que se encontra essa funcionalidade, sendo elas:
 
@@ -877,24 +853,25 @@ Sendo assim, quando o usuário clicar com o botão para cima, ele aumentara o va
 
 #### Modulo de peso e Magic Box
 
-A integração com o módulo de peso com o Magic Boz, se dá pela funcionalidade de que, a célula de carga será o valor de input que determinara quando o ensaio da amostra devera ser analisado. Dessa forma, eliminando a necessidade de determinar quantos movimentos serão necessários em cada ensaio.  A construção dessa funcionalidade, se deu por meio dá biblioteca machine citada anteriormente especificadamente o “PIN” e o “SPI”, sendo o Pin é para a utilização das portas e o SPI para a comunicação. Após a construção da solução e execução de teste, foi possível analisar a que passo a solução estava se encaminhando e se atendia o que proposto:
+A integração com o módulo de peso com o Magic Boz, se dá pela funcionalidade de que, a célula de carga será o valor de input que determinara quando o ensaio da amostra devera ser analisado. Dessa forma, eliminando a necessidade de determinar quantos movimentos serão necessários em cada ensaio. A construção dessa funcionalidade, se deu por meio dá biblioteca machine citada anteriormente especificadamente o “PIN” e o “SPI”, sendo o Pin é para a utilização das portas e o SPI para a comunicação. Após a construção da solução e execução de teste, foi possível analisar a que passo a solução estava se encaminhando e se atendia o que proposto:
 
 - Pontos positivos: o modulo de penso consegue funcionar de formar rápido com o Magic Box.
-  
 - Pontos negativos: a solução, até o momento criada, tem seus valores que variam muito constantemente, sendo necessária uma reavaliação do código e forma implementado.
 
 #### Suporte para o eletroímã
+
 Durante toda a sprint foram esquematizado e trabalhado 4 tipos de suporte para o eletroímã, sendo os modelos 1 e 2 pensado apenas para suporta dois eletroímãs, e os modelo 3 e 4 para suportar 4 eletroímãs. Todos os modelos criados apresentaram pontos positivos e negativos, que iram ser citados abaixo:
 
 - Pontos positivos: Todos os modelos cumpriam com a necessidade de suportar os eletroímãs, os suportes não ficaram pesados depois da impressão e a qualidade das impressões ficaram perfeitas, levando a pensar que vieram juntamento com o kit do Dobot Magician Lite.
 
 - Pontos negativos: Os modelos de suportes 1 e 2 limitava a uma área muito pequena de atuação na bandeja, já que os eletroímãs são pequenos. O modelo de suporte 1, tinham um comprimento muito pequeno. O modelo de supor 3, foi criado com uma tampa embaixo do eletroímã visando sua permeabilização, infelizmente o resultado foi negativo, por limitar a força do eletroímã. O modelo de suporte 4, dificulta a forma de instalação e substituição dos eletroímãs.
-  
+
 <b>Nota: Durante o final da Sprint 4, um novo modelo de suporte foi criado, mas iria ser impresso e testado apenas na Sprint 5</b>
 
 #### Movimentação do Braço Robótico
 
 <b>Nota: A movimentação do Braço Robótico, ainda se dá pela execução do realizado da Sprint 3, tendo em vista que para a Sprint 4, não teria necessidade de alteração.</b>
+
 ## Teste de Usabilidade
 
 Como citado anteriormente, o modelo de interface escolhido para o protótipo desenvolvido pelo grupo foi o próprio Magic Box do Dobot, ao qual é fornecido pelo kit. Essa escolha foi feita pelo fato de ser um microcontrolador, ponte-H, ter uma interface intuitiva e amigável, além de ter uma comunicação rápida e direta por meio de dois cabos: um de alimentação e outro de comunicação com o braço robótico.
@@ -928,5 +905,7 @@ Embora alguns resultados negativos, foi possível validar a ideia principal do q
 ## Manual de Implantação
 
 ## Manual do Usuário
+
+## Manual do Administrador
 
 # Referências
