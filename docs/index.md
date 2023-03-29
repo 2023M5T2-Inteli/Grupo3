@@ -39,6 +39,7 @@ Concepção de sistema de automação industrial
     - [Entraves de de entrada](#entraves-de-de-entrada)
     - [Concorrentes diretos:](#concorrentes-diretos)
     - [Substitutos:](#substitutos)
+  - [Visualização de 5 forças de Porter detalhada](#visualização-de-5-forças-de-porter-detalhada)
   - [Proposta de Valor: Value Proposition Canvas](#proposta-de-valor-value-proposition-canvas)
     - [Produto:](#produto)
     - [Cliente](#cliente)
@@ -46,7 +47,7 @@ Concepção de sistema de automação industrial
   - [Matriz de avaliação de valor Oceano Azul](#matriz-de-avaliação-de-valor-oceano-azul)
 - [Requisitos do Sistema](#requisitos-do-sistema)
   - [Personas](#personas)
-  - [Histórias dos usuários (user stories)](#histórias-dos-usuários-user-stories)
+  - [Histórias dos usuários (user stories) 2](#histórias-dos-usuários-user-stories-2)
     - [Técnico do laboratório IPT](#técnico-do-laboratório-ipt)
     - [Engenheiro responsável pelo laboratório](#engenheiro-responsável-pelo-laboratório)
 - [Arquitetura do Sistema](#arquitetura-do-sistema)
@@ -66,15 +67,15 @@ Concepção de sistema de automação industrial
   - [Materiais:](#materiais)
     - [Filamento PLA:](#filamento-pla)
     - [Especificações:](#especificações)
-      - [Método de fabricação dos projetos mecânicos:](#método-de-fabricação-dos-projetos-mecânicos)
-      - [Projeto dos dispositivos Eletrônicos](#projeto-dos-dispositivos-eletrônicos)
+    - [Método de fabricação dos projetos mecânicos:](#método-de-fabricação-dos-projetos-mecânicos)
+    - [Projeto dos dispositivos Eletrônicos](#projeto-dos-dispositivos-eletrônicos)
       - [Pinagem Magic Box:](#pinagem-magic-box)
       - [Esquemático célula de peso:](#esquemático-célula-de-peso)
-- [Planejamento e método de fabricação:](#planejamento-e-método-de-fabricação) - [Descrição do Hardware](#descrição-do-hardware)
-  - [Requisitos de software](#requisitos-de-software)
-  - [Tecnologias Utilizadas](#tecnologias-utilizadas)
+      - [Portas do Magic Box](#portas-do-magic-box)
+- [Planejamento e método de fabricação:](#planejamento-e-método-de-fabricação)
+  - [Descrição do Hardware](#descrição-do-hardware)
+    - [Requisitos de software](#requisitos-de-software)
 - [UX e UI Design](#ux-e-ui-design)
-  - [Wireframe + Storyboard](#wireframe--storyboard)
   - [Design de Interface](#design-de-interface)
 - [Validação Magic Box](#validação-magic-box)
   - [Áreas de atuação](#áreas-de-atuação)
@@ -87,7 +88,7 @@ Concepção de sistema de automação industrial
 - [Teste de Software](#teste-de-software)
   - [Testes Unitários](#testes-unitários)
     - [Sprint 2](#sprint-2)
-      - [Braço mecanico](#braço-mecanico)
+      - [Braço mecânico](#braço-mecânico)
       - [Eletroímã](#eletroímã-1)
       - [Módulo de peso](#módulo-de-peso)
     - [Sprint 3](#sprint-3)
@@ -101,11 +102,9 @@ Concepção de sistema de automação industrial
       - [Suporte para o eletroímã](#suporte-para-o-eletroímã)
       - [Movimentação do Braço Robótico](#movimentação-do-braço-robótico)
   - [Teste de Usabilidade](#teste-de-usabilidade)
-- [Análise de Dados](#análise-de-dados)
 - [Manuais](#manuais)
   - [Manual de Implantação](#manual-de-implantação)
   - [Manual do Usuário](#manual-do-usuário)
-  - [Manual do Administrador](#manual-do-administrador)
 - [Referências](#referências)
 
 # Autores
@@ -898,14 +897,14 @@ Sendo assim, os próprios arquivos salvos no Magic Box serviram como um menu, ao
 
 Embora alguns resultados negativos, foi possível validar a ideia principal do que foi desenvolvido, além de ter algumas percepções do que talvez possa ser melhorado.
 
-# Análise de Dados
-
 # Manuais
 
 ## Manual de Implantação
 
 ## Manual do Usuário
 
-## Manual do Administrador
-
 # Referências
+
+<a href= "https://www.dobot-robots.com/service/download-center?keyword=&products%5B%5D=315" target="_blank">Dobot Magician Lite - User Guide</a>
+
+<a href= "https://github.com/robert-hh/hx711" target="_blank">Módulo HX711 - Github of robert-hh</a>
