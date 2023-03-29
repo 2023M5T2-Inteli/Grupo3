@@ -241,7 +241,7 @@ Em última análise, realizando-se os cálculos, chega-se à conclusão que o va
 
 <p align="center">
 
-<img src="img/relatorio/value-proposition-canvas.png">
+<img src="img/relatorio/Value-Proposition-Canvas.jpg">
 </p>
 <br>
 
