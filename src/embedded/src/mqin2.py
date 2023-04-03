@@ -11,13 +11,27 @@ from machine import Pin, SPI
 
 
     # Set pin 12 to output mode
-MagicBox.IO.set_pin_mode(12, magicbox.PWM)
-    # Wait 500ms
-Time.sleep(500)
-    # Set pin 12 to high
+MagicBox.IO.set_pin_mode(13, magicbox.PWM)
+MagicBox.IO.set_pin_mode(12, magicbox.DO)
 MagicBox.IO.set_pin_value(12, 1)
     # Wait 500ms
-Time.sleep(5000)
-MagicBox.IO.set_pin_value(12, 0)
+Time.sleep(500)
+
+while(True):
+   
+    MagicBox.IO.set_pin_pwm(13,5000, 100)
+    Time.sleep(5000)
+    MagicBox.IO.set_pin_pwm(13,5000, 75)
+    Time.sleep(5000)
+    MagicBox.IO.set_pin_pwm(13,5000, 50)
+    Time.sleep(5000)
+    MagicBox.IO.set_pin_pwm(13,5000, 25)
+    Time.sleep(5000)
+    MagicBox.IO.set_pin_pwm(13,5000, 0)
+
+    
+
+
+
 Time.sleep(5000)
 MagicBox.IO.set_pin_value(12, 1)
