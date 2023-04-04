@@ -900,8 +900,76 @@ Embora alguns resultados negativos, foi possível validar a ideia principal do q
 # Manuais
 
 ## Manual de Implantação
+    O manual de implantação é uma parte da documentação destinada à montar o robô a partir do momento que esse é tirado da caixa. Nesse sentido, segue uma lista de instruções com fotos para montagem do kit DOBOT Magician Lite.
+ 
+    
+  1 - O primeiro passo consiste em tirar o robô da caixa e posicioná-lo no encaixe feito especificamente para ele. Essa parte do processo serve para garantir que todos os ensaios sejam iguais;
+      
+  <BR>
+  <p align="center">
+  <img src="img/relatorio/robo_caixa.jpeg" width="400px">
+  </p>
+  <br>
+
+  2 - Após isso, tire a fonte de energia da caixa e conecte a fonte com o robô e a tomada;
+      <p align="center">
+  <img src="img/relatorio/fonte_energia.jpeg" width="400px">
+  </p>
+  <br>
+
+3 - Tire o cabo USB e um cabo Flat da caixa, conectando um na entrada USB e o outro na 12V, respectivamente;
+    <p align="center">
+  <img src="img/relatorio/robo_cabos.jpeg" width="400px">
+  </p>
+  <br>
+
+4 - Tire o cabo de comunicação e o magic box da caixa e conecte os cabos USB, 12V e de comunicação no Magic Box;
+<p align="center">
+  <img src="img/relatorio/box_usb.jpeg" width="400px">
+  </p>
+  <br>
+<p align="center">
+  <img src="img/relatorio/box_comunicacao.jpeg" width="400px">
+  </p>
+  <br>
+
+  5 - Tire o case com dois ímãs já conectado à ponte H e conecte os jumpers da ponte no Magic Box; (portas do magic box e conexão na ponte H explicados nesse documento nos tópicos: componentes e validação dos dispositivos mecânicos)
+    <p align="center">
+  <img src="img/relatorio/box_ponteH.jpeg" width="400px">
+  </p>
+  <br>
+  6 - Por fim, encaixe o case do ímã no braço robótico.
+  <p align="center">
+  <img src="img/relatorio/case_ima.jpeg" width="400px">
+  </p>
+  <br>
 
 ## Manual do Usuário
+  Com o passo a passo da etapa anterior executado,  está tudo pronto para executar a operação. Para isso, siga as instruções contidas abaixo(com imagens) e execute o programa.
+
+  1 - O primeiro passo consiste em ligar o magic box, para isso, basta segurar o botão central até ouvir um som e a tela ligar;
+    <p align="center">
+  <img src="img/relatorio/box_liga.jpeg" width="400px">
+  </p>
+  <br>
+
+  2 - O segundo passo é ligar o DOBOT, pressionando o botão power à esquerda. Para confirmar a ligação, basta ouvir um som de confirmação;
+    <p align="center">
+  <img src="img/relatorio/dobot_ligar.jpeg" width="400px">
+  </p>
+  <br>
+
+  3 - Quando ambos componentes estiverem ligados, selecione o método de uso(contidos na interface de usuário nesse documento). Para aplicação, nesse manual será utilizado o método script para execução do programa;
+  <p align="center">
+    <img src="img/relatorio/selecao_script.jpeg" width="400px">
+    </p>
+    <br>
+
+  4 - Após seleção do modo, confirme a ação com o botão com símbolo de circulo. Ademais, confirme a intensidade de campo magnético da mesma maneira e aprecie o experimento.
+  <p align="center">
+    <img src="img/relatorio/primeira_bandeja.jpeg" width="400px">
+    </p>
+    <br>
 
 # Referências
 
