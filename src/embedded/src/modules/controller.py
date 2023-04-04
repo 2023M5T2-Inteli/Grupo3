@@ -63,24 +63,24 @@ def init_hx711():
 
 
 # Function to turn on the electromagnet
-def turnOnElectromagnet():
+def turnOnElectromagnet(mf):
     # Set pin 12 to output mode
-    MagicBox.IO.set_pin_mode(12, magicbox.DO)
+    MagicBox.IO.set_pin_mode(13, magicbox.PWM)
     # Wait 500ms
     Time.sleep(500)
     # Set pin 12 to high
-    MagicBox.IO.set_pin_value(12, 1)
+    MagicBox.IO.set_pin_pwm(13, 5000, mf)
     # Wait 500ms
     Time.sleep(500)
 
 # Function to turn off the electromagnet
 def turnOffElectromagnet():
     # Set pin 12 to output mode
-    MagicBox.IO.set_pin_mode(12, magicbox.DO)
+    MagicBox.IO.set_pin_mode(13, magicbox.PWM)
     # Wait 500ms
     Time.sleep(500)
-    # Set pin 12 to low
-    MagicBox.IO.set_pin_value(12, 0)
+    # Set pin 12 to high
+    MagicBox.IO.set_pin_pwm(13, 5000, 0)
     # Wait 500ms
     Time.sleep(500)
 
@@ -123,7 +123,7 @@ def scanFirstTray():
     # Initialize a counter variable.
     repeat = 0
     # Turn on an electromagnet.
-    turnOnElectromagnet()
+    #turnOnElectromagnet()
     # Loop 10 times.
     while repeat != 10:
         # If the counter is even, move to a certain position.
@@ -218,7 +218,7 @@ def set_magnetic_field():
     
     # Set initial values for variables
     is_confirm = False
-    magnetic_field = 1
+    magnetic_field = 50
     
     # Loop until the magnetic field is confirmed
     while(is_confirm == False):
@@ -227,15 +227,15 @@ def set_magnetic_field():
         print("Campo: ", magnetic_field)
         
         # If the UP arrow key is pressed and the magnetic field is less than 12, increase the magnetic field by 1
-        if Keyboard.UP.is_pressed() and magnetic_field <12:
+        if Keyboard.UP.is_pressed() and magnetic_field <100:
             Time.sleep(1000)
-            magnetic_field = magnetic_field + 1
+            magnetic_field = magnetic_field + 10
             print(str(magnetic_field))
         
         # If the DOWN arrow key is pressed and the magnetic field is greater than 1, decrease the magnetic field by 1
-        if Keyboard.DOWN.is_pressed() and magnetic_field >1:
+        if Keyboard.DOWN.is_pressed() and magnetic_field >10:
             Time.sleep(1000)
-            magnetic_field = magnetic_field - 1
+            magnetic_field = magnetic_field - 10
             print(str(magnetic_field))
             
         # If the RIGHT arrow key is pressed, confirm the magnetic field value and exit the loop
@@ -260,11 +260,20 @@ def play_buzzer():
 def main():
     magnetic_field = set_magnetic_field() # Set the magnetic field
     play_buzzer() # Play a buzzer sound
+    #turn on the Hbridge
+    MagicBox.IO.set_pin_mode(12, magicbox.DO)
+    # Wait 500ms
+    Time.sleep(500)
+    # Set pin 12 to high
+    MagicBox.IO.set_pin_value(12, 1)
+    # Wait 500ms
+    Time.sleep(500)
     while True:
         print("Iniciando ensaio") # Print "Iniciando ensaio" message to the display
         isScan = 1  # Initialize isScan variable to 0
      # Run the loop until isScan is equal to 3
         while (isScan != 2):
+            turnOnElectromagnet(magnetic_field)
             upArm()  # Move the arm up
             Dobot.set_home()  # Set Dobot to its home position
             iniFirstTray()  # Initialize the first tray
