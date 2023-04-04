@@ -254,7 +254,7 @@ Em última análise, realizando-se os cálculos, chega-se à conclusão que o va
 
 <p align="center">
 
-<img src="img/relatorio/value-proposition-canvas.png">
+<img src="img/relatorio/Value-Proposition-Canvas.jpg">
 </p>
 <br>
 
@@ -265,7 +265,7 @@ A partir da análise que realizamos sobre o contexto do projeto, percebemos que 
 Em contrapartida, os aspectos que gerariam maiores oportunidades seriam relacionados com a possibilidade de se obter uma separação mais precisa e com a capacidade de variação do campo magnético.
 
 <p align="center">
-<img src="img/relatorio/matriz-risco.png">
+<img src="img/relatorio/matriz-risco.jpg">
 </p>
 
 ## Matriz de avaliação de valor Oceano Azul
@@ -310,14 +310,14 @@ A matriz de oceano Azul é uma análise feita sobre a empresa e a solução prop
 3. Eu, como técnico de laboratório do IPT, desejo que a estrutura de bandejas seja removível para maior facilidade de lavagem e remoção de amostras.
 4. Eu, como técnico de laboratório do IPT, desejo automatizar o processo de varredura e separação de amostras.
 5. Eu, como técnico de laboratório do IPT, desejo dedicar mais meu tempo para pesagem e análise química das amostras.
-6. Eu, como técnico de laboratório do IPT, desejo uma interface para uso do robô que seja de fácil utilização e simples manutenção.
+6. Eu, como técnico de laboratório do IPT, desejo uma interface para uso do robô que seja de fácil utilização, não precise de acesso à internet e tenha   simples manutenção.
 
 ### Engenheiro responsável pelo laboratório
 
 1. Eu, como engenheiro responsável pelo laboratório do IPT, desejo que a amostra analisada seja de maior confiabilidade do que possui hoje em dia.
 2. Eu, como engenheiro responsável pelo laboratório do IPT, desejo que a amostra seja analisada de maneira mais rápida para maior satisfação dos clientes.
 3. Eu, como engenheiro responsável pelo laboratório do IPT, desejo que a aplicação seja de fácil manutenção para não parar por muito tempo o atendimento dos clientes do laboratório.
-4. Eu, como engenheiro responsável pelo laboratório do IPT, desejo que a interface da aplicação seja simples e que eu consiga fazer todas as alterações possíveis por meio de uma tela LCD.
+4. Eu, como engenheiro responsável pelo laboratório do IPT, desejo que a interface da aplicação seja simples e que eu consiga fazer todas as alterações possíveis por meio do MagicBox para apenas configurar o campo magnético, iniciar os ciclos de varredura e aferir o peso da amostra.
 
 # Arquitetura do Sistema
 
@@ -900,8 +900,76 @@ Embora alguns resultados negativos, foi possível validar a ideia principal do q
 # Manuais
 
 ## Manual de Implantação
+    O manual de implantação é uma parte da documentação destinada à montar o robô a partir do momento que esse é tirado da caixa. Nesse sentido, segue uma lista de instruções com fotos para montagem do kit DOBOT Magician Lite.
+ 
+    
+  1 - O primeiro passo consiste em tirar o robô da caixa e posicioná-lo no encaixe feito especificamente para ele. Essa parte do processo serve para garantir que todos os ensaios sejam iguais;
+      
+  <BR>
+  <p align="center">
+  <img src="img/relatorio/robo_caixa.jpeg" width="400px">
+  </p>
+  <br>
+
+  2 - Após isso, tire a fonte de energia da caixa e conecte a fonte com o robô e a tomada;
+      <p align="center">
+  <img src="img/relatorio/fonte_energia.jpeg" width="400px">
+  </p>
+  <br>
+
+3 - Tire o cabo USB e um cabo Flat da caixa, conectando um na entrada USB e o outro na 12V, respectivamente;
+    <p align="center">
+  <img src="img/relatorio/robo_cabos.jpeg" width="400px">
+  </p>
+  <br>
+
+4 - Tire o cabo de comunicação e o magic box da caixa e conecte os cabos USB, 12V e de comunicação no Magic Box;
+<p align="center">
+  <img src="img/relatorio/box_usb.jpeg" width="400px">
+  </p>
+  <br>
+<p align="center">
+  <img src="img/relatorio/box_comunicacao.jpeg" width="400px">
+  </p>
+  <br>
+
+  5 - Tire o case com dois ímãs já conectado à ponte H e conecte os jumpers da ponte no Magic Box; (portas do magic box e conexão na ponte H explicados nesse documento nos tópicos: componentes e validação dos dispositivos mecânicos)
+    <p align="center">
+  <img src="img/relatorio/box_ponteH.jpeg" width="400px">
+  </p>
+  <br>
+  6 - Por fim, encaixe o case do ímã no braço robótico.
+  <p align="center">
+  <img src="img/relatorio/case_ima.jpeg" width="400px">
+  </p>
+  <br>
 
 ## Manual do Usuário
+  Com o passo a passo da etapa anterior executado,  está tudo pronto para executar a operação. Para isso, siga as instruções contidas abaixo(com imagens) e execute o programa.
+
+  1 - O primeiro passo consiste em ligar o magic box, para isso, basta segurar o botão central até ouvir um som e a tela ligar;
+    <p align="center">
+  <img src="img/relatorio/box_liga.jpeg" width="400px">
+  </p>
+  <br>
+
+  2 - O segundo passo é ligar o DOBOT, pressionando o botão power à esquerda. Para confirmar a ligação, basta ouvir um som de confirmação;
+    <p align="center">
+  <img src="img/relatorio/dobot_ligar.jpeg" width="400px">
+  </p>
+  <br>
+
+  3 - Quando ambos componentes estiverem ligados, selecione o método de uso(contidos na interface de usuário nesse documento). Para aplicação, nesse manual será utilizado o método script para execução do programa;
+  <p align="center">
+    <img src="img/relatorio/selecao_script.jpeg" width="400px">
+    </p>
+    <br>
+
+  4 - Após seleção do modo, confirme a ação com o botão com símbolo de circulo. Ademais, confirme a intensidade de campo magnético da mesma maneira e aprecie o experimento.
+  <p align="center">
+    <img src="img/relatorio/primeira_bandeja.jpeg" width="400px">
+    </p>
+    <br>
 
 # Referências
 
