@@ -924,9 +924,22 @@ Embora alguns resultados negativos, foi possível validar a ideia principal do q
 
 ## Eletroímã, O retorno!
 
+#### Contexto
 Usando de gancho, a Sprint 5 uma das mais importantes para o projeto, pois nela que foi possível testar a solução de eletroímãs, no qual não obtivemos os resultados esperados para a solução... Utilizando-se do microcontrolador _Magic Box_, e seguindo a documentação, era possível encontrar básicas sobre o funcionamento de "_Motores externo_" ou "_SW Interface_", no que se encontra duas saídas, apresentadas por duas portas existentes no microcontrolador, as _SW1_(`EIO12`) e _SW2_(`EIO11`), em que seria possível o controle da tensão de saída, entre os valores de `8V~12.6VP`, e fornecer uma corrente de até `3A` para cada porta de saída.
 
-Durantes os testes usando exemplos encontrados, tanto nas documentações, tanto no forum oficial, e testes severos utilizando controladoras de portas da própria _Magic Box_, não obtivemos o resultado de controle da tensão de saída dos ímãs, apenas tivemos controle de funcionamento, ou seja, ligar e desligar o ímã, o que nos levou a crer que o problema estava na própria _Magic Box_, e não no código, ou no hardware... Com o problema mostrado, tivemos pouco tempo para buscar uma solução, e a mais própria foi voltarmos a utilizar a [Ponte H](#ponte-h) para controlar os ímas, pois a interface PWM, contido no microcontrolador, para manipular a tensão da [Ponte H](#ponte-h), estava em funcionamento, logo, revisamos as mudanças necessárias para implementação do mesmo no código, e com sucesso, pudemos ter o controle da tensão de saída dos ímas, e assim, obter o resultado esperado para a solução.
+#### Problema e solução atual
+
+Durantes os testes usando exemplos encontrados, tanto nas documentações, tanto no [fórum oficial](https://forum.dobot.cc/), e testes severos utilizando controladoras de portas da própria _Magic Box_, não obtivemos o resultado de controle da tensão de saída dos ímãs, apenas tivemos controle de funcionamento, ou seja, ligar e desligar o ímã, o que nos levou a crer que o problema estava na própria _Magic Box_, e não no código, ou no hardware... Com o problema mostrado, tivemos pouco tempo para buscar uma solução, e a mais própria foi voltarmos a utilizar a [Ponte H](#ponte-h) para controlar os ímas, pois a interface PWM, contido no microcontrolador, para manipular a tensão da [Ponte H](#ponte-h), estava em funcionamento, logo, revisamos as mudanças necessárias para implementação do mesmo no código, e com sucesso, pudemos ter o controle da tensão de saída dos ímas, e assim, obter o resultado esperado para a solução.
+#### Possível solução para o problema base
+Durante uma ardua busca, pesquisa e perguntas, em que tivemos contato até com um engenheiro da Dobot, tivemos poucos respostas de como contornar este problema, até então tinhamos desistido, pelo tempo que custou, sem algum tipo de retorno. No entanto, numa ultima tentativa de busca durante o [fórum oficial](https://forum.dobot.cc/), pudemos encontra algunas informações de outras pessoas que tiveram do mesmo problema, sendo eles:
+- https://forum.dobot.cc/t/dobot-magician/163
+- https://forum.dobot.cc/t/setemotor-didnt-work/3986
+- https://forum.dobot.cc/t/api-setemotor-not-work/414/8
+- https://forum.dobot.cc/t/conveyor-with-python-how-to/2366
+
+Vasculhando por respostas, encontramos um padrão de resposta, que tinha um caminho para solucionar o problema, no qual dizia sobre um erro de tipos na comunicação à API interna do _Magic Box_, em contexto pouco técnico, o tipo do dado esperado para o campo de potência do motor, para controle das portas _SW_ seria do tipo `INT32`, ou seja, um número inteiro, porém, o que é encontrado nos códigos, tanto na documentação oficial, tanto de repósitos, e até no `Firmware` interno do _Magic Box_, era um tipo `FLOAT`, ou seja, um número com casas decimais, o que não é aceito pela API interna do _Magic Box_, e por isso, não funcionava. Com isso, tivemos a certeza que o problema estava na comunicação entre o código e o _Magic Box_, e não no hardware, ou no código, e que era possível contornar o problema de alguma forma, mudando o tipo do dado na API base do _Magic Box_.
+
+Contudo, atualmente o código fonte do _Magic Box_ não é aberto, e não é possível alterar o código fonte da API base, e nem mesmo o `Firmware` interno, o que nos levou a crer que o problema não seria resolvido tão cedo, e que teríamos que utilizar a [Ponte H](#ponte-h) para controlar os ímas, e assim, obter o resultado esperado para a solução.
 
 # Manuais
 
