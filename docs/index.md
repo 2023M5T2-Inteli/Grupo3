@@ -103,7 +103,7 @@ Concepção de sistema de automação industrial
       - [Suporte para o eletroímã](#suporte-para-o-eletroímã)
       - [Movimentação do Braço Robótico](#movimentação-do-braço-robótico)
     - [Sprint 5](#sprint-5)
-      - [Eletroímã - O retorno!](#eletroímã-o-retorno)
+      - [Ponte H - O retorno!](#ponte-h-o-retorno)
         - [Contexto](#contexto)
         - [Problema e solução atual](#problema-e-solução-atual)
         - [Possível solução para o problema base](#possível-solução-para-o-problema-base)
@@ -925,7 +925,7 @@ Embora alguns resultados negativos, foi possível validar a ideia principal do q
 
 # Sprint 5
 
-## Eletroímã, O retorno!
+## Ponte H, O retorno!
 
 #### Contexto
 Usando de gancho, a Sprint 5 uma das mais importantes para o projeto, pois nela que foi possível testar a solução de eletroímãs, no qual não obtivemos os resultados esperados para a solução... Utilizando-se do microcontrolador _Magic Box_, e seguindo a documentação, era possível encontrar básicas sobre o funcionamento de "_Motores externo_" ou "_SW Interface_", no que se encontra duas saídas, apresentadas por duas portas existentes no microcontrolador, as _SW1_(`EIO12`) e _SW2_(`EIO11`), em que seria possível o controle da tensão de saída, entre os valores de `8V~12.6VP`, e fornecer uma corrente de até `3A` para cada porta de saída.
