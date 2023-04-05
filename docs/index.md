@@ -310,7 +310,7 @@ A matriz de oceano Azul é uma análise feita sobre a empresa e a solução prop
 3. Eu, como técnico de laboratório do IPT, desejo que a estrutura de bandejas seja removível para maior facilidade de lavagem e remoção de amostras.
 4. Eu, como técnico de laboratório do IPT, desejo automatizar o processo de varredura e separação de amostras.
 5. Eu, como técnico de laboratório do IPT, desejo dedicar mais meu tempo para pesagem e análise química das amostras.
-6. Eu, como técnico de laboratório do IPT, desejo uma interface para uso do robô que seja de fácil utilização, não precise de acesso à internet e tenha   simples manutenção.
+6. Eu, como técnico de laboratório do IPT, desejo uma interface para uso do robô que seja de fácil utilização, não precise de acesso à internet e tenha simples manutenção.
 
 ### Engenheiro responsável pelo laboratório
 
@@ -325,13 +325,13 @@ A matriz de oceano Azul é uma análise feita sobre a empresa e a solução prop
 
 Um croqui trata-se de um método de representação gráfica, utilizado principalmente por arquitetos, engenheiros e designers para esboçar ideias e conceitos visualmente. O objetivo do croqui é transmitir uma ideia de forma rápida e intuitiva, permitindo que o criador possa explorar diferentes possibilidades e testar soluções de forma prática. Neste sentido, o croqui foi uma ferramenta fundamental para o processo criativo da solução proposta pelo grupo. O projeto consiste na criação de um sistema automatizado de ensaio para análise de amostras de metal retiradas do solo, utilizando o braço robótico Dobot Magician Lite.
 
-Para otimizar a movimentação do braço, serão utilizadas três bandejas dispostas radialmente, permitindo maior velocidade de execução e reduzindo travamentos. A primeira bandeja será destinada à amostra bruta, a segunda será uma bandeja com água para limpar possíveis resíduos não magnéticos que foram puxados acidentalmente pelo eletroímã e a terceira será para a amostra limpa. Para controle dos componentes, será utilizado o Magic-Box, eliminando a necessidade de um servidor externo e permitindo ao cliente acesso às configurações do ensaio através de botões e display embutidos. Além disso, será adicionado um sensor de peso à terceira bandeja, responsável pela amostra limpa que, a cada rodada, realizará a pesagem e finalizará o ensaio quando não houver alteração na aferição desse peso.
+Para otimizar a movimentação do braço, serão utilizadas três bandejas dispostas radialmente, permitindo maior velocidade de execução e reduzindo travamentos. Dessa maneira, a primeira bandeja será destinada à amostra bruta, a segunda será uma bandeja com água para limpar possíveis resíduos não magnéticos que foram puxados acidentalmente pelo eletroímã e a terceira será para a amostra limpa. Para controle dos componentes, será utilizado o Magic-Box, eliminando a necessidade de um servidor externo e permitindo ao cliente acesso às configurações do ensaio através de botões e display embutidos. Além disso, será adicionado um sensor de peso à terceira bandeja, responsável pela amostra limpa que, a cada rodada, realizará a pesagem e finaliza o ensaio quando não houver alteração na aferição desse peso.
 
-Para captar as amostras com o braço robótico, será adicionado um eletroímã, que será regulado pelo Magic-Box através de uma ponte H interna, permitindo a regulagem da força magnética. Espera-se obter, com a implementação dessas características, um sistema de ensaio automatizado eficiente e de fácil utilização. Um croqui deste sistema pode ser visto na figura abaixo:
+Para captar as amostras com o braço robótico, será adicionado um eletroímã, que será regulado por uma ponte H externa conectada ao Magic Box por meio de um cabo PWM, permitindo a regulagem da força magnética e inversão da mesma. Espera-se obter, com a implementação dessas características, um sistema de ensaio automatizado eficiente e de fácil utilização. Um croqui deste sistema pode ser visto na figura abaixo:
 
 <p align="center">
 
-<img src="img/relatorio/croqui.png">
+<img src="img/relatorio/Croquiponteh.jpg">
 </p>
 
 ## Documentação dos componentes
@@ -410,6 +410,26 @@ O Sensor de Peso trata-se de um acessório eletrônico capaz de detectar diferen
 - Dimensões(CxLxA):80mm,12,7mm,12,7mm
 - Peso: 31g
 - Ligação do fios: Vermelho(+),Preto(-),Verde(Sinal +),Branco(Sinal -)
+
+#### Ponte H
+
+A ponte h é um circuito integrado que será utilizado para a variação de campo magnéctico atrávé da variação da corrente. Essa variação será controlada através do software projeta para atuar como comunição entre o Magic Box e a ponte h. Sendo assim, possivel desligar e ligar o imã atráves da inversão de campo pela inversão de sentido da corrente.
+
+<p align="center">
+<img src="img/relatorio/ponte-h.jpg" width="400px">
+</p>
+<br>
+
+#### Especificações do Ponte H:
+
+- Tensão de Operação: 4~35v.
+- Chip: ST L298N (Datasheet)
+- Controle de 2 motores DC ou 1 motor de passo.
+- Corrente de Operação máxima: 2A por canal ou 4A max.
+- Tensão lógica: 5v.
+- Corrente lógica: 0~36mA.
+- Limites de Temperatura: -20 a +135°C.
+- Potência Máxima: 25W.
 
 ### Módulos funcionais do sistema
 
@@ -612,7 +632,7 @@ Base da bandeja em que será depositada a amostra já separada e limpa, apenas c
 
 - Para o projeto, serão utilizados alguns componentes eletrônicos que têm a finalidade de cumprir com o objetivo da automação do processo de separação magnética de minérios e entre esses temos o braço robótico Magician Lite, que é conectado com um controlador externo que será o Magic Box através da porta de interface de comunicação com o Magician Lite (item 10 na imagem do campo de projeto de dispositivos eletrônicos). Além desses componentes serão usados, também, um eletroímã que será conectado ao Magic Box pela saída de 12 Volts e um módulo de peso que acompanha uma célula de carga que será conectada também ao Magic Box.
 
-- O Magic Box atua como um microcontrolador capaz de rodar scripts que são iniciados e selecionados pela própria interface de display que ele possui, além disso ele também possui uma Ponte H integrado a ele que será utilizado para inverter o campo e desligar o eletroímã através de um comando efetuado no script. O Magician Lite é o braço robótico utilizado com estrutura física para realizar a separação de misturas efetuando o processo operacional dividido em 3 fases como proposto no TAPI, e assim o eletroímã é responsável por coletar o material ferromagnético, e com a ajuda do braço, depositá-lo no recipiente de amostra. Já o módulo de peso e a célula de carga serão utilizados como método de verificar o momento de encerrar o ciclo de separação de misturas através da checagem após o final da separação, em que haverá a verificação para saber se houve ou não alteração no peso da amostra. Assim, quando não houver mais alteração será indicado que não há mais conteúdo ferromagnético na amostra e o processo poderá ser encerrado.
+- O Magic Box atua como um microcontrolador capaz de rodar scripts que são iniciados e selecionados pela própria interface de display que ele possui.O Magician Lite é o braço robótico utilizado com estrutura física para realizar a separação de misturas efetuando o processo operacional dividido em 3 fases como proposto no TAPI, e assim o eletroímã é responsável por coletar o material ferromagnético, e com a ajuda do braço, depositá-lo no recipiente de amostra. Já o módulo de peso e a célula de carga serão utilizados como método de verificar o momento de encerrar o ciclo de separação de misturas através da checagem após o final da separação, em que haverá a verificação para saber se houve ou não alteração no peso da amostra. Assim, quando não houver mais alteração será indicado que não há mais conteúdo ferromagnético na amostra e o processo poderá ser encerrado.
 
 ### Requisitos de software
 
@@ -687,7 +707,7 @@ Dessa forma, a arquitetura da solução foi idealizada com o intuito de dar maio
 
 ### 1. Comunicação eletroimã
 
-- A comunicação com o eltroimã é feita através da porta de interface PWM categorizada como ponto 1 na docuementação acima, no hardware ela é indetificavél pela cor vermelha. Através dessa porta é possivel controlar a tensão e a corrente podendo assim ligar e desligar o imã invertendo a corrente além de controlar o campo magnético pela variação de tensão.
+- A comunicação com o eltroimã é feita através da porta de interface PWM categorizada como ponto 1 na docuementação acima, no hardware ela é indetificavél pela cor vermelha e uma porta de comunicação para comunicaçãpo, além de utilizar uma porta de saida 12V para alimentação que conecta com a ponte h externa.
 
 ### 2. Comunicação celula de peso
 
@@ -900,30 +920,33 @@ Embora alguns resultados negativos, foi possível validar a ideia principal do q
 # Manuais
 
 ## Manual de Implantação
+
     O manual de implantação é uma parte da documentação destinada à montar o robô a partir do momento que esse é tirado da caixa. Nesse sentido, segue uma lista de instruções com fotos para montagem do kit DOBOT Magician Lite.
- 
-    
-  1 - O primeiro passo consiste em tirar o robô da caixa e posicioná-lo no encaixe feito especificamente para ele. Essa parte do processo serve para garantir que todos os ensaios sejam iguais;
-      
+
+1 - O primeiro passo consiste em tirar o robô da caixa e posicioná-lo no encaixe feito especificamente para ele. Essa parte do processo serve para garantir que todos os ensaios sejam iguais;
+
   <BR>
   <p align="center">
   <img src="img/relatorio/robo_caixa.jpeg" width="400px">
   </p>
   <br>
 
-  2 - Após isso, tire a fonte de energia da caixa e conecte a fonte com o robô e a tomada;
-      <p align="center">
-  <img src="img/relatorio/fonte_energia.jpeg" width="400px">
+2 - Após isso, tire a fonte de energia da caixa e conecte a fonte com o robô e a tomada;
+<p align="center">
+<img src="img/relatorio/fonte_energia.jpeg" width="400px">
+
   </p>
   <br>
 
 3 - Tire o cabo USB e um cabo Flat da caixa, conectando um na entrada USB e o outro na 12V, respectivamente;
-    <p align="center">
-  <img src="img/relatorio/robo_cabos.jpeg" width="400px">
+<p align="center">
+<img src="img/relatorio/robo_cabos.jpeg" width="400px">
+
   </p>
   <br>
 
 4 - Tire o cabo de comunicação e o magic box da caixa e conecte os cabos USB, 12V e de comunicação no Magic Box;
+
 <p align="center">
   <img src="img/relatorio/box_usb.jpeg" width="400px">
   </p>
@@ -933,9 +956,10 @@ Embora alguns resultados negativos, foi possível validar a ideia principal do q
   </p>
   <br>
 
-  5 - Tire o case com dois ímãs já conectado à ponte H e conecte os jumpers da ponte no Magic Box; (portas do magic box e conexão na ponte H explicados nesse documento nos tópicos: componentes e validação dos dispositivos mecânicos)
-    <p align="center">
-  <img src="img/relatorio/box_ponteH.jpeg" width="400px">
+5 - Tire o case com dois ímãs já conectado à ponte H e conecte os jumpers da ponte no Magic Box; (portas do magic box e conexão na ponte H explicados nesse documento nos tópicos: componentes e validação dos dispositivos mecânicos)
+<p align="center">
+<img src="img/relatorio/box_ponteH.jpeg" width="400px">
+
   </p>
   <br>
   6 - Por fim, encaixe o case do ímã no braço robótico.
@@ -945,27 +969,32 @@ Embora alguns resultados negativos, foi possível validar a ideia principal do q
   <br>
 
 ## Manual do Usuário
-  Com o passo a passo da etapa anterior executado,  está tudo pronto para executar a operação. Para isso, siga as instruções contidas abaixo(com imagens) e execute o programa.
 
-  1 - O primeiro passo consiste em ligar o magic box, para isso, basta segurar o botão central até ouvir um som e a tela ligar;
-    <p align="center">
-  <img src="img/relatorio/box_liga.jpeg" width="400px">
+Com o passo a passo da etapa anterior executado, está tudo pronto para executar a operação. Para isso, siga as instruções contidas abaixo(com imagens) e execute o programa.
+
+1 - O primeiro passo consiste em ligar o magic box, para isso, basta segurar o botão central até ouvir um som e a tela ligar;
+<p align="center">
+<img src="img/relatorio/box_liga.jpeg" width="400px">
+
   </p>
   <br>
 
-  2 - O segundo passo é ligar o DOBOT, pressionando o botão power à esquerda. Para confirmar a ligação, basta ouvir um som de confirmação;
-    <p align="center">
-  <img src="img/relatorio/dobot_ligar.jpeg" width="400px">
+2 - O segundo passo é ligar o DOBOT, pressionando o botão power à esquerda. Para confirmar a ligação, basta ouvir um som de confirmação;
+<p align="center">
+<img src="img/relatorio/dobot_ligar.jpeg" width="400px">
+
   </p>
   <br>
 
-  3 - Quando ambos componentes estiverem ligados, selecione o método de uso(contidos na interface de usuário nesse documento). Para aplicação, nesse manual será utilizado o método script para execução do programa;
+3 - Quando ambos componentes estiverem ligados, selecione o método de uso(contidos na interface de usuário nesse documento). Para aplicação, nesse manual será utilizado o método script para execução do programa;
+
   <p align="center">
     <img src="img/relatorio/selecao_script.jpeg" width="400px">
     </p>
     <br>
 
-  4 - Após seleção do modo, confirme a ação com o botão com símbolo de circulo. Ademais, confirme a intensidade de campo magnético da mesma maneira e aprecie o experimento.
+4 - Após seleção do modo, confirme a ação com o botão com símbolo de circulo. Ademais, confirme a intensidade de campo magnético da mesma maneira e aprecie o experimento.
+
   <p align="center">
     <img src="img/relatorio/primeira_bandeja.jpeg" width="400px">
     </p>
