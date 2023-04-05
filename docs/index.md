@@ -61,6 +61,7 @@ Concepção de sistema de automação industrial
       - [Especificações do Eletroímã:](#especificações-do-eletroímã)
       - [Célula de Peso e Módulo Hx711 Sensor de Peso:](#célula-de-peso-e-módulo-hx711-sensor-de-peso)
       - [Especificações do Célula de Peso e Módulo Hx711 Sensor de Peso:](#especificações-do-célula-de-peso-e-módulo-hx711-sensor-de-peso)
+      - [Ponte H](#ponte-h)
     - [Módulos funcionais do sistema](#módulos-funcionais-do-sistema)
       - [Projeto dos dispositivos mecânicos](#projeto-dos-dispositivos-mecânicos)
     - [Projeto da bandeja circular](#projeto-da-bandeja-circular)
