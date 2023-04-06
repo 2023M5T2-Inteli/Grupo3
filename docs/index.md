@@ -972,7 +972,8 @@ Durante a Sprint 5, um dos esforços foi a validação da solução de bandeja, 
 
 ## Manual de Implantação
 
-    O manual de implantação é uma parte da documentação destinada à montar o robô a partir do momento que esse é tirado da caixa. Nesse sentido, segue uma lista de instruções com fotos para montagem do kit DOBOT Magician Lite.
+  
+  O manual de implantação é uma parte da documentação destinada à montar o robô a partir do momento que esse é tirado da caixa. Nesse sentido, segue uma lista de instruções com fotos para montagem do kit DOBOT Magician Lite.
 
 1 - O primeiro passo consiste em tirar o robô da caixa e posicioná-lo no encaixe feito especificamente para ele. Essa parte do processo serve para garantir que todos os ensaios sejam iguais;
 
@@ -1030,7 +1031,7 @@ Com o passo a passo da etapa anterior executado, está tudo pronto para executar
   </p>
   <br>
 
-2 - O segundo passo é ligar o DOBOT, pressionando o botão power à esquerda. Para confirmar a ligação, basta ouvir um som de confirmação;
+2 - O segundo passo é ligar o DOBOT, pressionando o botão power à esquerda. Para confirmar a ligação, espera até ouvir o som de confirmação;
 <p align="center">
 <img src="img/relatorio/dobot_ligar.jpeg" width="400px">
 
