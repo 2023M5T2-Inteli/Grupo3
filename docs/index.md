@@ -61,6 +61,7 @@ Concepção de sistema de automação industrial
       - [Especificações do Eletroímã:](#especificações-do-eletroímã)
       - [Célula de Peso e Módulo Hx711 Sensor de Peso:](#célula-de-peso-e-módulo-hx711-sensor-de-peso)
       - [Especificações do Célula de Peso e Módulo Hx711 Sensor de Peso:](#especificações-do-célula-de-peso-e-módulo-hx711-sensor-de-peso)
+      - [Ponte H](#ponte-h)
     - [Módulos funcionais do sistema](#módulos-funcionais-do-sistema)
       - [Projeto dos dispositivos mecânicos](#projeto-dos-dispositivos-mecânicos)
     - [Projeto da bandeja circular](#projeto-da-bandeja-circular)
@@ -89,7 +90,7 @@ Concepção de sistema de automação industrial
   - [Testes Unitários](#testes-unitários)
     - [Sprint 2](#sprint-2)
       - [Braço mecânico](#braço-mecânico)
-      - [Eletroímã](#eletroímã-1)
+      - [Eletroímã](#eletroímã)
       - [Módulo de peso](#módulo-de-peso)
     - [Sprint 3](#sprint-3)
       - [Braço Robótico e Magic Box](#braço-robótico-e-magic-box)
@@ -101,6 +102,11 @@ Concepção de sistema de automação industrial
       - [Modulo de peso e Magic Box](#modulo-de-peso-e-magic-box)
       - [Suporte para o eletroímã](#suporte-para-o-eletroímã)
       - [Movimentação do Braço Robótico](#movimentação-do-braço-robótico)
+    - [Sprint 5](#sprint-5)
+      - [Ponte H - O retorno!](#ponte-h-o-retorno)
+        - [Contexto](#contexto)
+        - [Problema e solução atual](#problema-e-solução-atual)
+        - [Possível solução para o problema base](#possível-solução-para-o-problema-base)
   - [Teste de Usabilidade](#teste-de-usabilidade)
 - [Manuais](#manuais)
   - [Manual de Implantação](#manual-de-implantação)
@@ -160,7 +166,7 @@ No início do módulo, foi nos apresentado, durante o processo de exposição do
 <p align="center"> 1 — Demonstração do processo manual de separação de amostras realizado pelo IPT.</p>
 
 </p>
-  
+
 <br>
 O processo de separação de amostras atualmente ocorre da seguinte forma: sobre uma mesa são dispostos 3 ímãs de diferentes potenciais (medidos em Gauss); 3 bandejas; 1 saco plástico; 1 recipiente com a amostra (imagem 2). Em todas as 3 bandejas são colocados água para facilitar a manipulação da amostra - na primeira bandeja é despejado a amostra e as outras 2 bandejas irão ser utilizadas como apoio durante o processo de separação manual. Após estas etapas, é escolhido o ímã que mais atrai minérios magnéticos, o qual é envolvido em um plástico (para facilitar a retirada dos materiais de ferros recolhidos pelo ímã).
 
@@ -916,6 +922,27 @@ Sendo assim, os próprios arquivos salvos no Magic Box serviram como um menu, ao
 - Negativos: O botão de OK, sinalizado em um formato esférico (localizado à direita do teclado), não apresenta um formato intuitivo em relação à sua função. Adicionalmente, em algumas situações, é necessário pressionar os botões com força para realizar a ação desejada, já que o teclado apresenta baixa sensibilidade.
 
 Embora alguns resultados negativos, foi possível validar a ideia principal do que foi desenvolvido, além de ter algumas percepções do que talvez possa ser melhorado.
+
+# Sprint 5
+
+## Ponte H, O retorno!
+
+#### Contexto
+Usando de gancho, a Sprint 5 uma das mais importantes para o projeto, pois nela que foi possível testar a solução de eletroímãs, no qual não obtivemos os resultados esperados para a solução... Utilizando-se do microcontrolador _Magic Box_, e seguindo a documentação, era possível encontrar básicas sobre o funcionamento de "_Motores externo_" ou "_SW Interface_", no que se encontra duas saídas, apresentadas por duas portas existentes no microcontrolador, as _SW1_(`EIO12`) e _SW2_(`EIO11`), em que seria possível o controle da tensão de saída, entre os valores de `8V~12.6VP`, e fornecer uma corrente de até `3A` para cada porta de saída.
+
+#### Problema e solução atual
+
+Durantes os testes usando exemplos encontrados, tanto nas documentações, tanto no [fórum oficial](https://forum.dobot.cc/), e testes severos utilizando controladoras de portas da própria _Magic Box_, não obtivemos o resultado de controle da tensão de saída dos ímãs, apenas tivemos controle de funcionamento, ou seja, ligar e desligar o ímã, o que nos levou a crer que o problema estava na própria _Magic Box_, e não no código, ou no hardware... Com o problema mostrado, tivemos pouco tempo para buscar uma solução, e a mais própria foi voltarmos a utilizar a [Ponte H](#ponte-h) para controlar os ímas, pois a interface PWM, contido no microcontrolador, para manipular a tensão da [Ponte H](#ponte-h), estava em funcionamento, logo, revisamos as mudanças necessárias para implementação do mesmo no código, e com sucesso, pudemos ter o controle da tensão de saída dos ímas, e assim, obter o resultado esperado para a solução.
+#### Possível solução para o problema base
+Durante uma ardua busca, pesquisa e perguntas, em que tivemos contato até com um engenheiro da Dobot, tivemos poucos respostas de como contornar este problema, até então tinhamos desistido, pelo tempo que custou, sem algum tipo de retorno. No entanto, numa ultima tentativa de busca durante o [fórum oficial](https://forum.dobot.cc/), pudemos encontra algunas informações de outras pessoas que tiveram do mesmo problema, sendo eles:
+- https://forum.dobot.cc/t/dobot-magician/163
+- https://forum.dobot.cc/t/setemotor-didnt-work/3986
+- https://forum.dobot.cc/t/api-setemotor-not-work/414/8
+- https://forum.dobot.cc/t/conveyor-with-python-how-to/2366
+
+Vasculhando por respostas, encontramos um padrão de resposta, que tinha um caminho para solucionar o problema, no qual dizia sobre um erro de tipos na comunicação à API interna do _Magic Box_, em contexto pouco técnico, o tipo do dado esperado para o campo de potência do motor, para controle das portas _SW_ seria do tipo `INT32`, ou seja, um número inteiro, porém, o que é encontrado nos códigos, tanto na documentação oficial, tanto de repósitos, e até no `Firmware` interno do _Magic Box_, era um tipo `FLOAT`, ou seja, um número com casas decimais, o que não é aceito pela API interna do _Magic Box_, e por isso, não funcionava. Com isso, tivemos a certeza que o problema estava na comunicação entre o código e o _Magic Box_, e não no hardware, ou no código, e que era possível contornar o problema de alguma forma, mudando o tipo do dado na API base do _Magic Box_.
+
+Contudo, atualmente o código fonte do _Magic Box_ não é aberto, e não é possível alterar o código fonte da API base, e nem mesmo o `Firmware` interno, o que nos levou a crer que o problema não seria resolvido tão cedo, e que teríamos que utilizar a [Ponte H](#ponte-h) para controlar os ímas, e assim, obter o resultado esperado para a solução.
 
 # Manuais
 
