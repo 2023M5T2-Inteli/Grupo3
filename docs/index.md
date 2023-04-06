@@ -62,6 +62,7 @@ Concepção de sistema de automação industrial
       - [Célula de Peso e Módulo Hx711 Sensor de Peso:](#célula-de-peso-e-módulo-hx711-sensor-de-peso)
       - [Especificações do Célula de Peso e Módulo Hx711 Sensor de Peso:](#especificações-do-célula-de-peso-e-módulo-hx711-sensor-de-peso)
       - [Ponte H](#ponte-h)
+      - [Especificações do Ponte H:](#especificações-do-ponte-h)
     - [Módulos funcionais do sistema](#módulos-funcionais-do-sistema)
       - [Projeto dos dispositivos mecânicos](#projeto-dos-dispositivos-mecânicos)
     - [Projeto da bandeja circular](#projeto-da-bandeja-circular)
@@ -90,7 +91,7 @@ Concepção de sistema de automação industrial
   - [Testes Unitários](#testes-unitários)
     - [Sprint 2](#sprint-2)
       - [Braço mecânico](#braço-mecânico)
-      - [Eletroímã](#eletroímã)
+      - [Eletroímã](#eletroímã-1)
       - [Módulo de peso](#módulo-de-peso)
     - [Sprint 3](#sprint-3)
       - [Braço Robótico e Magic Box](#braço-robótico-e-magic-box)
@@ -102,12 +103,12 @@ Concepção de sistema de automação industrial
       - [Modulo de peso e Magic Box](#modulo-de-peso-e-magic-box)
       - [Suporte para o eletroímã](#suporte-para-o-eletroímã)
       - [Movimentação do Braço Robótico](#movimentação-do-braço-robótico)
-    - [Sprint 5](#sprint-5)
-      - [Ponte H - O retorno!](#ponte-h-o-retorno)
-        - [Contexto](#contexto)
-        - [Problema e solução atual](#problema-e-solução-atual)
-        - [Possível solução para o problema base](#possível-solução-para-o-problema-base)
   - [Teste de Usabilidade](#teste-de-usabilidade)
+- [Sprint 5](#sprint-5)
+  - [Ponte H, O retorno!](#ponte-h-o-retorno)
+      - [Contexto](#contexto)
+      - [Problema e solução atual](#problema-e-solução-atual)
+      - [Possível solução para o problema base](#possível-solução-para-o-problema-base)
 - [Manuais](#manuais)
   - [Manual de Implantação](#manual-de-implantação)
   - [Manual do Usuário](#manual-do-usuário)
@@ -301,9 +302,20 @@ A matriz de oceano Azul é uma análise feita sobre a empresa e a solução prop
 
 <img src="img/relatorio/personas-1.png">
 </p>
+
+<p  align="center">
+
+<img src="img/relatorio/personas-1-caracteristica.png">
+</p>
+
 <p align="center">
 
 <img src="img/relatorio/personas-2.png">
+</p>
+
+<p  align="center">
+
+<img src="img/relatorio/personas-2-caracteristica.png">
 </p>
 <br>
 
