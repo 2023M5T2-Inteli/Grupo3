@@ -1,290 +1,192 @@
-# Import necessary modules
-import dType
-from modules import *
-# from components import *
-from base.api import *
-from components import HX711
-from machine import Pin, SPI
+# Importing required modules
+import dType  # Importing dType module
+from modules import *  # Importing all the modules from the modules directory
+from base.api import *  # Importing all the modules from the base/api directory
+from components import HX711  # Importing HX711 from the components directory
+from machine import Pin, SPI  # Importing Pin and SPI modules from the machine directory
 
-
-# Function to test the properties of a dType object
+# Defining a function to print all properties of an item
 def test_list_props(item):
-    # Get list of properties of the object
+    # Get all the properties of the item
     properties_of_dType = dir(item)
-    # Iterate over the properties and print them out
+    # Iterate through all the properties
     for property_of_dType in properties_of_dType:
+        # Print the property name
         dType.PrintInfo(0, property_of_dType)
+        # Delay for 750 milliseconds
         dType.dSleep(750)
 
-
-# Define init and connect hx711
+# Defining a function to initialize the HX711 module
 def init_hx711():
-    
-    # Create new Pin objects for the input and output pins of the HX711 module
+    # Defining the pins for the HX711 module
     pin_OUT = Pin("D12", Pin.IN, pull=Pin.PULL_DOWN)
     pin_SCK = Pin("D13", Pin.OUT)
-    
-    # Create a new Pin object for the SPI clock pin
     spi_SCK = Pin("D13")
-    
-    # Print a message to indicate that the program is connecting to the weight module
+    # Connecting to the weight module
     print("Conectando ao modulo de peso")
-    
-    # Wait for 1 second (1000 milliseconds) before continuing
     Time.sleep(1000)
-    
-    # Create a new SPI object with the specified settings and pin assignments
+    # Initializing the SPI connection
     spi = SPI(baudrate=1000000, polarity=0, phase=0, sck=spi_SCK, mosi=pin_SCK, miso=pin_OUT)
-
-    # Create a new HX711 object with the specified pin assignments and SPI object
+    # Initializing the HX711 object
     hx711 = HX711(pin_SCK, pin_OUT, spi)
-    
-    # Loop indefinitely
+    # Reading the weight value in a loop
     while True:
         try:
-            # Zero out the sensor
+            # Taring the module
             hx711.tare()
-            
-            # Read the weight from the sensor
+            # Reading the value
             hx711.read()
-            
-            # Get the weight value from the HX711 object
+            # Getting the value
             value = hx711.get_value()
-            
-            # Display the weight value
-            print(str(value))
-            
+            # Printing the value
+            print(str(value))       
         except:
-            # If there's an error reading the sensor, display a message
+            # Printing an error message if the module is not found
             print("Erro: modulo de peso nao encontrado")
-        
-        # Wait for 500ms (half a second) before trying to read the sensor again
+        # Delay for 500 milliseconds
         Time.sleep(500)
 
-
-# Function to turn on the electromagnet
+# Defining a function to turn on the electromagnet
 def turnOnElectromagnet(mf):
-    # Set pin 12 to output mode
-    MagicBox.IO.set_pin_mode(13, magicbox.PWM)
-    # Wait 500ms
+    # Setting the pin mode
+    MagicBox.IO.set_pin_mode(12, magicbox.DO)
+    # Delay for 500 milliseconds
     Time.sleep(500)
-    # Set pin 12 to high
-    MagicBox.IO.set_pin_pwm(13, 5000, mf)
-    # Wait 500ms
+    # Setting the pin value to 1
+    MagicBox.IO.set_pin_value(12, 1)
+    # Delay for 500 milliseconds
     Time.sleep(500)
 
-# Function to turn off the electromagnet
+# Defining a function to turn off the electromagnet
 def turnOffElectromagnet():
-    # Set pin 12 to output mode
-    MagicBox.IO.set_pin_mode(13, magicbox.PWM)
-    # Wait 500ms
+    # Setting the pin mode
+    MagicBox.IO.set_pin_mode(12, magicbox.DO)
+    # Delay for 500 milliseconds
     Time.sleep(500)
-    # Set pin 12 to high
-    MagicBox.IO.set_pin_pwm(13, 5000, 0)
-    # Wait 500ms
-    Time.sleep(500)
+    # Setting the pin value to 0
+    MagicBox.IO.set_pin_value(12, 0)
 
-# Function to shake the arm after turning off the electromagnet
-def shakeAfterTurnOff():
-    # Loop 4 times
-    i = 0
-    while i < 4:
-        # Move the arm to position A
-        Dobot.move_to(-53, 220, 20, 0)
-        # Move the arm to position B
-        Dobot.move_to(-53, 220, -1, 0)
-        # Increment the counter
-        i += 1
-
-# Function to display the current position of the arm
+# Defining a function to show the position of the Dobot arm
 def showPosition():
-    # Get the current pose of the arm
+    # Getting the position of the arm
     position = Dobot.get_pose()
-    # Convert the pose to a string and display it
+    # Formatting the position
     positionStr = "X {0} Y:{1} Z:{2}".format(position[0], position[1], position[2])
-    #print positions at display
+    # Printing the position
     print(positionStr)
 
-# Function to initialize the first tray
-def iniFirstTray():
-    # Display a message
-    Display.print("Scanneando primeira bandeja!")
-    # Wait 500ms
-    Time.sleep(500)
-    # Move the arm to position A
-    Dobot.move_to(-13,  -235,  150, 0,1)
-    # Wait 500ms
-    Time.sleep(500)
-    # Move the arm to position B
-    Dobot.move_to(-13,  -230,  -4, 0,1)
-
-
+# Defining a function to move the Dobot arm to scan the first tray
 def scanFirstTray():
-    # Initialize a counter variable.
-    repeat = 0
-    # Turn on an electromagnet.
-    #turnOnElectromagnet()
-    # Loop 10 times.
-    while repeat != 10:
-        # If the counter is even, move to a certain position.
-        if (repeat % 2 == 0):
-            Dobot.move_to(-13,  -370,  -4, 0, 1)       
-        # Otherwise, move to a different position.
-        else:
-            Dobot.move_to(-13,  -230,  -4, 0, 1)
-        # Increment the counter.
-        repeat = repeat + 1
-
-
-def iniSecondTray():
-    # Display a message on a display.
-    Display.print("Separando na segunda bandeja!")
-    # Move the arm to a certain position.
-    Dobot.move_to(230,  10,  150, 0, 1)
-    # Wait for a period of time.
+    # Printing a message
+    print("Scanneando primeira bandeja!")
+    # Delay for 500 milliseconds
     Time.sleep(500)
-    # Move the arm to a different position.
-    Dobot.move_to(243,  13,  -3, 0,1)
-    # Wait for a period of time.
-    Time.sleep(500)
-
+    # Defining the coordinates
+    coordinates = [
+        [-210,  275,  10, 0,1],
+        [342,  52,  10, 0, 1], 
+        [310,  51,  10, 0, 1], 
+        [-185,  254,  10, 0, 1],   
+        [-158,  217,  10, 0, 1],
+        [266,  41,  10, 0, 1]
+        ]
+    # Iterating through all the coordinates
+    for i in range(0,6):
+        Dobot.move_to(coordinates[i][0],coordinates[i][1],coordinates[i][2],coordinates[i][3],coordinates[i][4])
+        Time.sleep(1000)   
 
 def scanSecondTray():
-    # Initialize a counter variable.
-    repeat = 0
-    # Loop 6 times.
-    while repeat != 6:
-        # If the counter is even, move to a certain position.
-        if (repeat % 2 == 0):
-            Dobot.move_to(360,  13,  -3, 0,1)
-            
-        # Otherwise, move to a different position.
+    Display.print("Limpando na segunda bandeja!")    # Prints message on the display
+    Time.sleep(500)    # Wait for 500ms before executing the next line of code
+    coordinates = [    # List of coordinates to move the Dobot arm to
+        [340,  -63,  76, 0, 1],
+        [340,  -63,  16, 0, 1],
+        [25,  -349,  10, 0, 1], 
+        [22,  -310,  10, 0, 1], 
+        [308,  -46,  10, 0, 1],
+        [264,  -46,  10, 0, 1],
+        [26,  -267,  10, 0, 1]
+        ]
+    for i in range(0,7):    # Loop over the coordinates list and move the Dobot arm to each coordinate
+        Dobot.move_to(coordinates[i][0],coordinates[i][1],coordinates[i][2],coordinates[i][3],coordinates[i][4])
+        Time.sleep(1000)   # Wait for 1000ms before executing the next line of code
+
+def scanThirdTray():
+    Display.print("Despejando na terceira bandeja!")    # Prints message on the display
+    coordinates = [    # List of coordinates to move the Dobot arm to
+        [-67,  -304,  125, 0,1],
+        -71,  -301,  10, 0,1
+    ]
+    for i in range(0,2):    # Loop over the coordinates list and move the Dobot arm to each coordinate
+        Dobot.move_to(coordinates[i][0],coordinates[i][1],coordinates[i][2],coordinates[i][3],coordinates[i][4])
+        Time.sleep(1000)    # Wait for 1000ms before executing the next line of code
+        
+    turnOffElectromagnet()    # Turn off the electromagnet
+    for i in range(0, 6):    # Loop over the range 0 to 6
+        if (i % 2 == 0):    # Check if the index is even
+            Dobot.move_to(-71,  -301,  10, 0,1)    # Move the Dobot arm to the first coordinate
         else:
-            Dobot.move_to(243,  13,  -3, 0,1)
-        # Increment the counter.
-        repeat = repeat + 1
-
-
-def iniThirdTray():
-    # Display a message on a display.
-    Display.print("Separando na terceira bandeja!")
-    # Move the arm to a certain position.
-    Dobot.move_to(-1,  230,  150, 0,1)
-    # Wait for a period of time.
-    Time.sleep(500)
-    # Move the arm to a different position.
-    Dobot.move_to(9,  223,  -4, 0,1)
-    # Wait for a period of time.
-    Time.sleep(100)
-    # Turn off an electromagnet.
-    turnOffElectromagnet()
-
-
-def shakeThirdTray():
-    # Initialize a counter variable.
-    repeat = 0
-    # Loop 6 times.
-    while repeat != 6:
-        # If the counter is even, move to a certain position.
-        if (repeat % 2 == 0):
-            Dobot.move_to(9,  360,  -4, 0,1)
-        # Otherwise, move to a different position.
-        else:
-            Dobot.move_to(9,  223,  -1, 0,1)
-        # Increment the counter.
-        repeat = repeat + 1
-
+            Dobot.move_to(-211,  -230,  10, 0,1)    # Move the Dobot arm to the second coordinate
 
 def upArm():
-    # Get the current position of the arm.
-    position = Dobot.get_pose()
-    x = position['x']
-    y = position['y']
-    # Wait for a period of time.
-    Time.sleep(1000)
-    # Move the arm up to a certain position.
-    Dobot.move_to(x, y,  150, 0)
+    position = Dobot.get_pose()    # Get the current position of the Dobot arm
+    x = position['x']    # Get the value of x-coordinate
+    y = position['y']    # Get the value of y-coordinate
+    Time.sleep(1000)    # Wait for 1000ms before executing the next line of code
+    Dobot.move_to(x, y,  150, 0)    # Move the Dobot arm to the specified coordinate
 
-# Function to finish the experiment
 def finish():   
-    upArm()# up the arm
-    Dobot.set_home()  # Set Dobot to its home position
-    Time.sleep(500)  # Wait for 500 milliseconds
-    Display.print("Ensaio finalizado!")  # Print "Ensaio finalizado!" message to the display
-    play_buzzer()
+    upArm()    # Move the Dobot arm up
+    Dobot.set_home()    # Set the current position as home position
+    Time.sleep(500)    # Wait for 500ms before executing the next line of code
+    Display.print("Ensaio finalizado!")    # Prints message on the display
+    play_buzzer()    # Play the buzzer
 
-# Define a function to set magnetic field
 def set_magnetic_field():
-    
-    # Set initial values for variables
-    is_confirm = False
-    magnetic_field = 50
-    
-    # Loop until the magnetic field is confirmed
-    while(is_confirm == False):
-        
-        # Print the current magnetic field value
-        print("Campo: ", magnetic_field)
-        
-        # If the UP arrow key is pressed and the magnetic field is less than 12, increase the magnetic field by 1
-        if Keyboard.UP.is_pressed() and magnetic_field <100:
-            Time.sleep(1000)
-            magnetic_field = magnetic_field + 10
-            print(str(magnetic_field))
-        
-        # If the DOWN arrow key is pressed and the magnetic field is greater than 1, decrease the magnetic field by 1
-        if Keyboard.DOWN.is_pressed() and magnetic_field >10:
-            Time.sleep(1000)
-            magnetic_field = magnetic_field - 10
-            print(str(magnetic_field))
-            
-        # If the RIGHT arrow key is pressed, confirm the magnetic field value and exit the loop
-        if Keyboard.RIGHT.is_pressed():
-            print("Campo escolhido!")
-            Time.sleep(2000)
-            is_confirm = True
-    
-    # Return the chosen magnetic field value
-    return magnetic_field
+    is_confirm = False # Initialize a flag to check if the magnetic field is confirmed
+    magnetic_field = 50 # Set the initial value of the magnetic field to 50
+    while(is_confirm == False): # Start a loop until the magnetic field is confirmed
+        print("Campo: ", magnetic_field)  # Print the current value of the magnetic field
+        if Keyboard.UP.is_pressed() and magnetic_field <100:   # Check if the UP arrow key is pressed and the magnetic field is less than 100
+            Time.sleep(1000) # Wait for 1 second
+            magnetic_field = magnetic_field + 10 # Increase the magnetic field by 10
+            print(str(magnetic_field))   # Print the updated magnetic field value
+
+        if Keyboard.DOWN.is_pressed() and magnetic_field >10:  # Check if the DOWN arrow key is pressed and the magnetic field is greater than 10
+            Time.sleep(1000) # Wait for 1 second
+            magnetic_field = magnetic_field - 10 # Decrease the magnetic field by 10
+            print(str(magnetic_field)) # Print the updated magnetic field value
+
+        if Keyboard.RIGHT.is_pressed(): # Check if the RIGHT arrow key is pressed
+            print("Campo escolhido!") # Print a message to confirm that the magnetic field is chosen
+            Time.sleep(2000) # Wait for 2 seconds
+            is_confirm = True # Set the flag to True to exit the loop
+    return magnetic_field # Return the confirmed magnetic field value
 
 
-#function to play a buzzer sound
 def play_buzzer():
-    #play a buzzer sound for 200ms
-    Buzzer.play(200)
-    #wait for 150ms
-    Time.sleep(150)
-    #play a buzzer sound for 200ms
-    Buzzer.play(200)
+    Buzzer.play(200) # Play a sound with a frequency of 200Hz using the buzzer
+    Time.sleep(150) # Wait for 150 milliseconds
+    Buzzer.play(200) # Play the sound again
+
 
 def main():
-    magnetic_field = set_magnetic_field() # Set the magnetic field
-    play_buzzer() # Play a buzzer sound
-    #turn on the Hbridge
-    MagicBox.IO.set_pin_mode(12, magicbox.DO)
-    # Wait 500ms
-    Time.sleep(500)
-    # Set pin 12 to high
-    MagicBox.IO.set_pin_value(12, 1)
-    # Wait 500ms
-    Time.sleep(500)
-    while True:
-        print("Iniciando ensaio") # Print "Iniciando ensaio" message to the display
-        isScan = 1  # Initialize isScan variable to 0
-     # Run the loop until isScan is equal to 3
-        while (isScan != 2):
-            turnOnElectromagnet(magnetic_field)
-            upArm()  # Move the arm up
-            Dobot.set_home()  # Set Dobot to its home position
-            iniFirstTray()  # Initialize the first tray
-            scanFirstTray()  # Scan the first tray
-            upArm()  # Move the arm up again
-            iniSecondTray()  # Initialize the second tray
-            scanSecondTray()  # Scan the second tray
-            upArm()  # Move the arm up again
-            iniThirdTray()  # Initialize the third tray
-            shakeThirdTray()  # Shake the third tray
-            isScan = isScan + 1  # Increment the isScan variable by 1
-        finish()  # Call the finish function to set Dobot to its home position, wait, and print a message.
-        Time.sleep(2000)  # Wait for 2000 milliseconds
-        init_hx711() #conecent hx711
+    magnetic_field = set_magnetic_field() # Call the function to set the magnetic field and assign the confirmed value to a variable
+    play_buzzer() # Call the function to play the buzzer sound
+    Time.sleep(1000) # Wait for 1 second
+    print("Iniciando ensaio") # Print a message to indicate that the experiment is starting
+    while True: # Start an infinite loop
+        isScan = 0 # Initialize a counter to keep track of the number of trays scanned
+        while (isScan != 2): # Start a loop until two trays are scanned
+            upArm() # Call a function to move the arm to a certain position
+            Dobot.set_home() # Set the current position as the home position for the robot
+            turnOnElectromagnet(magnetic_field) # Call a function to turn on the electromagnet with the confirmed magnetic field value
+            scanFirstTray() # Call a function to scan the first tray
+            upArm() # Call a function to move the arm to a certain position
+            scanSecondTray() # Call a function to scan the second tray
+            upArm() # Call a function to move the arm to a certain position
+            scanThirdTray() # Call a function to scan the third tray
+            isScan = isScan + 1 # Increase the counter by 1
+        finish() # Call a function to finish the experiment
+        Time.sleep(2000) # Wait for 2 seconds before starting the next round of the loop
+        #init_hx711()
