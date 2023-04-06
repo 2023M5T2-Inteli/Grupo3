@@ -109,6 +109,9 @@ Concepção de sistema de automação industrial
       - [Contexto](#contexto)
       - [Problema e solução atual](#problema-e-solução-atual)
       - [Possível solução para o problema base](#possível-solução-para-o-problema-base)
+  - [Validação final](#validação-final)
+    - [Bandeja](#bandeja)
+    - [Ensaio de amostra - prova conceito](#ensaio-de-amostra---prova-conceito)
 - [Manuais](#manuais)
   - [Manual de Implantação](#manual-de-implantação)
   - [Manual do Usuário](#manual-do-usuário)
@@ -956,6 +959,15 @@ Vasculhando por respostas, encontramos um padrão de resposta, que tinha um cami
 
 Contudo, atualmente o código fonte do _Magic Box_ não é aberto, e não é possível alterar o código fonte da API base, e nem mesmo o `Firmware` interno, o que nos levou a crer que o problema não seria resolvido tão cedo, e que teríamos que utilizar a [Ponte H](#ponte-h) para controlar os ímas, e assim, obter o resultado esperado para a solução.
 
+## Validação final
+
+### Bandeja
+Durante a Sprint 5, um dos esforços foi a validação da solução de bandeja, e para isso, foi necessário realizar a montagem do material de poliestireno de 1,8MM, que foram cortados a laser em uma instituição não vinculada ao INTELI. Após a etapa de corte, foi necessário unir respectivamente suas peças com cola superciana com o auxílio de elásticos de borracha (os clássicos amarelos). Inicialmente foram passados algumas camadas de cola, e após secar, foi colocado os elásticos para que a cola se espalhasse uniformemente. Após a secagem, foi possível retirar os elásticos e verificar o resultado. O resultado foi satisfatório, e a bandeja ficou bem firme, e com algumas folgas dado o trabalho realizado anteriormente por outros integrantes do grupo. Após a etapa de colagem, realizado inicialmente, foi necessário realizar o trabalho de vedação com silicone branco, sendo aplicado duas camadas de silicone, claro que uma após a outra secar. Após a montagem inicial, foram realizados alguns, teste, destacando pontos positivos e negativos da solução.
+- Pontos positivos: a bandeja faz sentido, sim, para a solução, pois ela é leve, de fácil manuseio e resistente de certa forma. Além de auxiliar na movimentação do robô e ser possível realizar a limpeza da bandeja, sem que seja necessário retirar o robô da mesa.
+ 
+- Pontos negativos: durante o primeiro teste com água, foi notado que a bandeja não estava totalmente vedada, e que a água poderia molhar o robô. Sendo necessário a aplicação de mais silicone para a vedação, também foi possível notar que houve erros de cálculo em relação à curvatura de algumas peças. Isso fez com que a bandeja não ficasse totalmente plana, e isso pode atrapalhar a movimentação do robô, e assim, fazer com que ele não consiga realizar a tarefa corretamente.
+
+### Ensaio de amostra - prova conceito
 # Manuais
 
 ## Manual de Implantação
