@@ -56,6 +56,14 @@ def turnOnElectromagnet(mf):
     MagicBox.IO.set_pin_value(12, 1)
     # Delay for 500 milliseconds
     Time.sleep(500)
+    # Setting the pin mode 
+    MagicBox.IO.set_pin_mode(13, magicbox.PWM)
+    # Wait 500ms
+    Time.sleep(500)
+    # Set pin 12 to high
+    MagicBox.IO.set_pin_pwm(13, 5000, mf)
+    # Wait 500ms
+    Time.sleep(500)
 
 # Defining a function to turn off the electromagnet
 def turnOffElectromagnet():
@@ -83,12 +91,12 @@ def scanFirstTray():
     Time.sleep(500)
     # Defining the coordinates
     coordinates = [
-        [-210,  275,  10, 0,1],
-        [342,  52,  10, 0, 1], 
-        [310,  51,  10, 0, 1], 
-        [-185,  254,  10, 0, 1],   
-        [-158,  217,  10, 0, 1],
-        [266,  41,  10, 0, 1]
+        [-210,  275,  12, 0,1],
+        [342,  52,  12, 0, 1], 
+        [310,  51,  12, 0, 1], 
+        [-185,  254,  12, 0, 1],   
+        [-158,  217,  12, 0, 1],
+        [266,  41,  12, 0, 1]
         ]
     # Iterating through all the coordinates
     for i in range(0,6):
@@ -96,37 +104,39 @@ def scanFirstTray():
         Time.sleep(1000)   
 
 def scanSecondTray():
-    Display.print("Limpando na segunda bandeja!")    # Prints message on the display
+    print("Limpando na segunda bandeja!")    # Prints message on the display
     Time.sleep(500)    # Wait for 500ms before executing the next line of code
     coordinates = [    # List of coordinates to move the Dobot arm to
         [340,  -63,  76, 0, 1],
         [340,  -63,  16, 0, 1],
-        [25,  -349,  10, 0, 1], 
-        [22,  -310,  10, 0, 1], 
-        [308,  -46,  10, 0, 1],
-        [264,  -46,  10, 0, 1],
-        [26,  -267,  10, 0, 1]
+        [25,  -349,  12, 0, 1], 
+        [22,  -310,  12, 0, 1], 
+        [308,  -46,  12, 0, 1],
+        [264,  -46,  12, 0, 1],
+        [26,  -267,  12, 0, 1]
         ]
     for i in range(0,7):    # Loop over the coordinates list and move the Dobot arm to each coordinate
         Dobot.move_to(coordinates[i][0],coordinates[i][1],coordinates[i][2],coordinates[i][3],coordinates[i][4])
         Time.sleep(1000)   # Wait for 1000ms before executing the next line of code
 
 def scanThirdTray():
-    Display.print("Despejando na terceira bandeja!")    # Prints message on the display
+    print("Despejando na terceira bandeja!")    # Prints message on the display
     coordinates = [    # List of coordinates to move the Dobot arm to
         [-67,  -304,  125, 0,1],
-        -71,  -301,  10, 0,1
+        [-71,  -301,  12, 0,1]
     ]
     for i in range(0,2):    # Loop over the coordinates list and move the Dobot arm to each coordinate
         Dobot.move_to(coordinates[i][0],coordinates[i][1],coordinates[i][2],coordinates[i][3],coordinates[i][4])
         Time.sleep(1000)    # Wait for 1000ms before executing the next line of code
         
-    turnOffElectromagnet()    # Turn off the electromagnet
-    for i in range(0, 6):    # Loop over the range 0 to 6
-        if (i % 2 == 0):    # Check if the index is even
-            Dobot.move_to(-71,  -301,  10, 0,1)    # Move the Dobot arm to the first coordinate
+    turnOffElectromagnet() 
+    repeat = 0   # Turn off the electromagnet
+    while repeat !=6:    # Loop over the range 0 to 6
+        if (repeat % 2 == 0):    # Check if the index is even
+            Dobot.move_to(-71,  -301,  12, 0,1)    # Move the Dobot arm to the first coordinate
         else:
-            Dobot.move_to(-211,  -230,  10, 0,1)    # Move the Dobot arm to the second coordinate
+            Dobot.move_to(-211,  -230,  12, 0,1)    # Move the Dobot arm to the second coordinate
+        repeat = repeat +1
 
 def upArm():
     position = Dobot.get_pose()    # Get the current position of the Dobot arm
@@ -139,7 +149,7 @@ def finish():
     upArm()    # Move the Dobot arm up
     Dobot.set_home()    # Set the current position as home position
     Time.sleep(500)    # Wait for 500ms before executing the next line of code
-    Display.print("Ensaio finalizado!")    # Prints message on the display
+    print("Ensaio finalizado!")    # Prints message on the display
     play_buzzer()    # Play the buzzer
 
 def set_magnetic_field():
