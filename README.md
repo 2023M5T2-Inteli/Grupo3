@@ -8,7 +8,7 @@
 </tr>
 </table>
 
-
+[![Video Title](https://user-images.githubusercontent.com/40807526/230747571-9e945e79-cadc-415d-b4e4-d7e35a6caa0e.mp4)](https://user-images.githubusercontent.com/40807526/230747571-9e945e79-cadc-415d-b4e4-d7e35a6caa0e.mp4)
 # Concepção de sistema de automação industrial
 O propósito deste repositório é proporcionar espaço de armazenamento e ferramentas para o controle de versões de todos documentos do projeto realizado durante o módulo 5 do curso de [Engenharia de Computação do Inteli](https://www.inteli.edu.br/engenharia-da-computacao/). O objetivo deste projeto é conceber e implementar um protótipo de um sistema de automação industrial, integrando módulos discretos implementados utilizando dispositivos microcontrolados a manipuladores robóticos antropomórficos.
 
@@ -50,3 +50,8 @@ Os principais diretórios do repositório são:
 - A pasta [docs](./docs), onde encontram-se os documentos de entrega do projeto. Aqui devem ficar o infográfico do usuário e o relatório de projeto.
 - A pasta [relatorio](./docs/img/relatorio/) serve para inserir fotos e vídeos do protótipo, assim como do seu processo de construção.
 - A pasta [src](./src) abriga todos os arquivos de desenvolvimento do projeto. Aqui deve ficar o código-fonte do projeto, assim como o projeto dos circuitos eletrônicos embarcados em cada módulo.
+
+
+Demostrativo da solução final:
+
+[![Demostrativo](https://user-images.githubusercontent.com/40807526/230747571-9e945e79-cadc-415d-b4e4-d7e35a6caa0e.mp4)](https://user-images.githubusercontent.com/40807526/230747571-9e945e79-cadc-415d-b4e4-d7e35a6caa0e.mp4)
