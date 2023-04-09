@@ -103,15 +103,15 @@ Concepção de sistema de automação industrial
       - [Modulo de peso e Magic Box](#modulo-de-peso-e-magic-box)
       - [Suporte para o eletroímã](#suporte-para-o-eletroímã)
       - [Movimentação do Braço Robótico](#movimentação-do-braço-robótico)
+    - [Sprint 5](#sprint-5)
+        - [Ponte H, O retorno!](#ponte-h-o-retorno)
+            - [Contexto](#contexto)
+            - [Problema e solução atual](#problema-e-solução-atual)
+            - [Possível solução para o problema base](#possível-solução-para-o-problema-base)
+        - [Validação final](#validação-final)
+            - [Bandeja](#bandeja)
+            - [Ensaio de amostra - prova conceito](#ensaio-de-amostra---prova-conceito)
   - [Teste de Usabilidade](#teste-de-usabilidade)
-- [Sprint 5](#sprint-5)
-  - [Ponte H, O retorno!](#ponte-h-o-retorno)
-      - [Contexto](#contexto)
-      - [Problema e solução atual](#problema-e-solução-atual)
-      - [Possível solução para o problema base](#possível-solução-para-o-problema-base)
-  - [Validação final](#validação-final)
-    - [Bandeja](#bandeja)
-    - [Ensaio de amostra - prova conceito](#ensaio-de-amostra---prova-conceito)
 - [Manuais](#manuais)
   - [Manual de Implantação](#manual-de-implantação)
   - [Manual do Usuário](#manual-do-usuário)
@@ -958,6 +958,10 @@ Durante uma ardua busca, pesquisa e perguntas, em que tivemos contato até com u
 Vasculhando por respostas, encontramos um padrão de resposta, que tinha um caminho para solucionar o problema, no qual dizia sobre um erro de tipos na comunicação à API interna do _Magic Box_, em contexto pouco técnico, o tipo do dado esperado para o campo de potência do motor, para controle das portas _SW_ seria do tipo `INT32`, ou seja, um número inteiro, porém, o que é encontrado nos códigos, tanto na documentação oficial, tanto de repósitos, e até no `Firmware` interno do _Magic Box_, era um tipo `FLOAT`, ou seja, um número com casas decimais, o que não é aceito pela API interna do _Magic Box_, e por isso, não funcionava. Com isso, tivemos a certeza que o problema estava na comunicação entre o código e o _Magic Box_, e não no hardware, ou no código, e que era possível contornar o problema de alguma forma, mudando o tipo do dado na API base do _Magic Box_.
 
 Contudo, atualmente o código fonte do _Magic Box_ não é aberto, e não é possível alterar o código fonte da API base, e nem mesmo o `Firmware` interno, o que nos levou a crer que o problema não seria resolvido tão cedo, e que teríamos que utilizar a [Ponte H](#ponte-h) para controlar os ímas, e assim, obter o resultado esperado para a solução.
+
+## Demostrativos da solução final
+
+[![Demostrativo](https://user-images.githubusercontent.com/40807526/230747571-9e945e79-cadc-415d-b4e4-d7e35a6caa0e.mp4)](https://user-images.githubusercontent.com/40807526/230747571-9e945e79-cadc-415d-b4e4-d7e35a6caa0e.mp4)
 
 ## Validação final
 
